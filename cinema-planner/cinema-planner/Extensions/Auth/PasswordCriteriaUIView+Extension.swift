@@ -18,4 +18,28 @@ extension PasswordCriteriaUIView {
         passwordCriteriaLabel.font = .preferredFont(forTextStyle: .subheadline)
         passwordCriteriaLabel.textColor = .secondaryLabel
     }
+    
+    func passwordCriteriaViewLayout() {
+        passwordCriteriaStackView.addArrangedSubview(passwordCriteriaImageView)
+        passwordCriteriaStackView.addArrangedSubview(passwordCriteriaLabel)
+        
+        addSubview(passwordCriteriaStackView)
+        
+        NSLayoutConstraint.activate([
+            passwordCriteriaStackView.topAnchor.constraint(equalTo: topAnchor),
+            passwordCriteriaStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            passwordCriteriaStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            passwordCriteriaStackView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            passwordCriteriaImageView.heightAnchor.constraint(equalTo: passwordCriteriaImageView.widthAnchor),
+            
+                    ])
+        
+        //CHCR
+        passwordCriteriaImageView.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
+        passwordCriteriaLabel.setContentHuggingPriority(UILayoutPriority.defaultLow, for: .horizontal)
+
+    }
 }
