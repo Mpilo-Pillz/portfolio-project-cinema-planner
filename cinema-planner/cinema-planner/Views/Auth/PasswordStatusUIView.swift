@@ -15,11 +15,15 @@ let passwordStatusStackView = makeStackView(withSpacing: 8, withAxis: .vertical)
     let lengthCriteriaView = PasswordCriteriaUIView(text: "8-32 characters (no spaces)")
     let uppercaseCriteriaView = PasswordCriteriaUIView(text: "uppercase letter (A-Z)")
     let lowercaseCriteriaView = PasswordCriteriaUIView(text: "lowercase (a-z)")
+    let digitCriteriaView = PasswordCriteriaUIView(text: "digit (0-9)")
     let specialCharacterCriteriaView = PasswordCriteriaUIView(text: "special character (e.g. !@#$%^)")
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        passwordStatusUIViewLayout()
+        
     }
     
     required init(coder: NSCoder) {
