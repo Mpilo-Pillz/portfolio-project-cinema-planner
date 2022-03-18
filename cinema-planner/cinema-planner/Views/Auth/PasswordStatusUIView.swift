@@ -22,6 +22,7 @@ let passwordStatusStackView = makeStackView(withSpacing: 8, withAxis: .vertical)
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        stylePasswordStatusUIView()
         passwordStatusUIViewLayout()
         
     }
