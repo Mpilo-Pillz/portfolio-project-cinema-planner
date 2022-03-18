@@ -10,6 +10,7 @@ import UIKit
 extension ForgotPasswordViewController {
     func layoutForgotPasswordViewController() {
         forgotPasswordStackView.addArrangedSubview(currentPasswordTextField)
+        forgotPasswordStackView.addArrangedSubview(passwordStatusUIView)
         
         view.addSubview(forgotPasswordStackView)
         
@@ -18,5 +19,11 @@ extension ForgotPasswordViewController {
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: forgotPasswordStackView.trailingAnchor, multiplier: 2),
             forgotPasswordStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
+    }
+    
+    func styleForgotPasswordViewController() {
+        passwordStatusUIView.translatesAutoresizingMaskIntoConstraints = false
+        passwordStatusUIView.layer.cornerRadius = 5
+        passwordStatusUIView.clipsToBounds = true
     }
 }
