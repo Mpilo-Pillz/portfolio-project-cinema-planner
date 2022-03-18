@@ -35,6 +35,8 @@ class PasswordCriteriaUIView: UIView {
         super.init(frame: .zero)
         
         passwordCriteriaLabel.text = text
+        
+        passwordCriteriaViewStyle()
 
     }
     
