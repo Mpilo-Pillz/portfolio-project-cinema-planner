@@ -37,6 +37,7 @@ class PasswordCriteriaUIView: UIView {
         passwordCriteriaLabel.text = text
         
         passwordCriteriaViewStyle()
+        passwordCriteriaViewLayout()
 
     }
     
