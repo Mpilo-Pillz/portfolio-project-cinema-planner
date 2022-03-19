@@ -9,6 +9,19 @@ import UIKit
 
 extension PasswordStatusUIView {
     
+    func stylePasswordStatusUIView() {
+        
+        criteriaLabel.numberOfLines = 0
+        criteriaLabel.lineBreakMode = .byWordWrapping
+        criteriaLabel.attributedText = makeCriteriaMessage()
+        
+        lengthCriteriaView.translatesAutoresizingMaskIntoConstraints = false
+        uppercaseCriteriaView.translatesAutoresizingMaskIntoConstraints = false
+        lowercaseCriteriaView.translatesAutoresizingMaskIntoConstraints = false
+        digitCriteriaView.translatesAutoresizingMaskIntoConstraints = false
+        specialCharacterCriteriaView.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
     func passwordStatusUIViewLayout() {
         passwordStatusStackView.distribution = .equalCentering
         
