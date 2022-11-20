@@ -19,6 +19,7 @@
 		C4D74324292A463900F71032 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74323292A463900F71032 /* CollectionViewTableViewCell.swift */; };
 		C4D74327292A4E2300F71032 /* HomeViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74326292A4E2300F71032 /* HomeViewController+Extension.swift */; };
 		C4D74329292A4EAC00F71032 /* CollectionViewTableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74328292A4EAC00F71032 /* CollectionViewTableViewCell+Extension.swift */; };
+		C4D7432B292A4F5500F71032 /* HeroHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D7432A292A4F5500F71032 /* HeroHeaderUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		C4D74323292A463900F71032 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		C4D74326292A4E2300F71032 /* HomeViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Extension.swift"; sourceTree = "<group>"; };
 		C4D74328292A4EAC00F71032 /* CollectionViewTableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewTableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		C4D7432A292A4F5500F71032 /* HeroHeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHeaderUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				C4D74323292A463900F71032 /* CollectionViewTableViewCell.swift */,
+				C4D7432A292A4F5500F71032 /* HeroHeaderUIView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				C4D74305292A327700F71032 /* SceneDelegate.swift in Sources */,
 				C4D74329292A4EAC00F71032 /* CollectionViewTableViewCell+Extension.swift in Sources */,
 				C4D7431A292A363700F71032 /* UpcomingViewController.swift in Sources */,
+				C4D7432B292A4F5500F71032 /* HeroHeaderUIView.swift in Sources */,
 				C4D74318292A35FA00F71032 /* HomeViewController.swift in Sources */,
 				C4D74327292A4E2300F71032 /* HomeViewController+Extension.swift in Sources */,
 			);
