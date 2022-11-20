@@ -20,6 +20,7 @@
 		C4D74327292A4E2300F71032 /* HomeViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74326292A4E2300F71032 /* HomeViewController+Extension.swift */; };
 		C4D74329292A4EAC00F71032 /* CollectionViewTableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74328292A4EAC00F71032 /* CollectionViewTableViewCell+Extension.swift */; };
 		C4D7432B292A4F5500F71032 /* HeroHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D7432A292A4F5500F71032 /* HeroHeaderUIView.swift */; };
+		C4D7432E292A5A7700F71032 /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D7432D292A5A7700F71032 /* ButtonFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		C4D74326292A4E2300F71032 /* HomeViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Extension.swift"; sourceTree = "<group>"; };
 		C4D74328292A4EAC00F71032 /* CollectionViewTableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewTableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		C4D7432A292A4F5500F71032 /* HeroHeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHeaderUIView.swift; sourceTree = "<group>"; };
+		C4D7432D292A5A7700F71032 /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		C4D74301292A327700F71032 /* cinema-planner */ = {
 			isa = PBXGroup;
 			children = (
+				C4D7432C292A5A6100F71032 /* Factories */,
 				C4D74321292A44E000F71032 /* Models */,
 				C4D74320292A44D800F71032 /* Views */,
 				C4D74322292A44F700F71032 /* ViewModels */,
@@ -126,6 +129,14 @@
 				C4D74328292A4EAC00F71032 /* CollectionViewTableViewCell+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C4D7432C292A5A6100F71032 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				C4D7432D292A5A7700F71032 /* ButtonFactory.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +215,7 @@
 				C4D7431F292A36A200F71032 /* DownloadsViewController.swift in Sources */,
 				C4D74303292A327700F71032 /* AppDelegate.swift in Sources */,
 				C4D74305292A327700F71032 /* SceneDelegate.swift in Sources */,
+				C4D7432E292A5A7700F71032 /* ButtonFactory.swift in Sources */,
 				C4D74329292A4EAC00F71032 /* CollectionViewTableViewCell+Extension.swift in Sources */,
 				C4D7431A292A363700F71032 /* UpcomingViewController.swift in Sources */,
 				C4D7432B292A4F5500F71032 /* HeroHeaderUIView.swift in Sources */,
