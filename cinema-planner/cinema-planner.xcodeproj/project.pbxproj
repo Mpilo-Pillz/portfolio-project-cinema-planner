@@ -17,6 +17,8 @@
 		C4D7431D292A366F00F71032 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D7431C292A366F00F71032 /* SearchViewController.swift */; };
 		C4D7431F292A36A200F71032 /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D7431E292A36A200F71032 /* DownloadsViewController.swift */; };
 		C4D74324292A463900F71032 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74323292A463900F71032 /* CollectionViewTableViewCell.swift */; };
+		C4D74327292A4E2300F71032 /* HomeViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74326292A4E2300F71032 /* HomeViewController+Extension.swift */; };
+		C4D74329292A4EAC00F71032 /* CollectionViewTableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74328292A4EAC00F71032 /* CollectionViewTableViewCell+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		C4D7431C292A366F00F71032 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		C4D7431E292A36A200F71032 /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
 		C4D74323292A463900F71032 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
+		C4D74326292A4E2300F71032 /* HomeViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Extension.swift"; sourceTree = "<group>"; };
+		C4D74328292A4EAC00F71032 /* CollectionViewTableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewTableViewCell+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 				C4D74320292A44D800F71032 /* Views */,
 				C4D74322292A44F700F71032 /* ViewModels */,
 				C4D74316292A35C200F71032 /* Controllers */,
+				C4D74325292A4DF500F71032 /* Extensions */,
 				C4D74302292A327700F71032 /* AppDelegate.swift */,
 				C4D74304292A327700F71032 /* SceneDelegate.swift */,
 				C4D74306292A327700F71032 /* MainTabBarViewController.swift */,
@@ -109,6 +114,15 @@
 			children = (
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C4D74325292A4DF500F71032 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C4D74326292A4E2300F71032 /* HomeViewController+Extension.swift */,
+				C4D74328292A4EAC00F71032 /* CollectionViewTableViewCell+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,8 +201,10 @@
 				C4D7431F292A36A200F71032 /* DownloadsViewController.swift in Sources */,
 				C4D74303292A327700F71032 /* AppDelegate.swift in Sources */,
 				C4D74305292A327700F71032 /* SceneDelegate.swift in Sources */,
+				C4D74329292A4EAC00F71032 /* CollectionViewTableViewCell+Extension.swift in Sources */,
 				C4D7431A292A363700F71032 /* UpcomingViewController.swift in Sources */,
 				C4D74318292A35FA00F71032 /* HomeViewController.swift in Sources */,
+				C4D74327292A4E2300F71032 /* HomeViewController+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
