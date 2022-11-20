@@ -9,19 +9,27 @@
 /* Begin PBXBuildFile section */
 		C4D74303292A327700F71032 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74302292A327700F71032 /* AppDelegate.swift */; };
 		C4D74305292A327700F71032 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74304292A327700F71032 /* SceneDelegate.swift */; };
-		C4D74307292A327700F71032 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74306292A327700F71032 /* ViewController.swift */; };
+		C4D74307292A327700F71032 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74306292A327700F71032 /* MainTabBarViewController.swift */; };
 		C4D7430C292A327700F71032 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4D7430B292A327700F71032 /* Assets.xcassets */; };
 		C4D7430F292A327700F71032 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4D7430D292A327700F71032 /* LaunchScreen.storyboard */; };
+		C4D74318292A35FA00F71032 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74317292A35FA00F71032 /* HomeViewController.swift */; };
+		C4D7431A292A363700F71032 /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74319292A363700F71032 /* UpcomingViewController.swift */; };
+		C4D7431D292A366F00F71032 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D7431C292A366F00F71032 /* SearchViewController.swift */; };
+		C4D7431F292A36A200F71032 /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D7431E292A36A200F71032 /* DownloadsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C4D742FF292A327700F71032 /* cinema-planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cinema-planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4D74302292A327700F71032 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4D74304292A327700F71032 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C4D74306292A327700F71032 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C4D74306292A327700F71032 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		C4D7430B292A327700F71032 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4D7430E292A327700F71032 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4D74310292A327700F71032 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4D74317292A35FA00F71032 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C4D74319292A363700F71032 /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
+		C4D7431C292A366F00F71032 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		C4D7431E292A36A200F71032 /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,26 @@
 		C4D74301292A327700F71032 /* cinema-planner */ = {
 			isa = PBXGroup;
 			children = (
+				C4D74316292A35C200F71032 /* Controllers */,
 				C4D74302292A327700F71032 /* AppDelegate.swift */,
 				C4D74304292A327700F71032 /* SceneDelegate.swift */,
-				C4D74306292A327700F71032 /* ViewController.swift */,
+				C4D74306292A327700F71032 /* MainTabBarViewController.swift */,
 				C4D7430B292A327700F71032 /* Assets.xcassets */,
 				C4D7430D292A327700F71032 /* LaunchScreen.storyboard */,
 				C4D74310292A327700F71032 /* Info.plist */,
 			);
 			path = "cinema-planner";
+			sourceTree = "<group>";
+		};
+		C4D74316292A35C200F71032 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C4D74317292A35FA00F71032 /* HomeViewController.swift */,
+				C4D74319292A363700F71032 /* UpcomingViewController.swift */,
+				C4D7431C292A366F00F71032 /* SearchViewController.swift */,
+				C4D7431E292A36A200F71032 /* DownloadsViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,9 +154,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4D74307292A327700F71032 /* ViewController.swift in Sources */,
+				C4D7431D292A366F00F71032 /* SearchViewController.swift in Sources */,
+				C4D74307292A327700F71032 /* MainTabBarViewController.swift in Sources */,
+				C4D7431F292A36A200F71032 /* DownloadsViewController.swift in Sources */,
 				C4D74303292A327700F71032 /* AppDelegate.swift in Sources */,
 				C4D74305292A327700F71032 /* SceneDelegate.swift in Sources */,
+				C4D7431A292A363700F71032 /* UpcomingViewController.swift in Sources */,
+				C4D74318292A35FA00F71032 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
