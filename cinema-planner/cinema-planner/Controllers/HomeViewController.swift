@@ -36,8 +36,10 @@ class HomeViewController: UIViewController {
         image = image?.withRenderingMode(.alwaysOriginal)
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: nil)
         
+        
         navigationItem.rightBarButtonItems = [
             UIBarButtonItem(image: UIImage(systemName: "person"), style: .done, target: self, action: nil),
+            UIBarButtonItem(image: UIImage(systemName: LocalState.scrollIcon), style: .done, target: self, action: #selector(toggleScroll) ),
             UIBarButtonItem(image: UIImage(systemName: "play.rectangle"), style: .done, target: self, action: nil)
             ]
         navigationController?.navigationBar.tintColor = .white
@@ -47,6 +49,19 @@ class HomeViewController: UIViewController {
         super.viewDidLayoutSubviews()
         homeFeedTable.frame = view.bounds
     }
+}
+
+extension HomeViewController {
+    
+    //    TODO: find a better way to handle swapping the scroll icon
+    @objc func toggleScroll() {
+        LocalState.hasMadeTitleBarScrollable = !LocalState.hasMadeTitleBarScrollable
+        LocalState.scrollIcon = LocalState.hasMadeTitleBarScrollable ?  "scroll" : "scroll.fill"
+      
+        configureNavBar()
+
+    }
+    
 }
 
 
