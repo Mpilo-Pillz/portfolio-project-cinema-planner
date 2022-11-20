@@ -11,7 +11,7 @@ class MainTabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
+        
         
         let vcHome = UINavigationController(rootViewController: HomeViewController())
         let vcUpcoming = UINavigationController(rootViewController: UpcomingViewController())
@@ -22,6 +22,13 @@ class MainTabBarViewController: UITabBarController {
         vcUpcoming.tabBarItem.image = UIImage(systemName: "play.circle")
         vcSearch.tabBarItem.image = UIImage(systemName: "magnifyingglass")
         vcDownloads.tabBarItem.image = UIImage(systemName: "arrow.down.to.line")
+        
+        vcHome.title = "Home"
+        vcUpcoming.title = "Coming Soon"
+        vcSearch.title = "Top Search"
+        vcDownloads.title = "Download"
+        
+        tabBar.tintColor = .label
         
         setViewControllers([vcHome, vcUpcoming, vcSearch, vcDownloads], animated: true)
     }
