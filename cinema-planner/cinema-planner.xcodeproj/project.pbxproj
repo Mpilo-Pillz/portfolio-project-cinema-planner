@@ -16,6 +16,7 @@
 		C4D7431A292A363700F71032 /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74319292A363700F71032 /* UpcomingViewController.swift */; };
 		C4D7431D292A366F00F71032 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D7431C292A366F00F71032 /* SearchViewController.swift */; };
 		C4D7431F292A36A200F71032 /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D7431E292A36A200F71032 /* DownloadsViewController.swift */; };
+		C4D74324292A463900F71032 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74323292A463900F71032 /* CollectionViewTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		C4D74319292A363700F71032 /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
 		C4D7431C292A366F00F71032 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		C4D7431E292A36A200F71032 /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
+		C4D74323292A463900F71032 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,9 @@
 		C4D74301292A327700F71032 /* cinema-planner */ = {
 			isa = PBXGroup;
 			children = (
+				C4D74321292A44E000F71032 /* Models */,
+				C4D74320292A44D800F71032 /* Views */,
+				C4D74322292A44F700F71032 /* ViewModels */,
 				C4D74316292A35C200F71032 /* Controllers */,
 				C4D74302292A327700F71032 /* AppDelegate.swift */,
 				C4D74304292A327700F71032 /* SceneDelegate.swift */,
@@ -82,6 +87,28 @@
 				C4D7431E292A36A200F71032 /* DownloadsViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C4D74320292A44D800F71032 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C4D74323292A463900F71032 /* CollectionViewTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C4D74321292A44E000F71032 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C4D74322292A44F700F71032 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +183,7 @@
 			files = (
 				C4D7431D292A366F00F71032 /* SearchViewController.swift in Sources */,
 				C4D74307292A327700F71032 /* MainTabBarViewController.swift in Sources */,
+				C4D74324292A463900F71032 /* CollectionViewTableViewCell.swift in Sources */,
 				C4D7431F292A36A200F71032 /* DownloadsViewController.swift in Sources */,
 				C4D74303292A327700F71032 /* AppDelegate.swift in Sources */,
 				C4D74305292A327700F71032 /* SceneDelegate.swift in Sources */,
