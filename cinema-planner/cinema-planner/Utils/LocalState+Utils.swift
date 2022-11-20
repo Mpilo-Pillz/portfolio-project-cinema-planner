@@ -24,6 +24,7 @@ public class LocalState {
     }
     
     public static var scrollIcon: String {
+        // TODO: Nolonger using. find out if it sould be local state or a userdefault
         get {
             return UserDefaults.standard.string(forKey: Keys.scrollIcon.rawValue) ?? "scroll"
         }

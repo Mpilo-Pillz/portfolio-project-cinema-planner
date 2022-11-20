@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    
+    var scrollIcon = "scroll.fill"
     private let homeFeedTable: UITableView = {
         
         let table = UITableView(frame: .zero, style: .grouped) // adds the header and makes it the same as ios settings page
@@ -39,7 +39,7 @@ class HomeViewController: UIViewController {
         
         navigationItem.rightBarButtonItems = [
             UIBarButtonItem(image: UIImage(systemName: "person"), style: .done, target: self, action: nil),
-            UIBarButtonItem(image: UIImage(systemName: LocalState.scrollIcon), style: .done, target: self, action: #selector(toggleScroll) ),
+            UIBarButtonItem(image: UIImage(systemName: self.scrollIcon), style: .done, target: self, action: #selector(toggleScroll) ),
             UIBarButtonItem(image: UIImage(systemName: "play.rectangle"), style: .done, target: self, action: nil)
             ]
         navigationController?.navigationBar.tintColor = .white
@@ -56,7 +56,7 @@ extension HomeViewController {
     //    TODO: find a better way to handle swapping the scroll icon
     @objc func toggleScroll() {
         LocalState.hasMadeTitleBarScrollable = !LocalState.hasMadeTitleBarScrollable
-        LocalState.scrollIcon = LocalState.hasMadeTitleBarScrollable ?  "scroll" : "scroll.fill"
+        self.scrollIcon = LocalState.hasMadeTitleBarScrollable ?  "scroll" : "scroll.fill"
       
         configureNavBar()
 
