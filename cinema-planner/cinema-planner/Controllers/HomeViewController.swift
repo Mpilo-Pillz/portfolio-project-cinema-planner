@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
         let headerView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
         homeFeedTable.tableHeaderView = headerView
         
-        fetchData()
+        
     
     }
     
@@ -54,39 +54,7 @@ class HomeViewController: UIViewController {
         homeFeedTable.frame = view.bounds
     }
     
-    private func fetchData() {
-//        APICaller.shared.getTrendingMovies { results in
-//            switch results {
-//            case .success(let movies):
-//                print(movies)
-//            case .failure(let error):
-//                print(error)
-//            }
-//
-//
-//        }
-        
-//        APICaller.shared.getTrendingTvs { results in
-//
-//
-//
-//        }
-//        APICaller.shared.getUpcomingMovies { results in
-//
-//
-//
-//        }
-//        APICaller.shared.getPopular { results in
-//
-//
-//
-//        }
-        APICaller.shared.getTopRated { results in
-            
-        
-            
-        }
-    }
+  
 }
 
 extension HomeViewController {
