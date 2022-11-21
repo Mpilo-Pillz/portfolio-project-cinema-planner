@@ -14,6 +14,8 @@
 		C4795F41292B7492003D8E64 /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4795F40292B7492003D8E64 /* TitleCollectionViewCell.swift */; };
 		C4795F44292B7638003D8E64 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = C4795F43292B7638003D8E64 /* SDWebImage */; };
 		C4795F46292B7638003D8E64 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C4795F45292B7638003D8E64 /* SDWebImageMapKit */; };
+		C4795F48292B8AD3003D8E64 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4795F47292B8AD3003D8E64 /* TitleTableViewCell.swift */; };
+		C4795F4A292B8EC6003D8E64 /* TitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4795F49292B8EC6003D8E64 /* TitleViewModel.swift */; };
 		C4D74303292A327700F71032 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74302292A327700F71032 /* AppDelegate.swift */; };
 		C4D74305292A327700F71032 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74304292A327700F71032 /* SceneDelegate.swift */; };
 		C4D74307292A327700F71032 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74306292A327700F71032 /* MainTabBarViewController.swift */; };
@@ -37,6 +39,8 @@
 		C4795F3C292B69F3003D8E64 /* Network+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network+Enum.swift"; sourceTree = "<group>"; };
 		C4795F3E292B6C81003D8E64 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		C4795F40292B7492003D8E64 /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
+		C4795F47292B8AD3003D8E64 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
+		C4795F49292B8EC6003D8E64 /* TitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TitleViewModel.swift; path = "cinema-planner/Views/TitleViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		C4D742FF292A327700F71032 /* cinema-planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cinema-planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4D74302292A327700F71032 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4D74304292A327700F71032 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 				C4D74323292A463900F71032 /* CollectionViewTableViewCell.swift */,
 				C4D7432A292A4F5500F71032 /* HeroHeaderUIView.swift */,
 				C4795F40292B7492003D8E64 /* TitleCollectionViewCell.swift */,
+				C4795F47292B8AD3003D8E64 /* TitleTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 		C4D74322292A44F700F71032 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				C4795F49292B8EC6003D8E64 /* TitleViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -271,12 +277,14 @@
 				C4D74331292A659B00F71032 /* LocalState+Utils.swift in Sources */,
 				C4795F3D292B69F3003D8E64 /* Network+Enum.swift in Sources */,
 				C4795F3F292B6C81003D8E64 /* String+Extension.swift in Sources */,
+				C4795F4A292B8EC6003D8E64 /* TitleViewModel.swift in Sources */,
 				C4D74303292A327700F71032 /* AppDelegate.swift in Sources */,
 				C4D74305292A327700F71032 /* SceneDelegate.swift in Sources */,
 				C4D7432E292A5A7700F71032 /* ButtonFactory.swift in Sources */,
 				C4D74329292A4EAC00F71032 /* CollectionViewTableViewCell+Extension.swift in Sources */,
 				C4D7431A292A363700F71032 /* UpcomingViewController.swift in Sources */,
 				C4D7432B292A4F5500F71032 /* HeroHeaderUIView.swift in Sources */,
+				C4795F48292B8AD3003D8E64 /* TitleTableViewCell.swift in Sources */,
 				C4795F41292B7492003D8E64 /* TitleCollectionViewCell.swift in Sources */,
 				C4D74318292A35FA00F71032 /* HomeViewController.swift in Sources */,
 				C4D74327292A4E2300F71032 /* HomeViewController+Extension.swift in Sources */,
