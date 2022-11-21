@@ -62,6 +62,10 @@ extension UpcomingViewController: UITableViewDelegate, UITableViewDataSource {
         cell.configure(with: TitleViewModel(titleName: (title.original_title ?? title.original_name) ?? "Untitled Video", posterURL: title.poster_path ?? "https://no.image.com"))
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 180
+    }
 }
 
 
