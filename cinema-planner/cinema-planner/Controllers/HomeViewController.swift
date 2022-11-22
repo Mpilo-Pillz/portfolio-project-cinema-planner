@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
         let headerView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
         homeFeedTable.tableHeaderView = headerView
         
-        
+        navigationController?.pushViewController(TitlePreviewViewController(), animated: true)
     
     }
     
