@@ -1,0 +1,14 @@
+{
+  "name": "cinema-planner",
+  "version": "1.0.0",
+  "description": "api to make calls to tmdb, youtube and authenticate users",
+  "main": "index.js",
+  "repository": "git@github.com:Mpilo-Pillz/portfolio-project-cinema-planner.git",
+  "author": "Mpilo-Pillz <mpilo.dlamini@yahoo.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  }
+}
