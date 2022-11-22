@@ -10,6 +10,8 @@ import Foundation
 struct Constants {
     static let API_KEY = ""
     static let baseURL = "https://api.themoviedb.org"
+    static let localbaseURL = "http://localhost:4000"
+    static let APIbaseURL = "https://api.themoviedb.org"
     static let trendingMovieRequest = "trending/movie/day"
     static let trendingTVRequest = "trending/tv/day"
     static let upcomingMovies = "movie/upcoming"
@@ -25,7 +27,7 @@ class APICaller {
     static let shared = APICaller()
     
     func getTrendingMovies(completion: @escaping (Result<[Title], Error>) -> Void) {
-        guard let url = URL(string: "\(Constants.baseURL)/3/\(Constants.trendingMovieRequest)?api_key=\(Constants.API_KEY)") else {return}
+        guard let url = URL(string: "\(Constants.localbaseURL)/api/v1/tmdb/getTrendingMovies") else {return}
         
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
             
@@ -44,7 +46,7 @@ class APICaller {
     }
     
     func getTrendingTvs(completion: @escaping (Result<[Title], Error>) -> Void) {
-        guard let url = URL(string: "\(Constants.baseURL)/3/\(Constants.trendingTVRequest)?api_key=\(Constants.API_KEY)") else {return}
+        guard let url = URL(string: "\(Constants.localbaseURL)/api/v1/tmdb/getTrendingTvShows") else {return}
         
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
             guard let data = data, error == nil else {
