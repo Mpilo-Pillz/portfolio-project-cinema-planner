@@ -16,6 +16,7 @@
 		C4795F46292B7638003D8E64 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C4795F45292B7638003D8E64 /* SDWebImageMapKit */; };
 		C4795F48292B8AD3003D8E64 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4795F47292B8AD3003D8E64 /* TitleTableViewCell.swift */; };
 		C4795F4A292B8EC6003D8E64 /* TitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4795F49292B8EC6003D8E64 /* TitleViewModel.swift */; };
+		C4795F4C292BA0B1003D8E64 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4795F4B292BA0B1003D8E64 /* SearchResultsViewController.swift */; };
 		C4D74303292A327700F71032 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74302292A327700F71032 /* AppDelegate.swift */; };
 		C4D74305292A327700F71032 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74304292A327700F71032 /* SceneDelegate.swift */; };
 		C4D74307292A327700F71032 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74306292A327700F71032 /* MainTabBarViewController.swift */; };
@@ -41,6 +42,7 @@
 		C4795F40292B7492003D8E64 /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		C4795F47292B8AD3003D8E64 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		C4795F49292B8EC6003D8E64 /* TitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TitleViewModel.swift; path = "cinema-planner/Views/TitleViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		C4795F4B292BA0B1003D8E64 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		C4D742FF292A327700F71032 /* cinema-planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cinema-planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4D74302292A327700F71032 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4D74304292A327700F71032 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				C4D74319292A363700F71032 /* UpcomingViewController.swift */,
 				C4D7431C292A366F00F71032 /* SearchViewController.swift */,
 				C4D7431E292A36A200F71032 /* DownloadsViewController.swift */,
+				C4795F4B292BA0B1003D8E64 /* SearchResultsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				C4795F48292B8AD3003D8E64 /* TitleTableViewCell.swift in Sources */,
 				C4795F41292B7492003D8E64 /* TitleCollectionViewCell.swift in Sources */,
 				C4D74318292A35FA00F71032 /* HomeViewController.swift in Sources */,
+				C4795F4C292BA0B1003D8E64 /* SearchResultsViewController.swift in Sources */,
 				C4D74327292A4E2300F71032 /* HomeViewController+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
