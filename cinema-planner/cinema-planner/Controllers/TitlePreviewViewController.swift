@@ -35,6 +35,8 @@ class TitlePreviewViewController: UIViewController {
         button.backgroundColor = .red
         button.setTitle("Download", for: .normal)
         button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 8
+        button.layer.masksToBounds = true
         return button
     }()
     
@@ -46,7 +48,7 @@ class TitlePreviewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.addSubview(webView)
         view.addSubview(titleLabel)
         view.addSubview(overviewLabel)
@@ -74,7 +76,9 @@ class TitlePreviewViewController: UIViewController {
         
         let downloadButtonConstraints = [
             downloadButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            downloadButton.topAnchor.constraint(equalTo: overviewLabel.bottomAnchor, constant: 25)
+            downloadButton.topAnchor.constraint(equalTo: overviewLabel.bottomAnchor, constant: 25),
+            downloadButton.widthAnchor.constraint(equalToConstant: 140),
+            downloadButton.heightAnchor.constraint(equalToConstant: 40)
         ]
         
         NSLayoutConstraint.activate(webViewConstraints)
@@ -83,7 +87,14 @@ class TitlePreviewViewController: UIViewController {
         NSLayoutConstraint.activate(downloadButtonConstraints)
     }
     
-
-    
-
+    func configure(with model: TitlePreviewViewModel) {
+        titleLabel.text = model.title
+        overviewLabel.text = model.titleOverview
+        
+        guard let url = URL(string: "https://www.youtube.com/embed/\(model.youtubeView.id.videoId)") else {
+            return
+        }
+        
+        webView.load(URLRequest(url: url))
+    }
 }

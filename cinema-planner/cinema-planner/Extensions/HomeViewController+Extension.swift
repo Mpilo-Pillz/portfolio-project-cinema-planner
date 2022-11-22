@@ -21,58 +21,60 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
+        cell.delegate = self
+        
         switch indexPath.section {
-               case Sections.TrendingMovies.rawValue:
-                   APICaller.shared.getTrendingMovies { result in
-                       switch result {
-                       case .success(let titles):
-                           cell.configure(with: titles)
-                       case .failure(let error):
-                           print(error.localizedDescription)
-                       }
-                   }
-                   
-               case Sections.TrendingTv.rawValue:
-                   APICaller.shared.getTrendingTvs { result in
-                       switch result {
-                       case .success(let titles):
-                           cell.configure(with: titles)
-                       case .failure(let error):
-                           print(error.localizedDescription)
-                       }
-                   }
-               case Sections.Popular.rawValue:
-                   APICaller.shared.getPopular { result in
-                       switch result {
-                       case .success(let titles):
-                           cell.configure(with: titles)
-                       case .failure(let error):
-                           print(error.localizedDescription)
-                       }
-                   }
-               case Sections.Upcoming.rawValue:
-                   APICaller.shared.getUpcomingMovies { result in
-                       switch result {
-                       case .success(let titles):
-                           cell.configure(with: titles)
-                       case .failure(let error):
-                           print(error.localizedDescription)
-                       }
-                   }
-               case Sections.TopRated.rawValue:
-                   APICaller.shared.getTopRated { result in
-                       switch result {
-                       case .success(let titles):
-                           cell.configure(with: titles)
-                       case .failure(let error):
-                           print(error.localizedDescription)
-                       }
-                   }
-               default:
-                   return UITableViewCell()
-               }
-               
-               return cell
+        case Sections.TrendingMovies.rawValue:
+            APICaller.shared.getTrendingMovies { result in
+                switch result {
+                case .success(let titles):
+                    cell.configure(with: titles)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+            
+        case Sections.TrendingTv.rawValue:
+            APICaller.shared.getTrendingTvs { result in
+                switch result {
+                case .success(let titles):
+                    cell.configure(with: titles)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        case Sections.Popular.rawValue:
+            APICaller.shared.getPopular { result in
+                switch result {
+                case .success(let titles):
+                    cell.configure(with: titles)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        case Sections.Upcoming.rawValue:
+            APICaller.shared.getUpcomingMovies { result in
+                switch result {
+                case .success(let titles):
+                    cell.configure(with: titles)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        case Sections.TopRated.rawValue:
+            APICaller.shared.getTopRated { result in
+                switch result {
+                case .success(let titles):
+                    cell.configure(with: titles)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        default:
+            return UITableViewCell()
+        }
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -90,10 +92,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         header.textLabel?.frame = CGRect(x: header.bounds.origin.x + 20, y:header.bounds.origin.y, width: 100, height: header.bounds.height)
         header.textLabel?.textColor = .white
         header.textLabel?.text = header.textLabel?.text?.capitalizeFirstLetter()
-//        var content = header.defaultContentConfiguration()
-//        content.text = title
-//        content.textProperties.color = .white
-//        content.textProperties.font = .systemFont(ofSize: 25, weight: .semibold)
+        //        var content = header.defaultContentConfiguration()
+        //        content.text = title
+        //        content.textProperties.color = .white
+        //        content.textProperties.font = .systemFont(ofSize: 25, weight: .semibold)
         
     }
     
@@ -107,6 +109,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             let offset = scrollView.contentOffset.y + defaultOffset
             
             navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offset))
+        }
+    }
+}
+
+extension HomeViewController: CollectionViewTableViewCellDelegate {
+    func collectionViewTableViewCellDidTapCell(_ cell: CollectionViewTableViewCell, viewModel: TitlePreviewViewModel) {
+        
+        DispatchQueue.main.async { [weak self] in
+            let vc = TitlePreviewViewController()
+            vc.configure(with: viewModel)
+            self?.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
