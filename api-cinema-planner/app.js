@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 const tmdbRouter = require("./src/routes/tmdbRoutes");
+const youtubeRouter = require("./src/routes/youtubeRoutes");
 
 const app = express();
 app.use(cors());
@@ -13,5 +14,6 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/v1/tmdb", tmdbRouter);
+app.use("/api/v1/youtube", youtubeRouter);
 
 module.exports = app;
