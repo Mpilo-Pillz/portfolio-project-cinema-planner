@@ -24,6 +24,8 @@ class OnboardingViewController: UIViewController {
     init(heroImageName: String, titleText: String) {
         self.heroImageName = heroImageName
         self.titleText = titleText
+        
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {

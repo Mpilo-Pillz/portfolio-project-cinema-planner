@@ -26,6 +26,7 @@
 		C493667529307DC2003C6C3D /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C493667429307DC2003C6C3D /* OnboardingViewController.swift */; };
 		C493667729307F3F003C6C3D /* OnboardingViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C493667629307F3F003C6C3D /* OnboardingViewController+Extension.swift */; };
 		C493667929308002003C6C3D /* LabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C493667829308002003C6C3D /* LabelFactory.swift */; };
+		C493667B29314FF9003C6C3D /* OnboardingContainerViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C493667A29314FF9003C6C3D /* OnboardingContainerViewController+Extension.swift */; };
 		C4D74303292A327700F71032 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74302292A327700F71032 /* AppDelegate.swift */; };
 		C4D74305292A327700F71032 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74304292A327700F71032 /* SceneDelegate.swift */; };
 		C4D74307292A327700F71032 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74306292A327700F71032 /* MainTabBarViewController.swift */; };
@@ -61,6 +62,7 @@
 		C493667429307DC2003C6C3D /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		C493667629307F3F003C6C3D /* OnboardingViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController+Extension.swift"; sourceTree = "<group>"; };
 		C493667829308002003C6C3D /* LabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFactory.swift; sourceTree = "<group>"; };
+		C493667A29314FF9003C6C3D /* OnboardingContainerViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingContainerViewController+Extension.swift"; sourceTree = "<group>"; };
 		C4D742FF292A327700F71032 /* cinema-planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cinema-planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4D74302292A327700F71032 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4D74304292A327700F71032 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				C4D74328292A4EAC00F71032 /* CollectionViewTableViewCell+Extension.swift */,
 				C4795F3E292B6C81003D8E64 /* String+Extension.swift */,
 				C493667629307F3F003C6C3D /* OnboardingViewController+Extension.swift */,
+				C493667A29314FF9003C6C3D /* OnboardingContainerViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				C4D7431A292A363700F71032 /* UpcomingViewController.swift in Sources */,
 				C493667729307F3F003C6C3D /* OnboardingViewController+Extension.swift in Sources */,
 				C4D7432B292A4F5500F71032 /* HeroHeaderUIView.swift in Sources */,
+				C493667B29314FF9003C6C3D /* OnboardingContainerViewController+Extension.swift in Sources */,
 				C4795F48292B8AD3003D8E64 /* TitleTableViewCell.swift in Sources */,
 				C4795F41292B7492003D8E64 /* TitleCollectionViewCell.swift in Sources */,
 				C4D74318292A35FA00F71032 /* HomeViewController.swift in Sources */,

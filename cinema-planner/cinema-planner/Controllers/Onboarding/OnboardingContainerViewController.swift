@@ -13,7 +13,8 @@ protocol OnboardingContainerViewControllerDelegate: AnyObject {
 class OnboardingContainerViewController: UIViewController {
     
     let pageViewController: UIPageViewController
-    let onboardingPages = [UIViewController]()
+    var onboardingPages = [UIViewController]()
+    weak var delegate: OnboardingContainerViewControllerDelegate?
     
     var currentOnboardingViewController: UIViewController {
         didSet {
@@ -74,8 +75,8 @@ class OnboardingContainerViewController: UIViewController {
             view.bottomAnchor.constraint(equalTo: pageViewController.view.bottomAnchor)
         ])
         
-        pageViewController.setViewControllers([pageViewController.first!], direction: .forward, animated: false, completion: nil)
-        currentOnboardingViewController = pageViewController.first!
+        pageViewController.setViewControllers([onboardingPages.first!], direction: .forward, animated: false, completion: nil)
+        currentOnboardingViewController = onboardingPages.first!
     }
     
     private func style() {
@@ -129,6 +130,8 @@ class OnboardingContainerViewController: UIViewController {
             view.bottomAnchor.constraint(equalToSystemSpacingBelow: doneButton.bottomAnchor, multiplier: 4)
         ])
     }
-    
-    
 }
+
+
+
+
