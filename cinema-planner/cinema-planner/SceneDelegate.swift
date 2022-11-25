@@ -7,10 +7,11 @@
 
 import UIKit
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+class SceneDelegate: UIResponder, UIWindowSceneDelegate, UITabBarControllerDelegate {
 
     var window: UIWindow?
-    
+    let onboardingContainerViewController = OnboardingContainerViewController()
+    let mainTabBarViewController = MainTabBarViewController()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         LocalState.hasMadeTitleBarScrollable = false
@@ -18,8 +19,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.backgroundColor = .systemBackground
-        window?.rootViewController = MainTabBarViewController()
+        window?.rootViewController = onboardingContainerViewController
         window?.makeKeyAndVisible()
+        
+        onboardingContainerViewController.delegate = self
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -49,7 +53,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
+}
 
+extension SceneDelegate {
+    func setRootViewController(_ viewController: UIViewController, animated: Bool = true) {
+        guard animated, let window = self.window else {
+            self.window?.rootViewController = viewController
+            self.window?.makeKeyAndVisible()
+            return
+        }
+        
+        window.rootViewController = viewController
+        window.makeKeyAndVisible()
+        UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil, completion: nil)
+    }
+}
 
+extension SceneDelegate: OnboardingContainerViewControllerDelegate {
+    func didfinishOnboarding() {
+        LocalState.hasOnboarded = true
+        setRootViewController(mainTabBarViewController)
+    }
 }
 
