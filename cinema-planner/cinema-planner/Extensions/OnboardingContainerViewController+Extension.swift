@@ -26,7 +26,7 @@ OnboardingContainerViewController: UIPageViewControllerDataSource {
     }
     
     private func getNextViewController(from viewController: UIViewController) -> UIViewController? {
-        guard let index = onboardingPages.firstIndex(of: viewController), index - 1 >= 0 else { return nil }
+        guard let index = onboardingPages.firstIndex(of: viewController), index + 1 < onboardingPages.count else { return nil }
         currentOnboardingViewController = onboardingPages[index + 1]
         return onboardingPages[index + 1]
     }
