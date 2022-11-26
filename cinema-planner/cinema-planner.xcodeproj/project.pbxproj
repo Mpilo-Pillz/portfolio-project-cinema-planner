@@ -27,6 +27,11 @@
 		C493667729307F3F003C6C3D /* OnboardingViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C493667629307F3F003C6C3D /* OnboardingViewController+Extension.swift */; };
 		C493667929308002003C6C3D /* LabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C493667829308002003C6C3D /* LabelFactory.swift */; };
 		C493667B29314FF9003C6C3D /* OnboardingContainerViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C493667A29314FF9003C6C3D /* OnboardingContainerViewController+Extension.swift */; };
+		C493667F2931EBAC003C6C3D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C493667E2931EBAC003C6C3D /* LoginViewController.swift */; };
+		C49366822931EE2F003C6C3D /* LoginViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49366812931EE2F003C6C3D /* LoginViewController+Extension.swift */; };
+		C49366842931FB86003C6C3D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49366832931FB86003C6C3D /* LoginView.swift */; };
+		C49366862931FBB8003C6C3D /* TextFieldFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49366852931FBB8003C6C3D /* TextFieldFactory.swift */; };
+		C49366882931FEE5003C6C3D /* StackViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49366872931FEE5003C6C3D /* StackViewFactory.swift */; };
 		C4D74303292A327700F71032 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74302292A327700F71032 /* AppDelegate.swift */; };
 		C4D74305292A327700F71032 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74304292A327700F71032 /* SceneDelegate.swift */; };
 		C4D74307292A327700F71032 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74306292A327700F71032 /* MainTabBarViewController.swift */; };
@@ -63,6 +68,11 @@
 		C493667629307F3F003C6C3D /* OnboardingViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController+Extension.swift"; sourceTree = "<group>"; };
 		C493667829308002003C6C3D /* LabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFactory.swift; sourceTree = "<group>"; };
 		C493667A29314FF9003C6C3D /* OnboardingContainerViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingContainerViewController+Extension.swift"; sourceTree = "<group>"; };
+		C493667E2931EBAC003C6C3D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C49366812931EE2F003C6C3D /* LoginViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+Extension.swift"; sourceTree = "<group>"; };
+		C49366832931FB86003C6C3D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C49366852931FBB8003C6C3D /* TextFieldFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldFactory.swift; sourceTree = "<group>"; };
+		C49366872931FEE5003C6C3D /* StackViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewFactory.swift; sourceTree = "<group>"; };
 		C4D742FF292A327700F71032 /* cinema-planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cinema-planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4D74302292A327700F71032 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4D74304292A327700F71032 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +131,31 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		C493667C2931E7B8003C6C3D /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				C493667D2931EB94003C6C3D /* Login */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		C493667D2931EB94003C6C3D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C493667E2931EBAC003C6C3D /* LoginViewController.swift */,
+				C49366832931FB86003C6C3D /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		C49366802931EE10003C6C3D /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				C49366812931EE2F003C6C3D /* LoginViewController+Extension.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		C4D742F6292A327700F71032 = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +198,7 @@
 		C4D74316292A35C200F71032 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C493667C2931E7B8003C6C3D /* Auth */,
 				C493667129307B4D003C6C3D /* Onboarding */,
 				C4D74317292A35FA00F71032 /* HomeViewController.swift */,
 				C4D74319292A363700F71032 /* UpcomingViewController.swift */,
@@ -206,6 +242,7 @@
 		C4D74325292A4DF500F71032 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C49366802931EE10003C6C3D /* Auth */,
 				C4D74326292A4E2300F71032 /* HomeViewController+Extension.swift */,
 				C4D74328292A4EAC00F71032 /* CollectionViewTableViewCell+Extension.swift */,
 				C4795F3E292B6C81003D8E64 /* String+Extension.swift */,
@@ -220,6 +257,8 @@
 			children = (
 				C4D7432D292A5A7700F71032 /* ButtonFactory.swift */,
 				C493667829308002003C6C3D /* LabelFactory.swift */,
+				C49366852931FBB8003C6C3D /* TextFieldFactory.swift */,
+				C49366872931FEE5003C6C3D /* StackViewFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -319,14 +358,18 @@
 				C4795F52292D2FF7003D8E64 /* TitlePreviewViewModel.swift in Sources */,
 				C4D7431F292A36A200F71032 /* DownloadsViewController.swift in Sources */,
 				C4D74331292A659B00F71032 /* LocalState+Utils.swift in Sources */,
+				C49366842931FB86003C6C3D /* LoginView.swift in Sources */,
 				C4795F3D292B69F3003D8E64 /* Network+Enum.swift in Sources */,
 				C493667329307B9C003C6C3D /* OnboardingContainerViewController.swift in Sources */,
+				C493667F2931EBAC003C6C3D /* LoginViewController.swift in Sources */,
 				C493667529307DC2003C6C3D /* OnboardingViewController.swift in Sources */,
 				C4795F3F292B6C81003D8E64 /* String+Extension.swift in Sources */,
 				C4795F4A292B8EC6003D8E64 /* TitleViewModel.swift in Sources */,
 				C4D74303292A327700F71032 /* AppDelegate.swift in Sources */,
 				C4D74305292A327700F71032 /* SceneDelegate.swift in Sources */,
 				C4D7432E292A5A7700F71032 /* ButtonFactory.swift in Sources */,
+				C49366822931EE2F003C6C3D /* LoginViewController+Extension.swift in Sources */,
+				C49366862931FBB8003C6C3D /* TextFieldFactory.swift in Sources */,
 				C4D74329292A4EAC00F71032 /* CollectionViewTableViewCell+Extension.swift in Sources */,
 				C4D7431A292A363700F71032 /* UpcomingViewController.swift in Sources */,
 				C493667729307F3F003C6C3D /* OnboardingViewController+Extension.swift in Sources */,
@@ -339,6 +382,7 @@
 				C4795F55292E7073003D8E64 /* CinemaPlannerModel.xcdatamodeld in Sources */,
 				C4795F57292E75A3003D8E64 /* DataPersistenceManager.swift in Sources */,
 				C4795F4E292D262E003D8E64 /* YoutubeSearchResponse.swift in Sources */,
+				C49366882931FEE5003C6C3D /* StackViewFactory.swift in Sources */,
 				C4D74327292A4E2300F71032 /* HomeViewController+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

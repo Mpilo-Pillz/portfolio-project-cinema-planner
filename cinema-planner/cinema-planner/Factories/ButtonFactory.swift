@@ -7,14 +7,25 @@
 
 import UIKit
 
-func makeButton(withText text: String, withButtonType buttontype: UIControl.State) -> UIButton {
+func makeSecondaryButton(withText text: String, withButtonType buttontype: UIControl.State) -> UIButton {
     
-    let button = UIButton()
-    button.setTitle(text, for: buttontype)
-    button.layer.borderColor = UIColor.white.cgColor
-    button.layer.borderWidth = 1
-    button.layer.cornerRadius = 5
-    button.translatesAutoresizingMaskIntoConstraints = false
+    let secondaryButton = UIButton()
+    secondaryButton.setTitle(text, for: buttontype)
+    secondaryButton.layer.borderColor = UIColor.white.cgColor
+    secondaryButton.layer.borderWidth = 1
+    secondaryButton.layer.cornerRadius = 5
+    secondaryButton.translatesAutoresizingMaskIntoConstraints = false
     
-    return button
+    return secondaryButton
+}
+
+func makePrimaryButton(withText text: String) -> UIButton {
+    let primaryButton = UIButton(type: .system)
+    primaryButton.translatesAutoresizingMaskIntoConstraints = false
+    primaryButton.configuration = .filled()
+    primaryButton.configuration?.imagePadding = 8
+    primaryButton.setTitle(text, for: [])
+    
+    return primaryButton
+    
 }
