@@ -20,6 +20,9 @@ class LoginView: UIView {
         styleLoginView()
         layoutLoginView()
         setupLoginViewConstraints()
+        
+        layer.cornerRadius = 5
+        clipsToBounds = true
     }
     
     required init(coder: NSCoder) {

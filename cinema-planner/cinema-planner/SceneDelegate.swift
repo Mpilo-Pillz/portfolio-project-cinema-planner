@@ -12,6 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UITabBarControllerDeleg
     var window: UIWindow?
     let onboardingContainerViewController = OnboardingContainerViewController()
     let mainTabBarViewController = MainTabBarViewController()
+    let loginViewController = LoginViewController()
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         LocalState.hasMadeTitleBarScrollable = false
@@ -33,7 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UITabBarControllerDeleg
     }
     
     private func displayNextScreen() {
-        LocalState.hasOnboarded ? setRootViewController(mainTabBarViewController) : setRootViewController(onboardingContainerViewController)
+        LocalState.hasOnboarded ? setRootViewController(loginViewController) : setRootViewController(onboardingContainerViewController)
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -79,10 +80,14 @@ extension SceneDelegate {
     }
 }
 
-extension SceneDelegate: OnboardingContainerViewControllerDelegate {
+extension SceneDelegate: LoginViewControllerDelegate, OnboardingContainerViewControllerDelegate {
+    func didLogin() {
+        setRootViewController(mainTabBarViewController)
+    }
+    
     func didfinishOnboarding() {
         LocalState.hasOnboarded = true
-        setRootViewController(mainTabBarViewController)
+        displayNextScreen()
     }
 }
 

@@ -55,7 +55,4 @@ class LoginViewController: UIViewController {
         super.viewDidAppear(animated)
         animate()
     }
-
-  
-
 }
