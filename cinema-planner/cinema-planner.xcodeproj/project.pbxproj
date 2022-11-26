@@ -32,6 +32,7 @@
 		C49366842931FB86003C6C3D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49366832931FB86003C6C3D /* LoginView.swift */; };
 		C49366862931FBB8003C6C3D /* TextFieldFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49366852931FBB8003C6C3D /* TextFieldFactory.swift */; };
 		C49366882931FEE5003C6C3D /* StackViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49366872931FEE5003C6C3D /* StackViewFactory.swift */; };
+		C493668A2932A3DB003C6C3D /* LoginView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49366892932A3DB003C6C3D /* LoginView+Extension.swift */; };
 		C4D74303292A327700F71032 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74302292A327700F71032 /* AppDelegate.swift */; };
 		C4D74305292A327700F71032 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74304292A327700F71032 /* SceneDelegate.swift */; };
 		C4D74307292A327700F71032 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74306292A327700F71032 /* MainTabBarViewController.swift */; };
@@ -73,6 +74,7 @@
 		C49366832931FB86003C6C3D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C49366852931FBB8003C6C3D /* TextFieldFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldFactory.swift; sourceTree = "<group>"; };
 		C49366872931FEE5003C6C3D /* StackViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewFactory.swift; sourceTree = "<group>"; };
+		C49366892932A3DB003C6C3D /* LoginView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView+Extension.swift"; sourceTree = "<group>"; };
 		C4D742FF292A327700F71032 /* cinema-planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cinema-planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4D74302292A327700F71032 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4D74304292A327700F71032 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				C49366812931EE2F003C6C3D /* LoginViewController+Extension.swift */,
+				C49366892932A3DB003C6C3D /* LoginView+Extension.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4D7431D292A366F00F71032 /* SearchViewController.swift in Sources */,
+				C493668A2932A3DB003C6C3D /* LoginView+Extension.swift in Sources */,
 				C4D74307292A327700F71032 /* MainTabBarViewController.swift in Sources */,
 				C4D74324292A463900F71032 /* CollectionViewTableViewCell.swift in Sources */,
 				C493667929308002003C6C3D /* LabelFactory.swift in Sources */,

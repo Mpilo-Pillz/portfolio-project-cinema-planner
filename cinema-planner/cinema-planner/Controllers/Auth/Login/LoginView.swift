@@ -37,10 +37,18 @@ extension LoginView {
         loginViewStackView.addArrangedSubview(loginViewUsernameTextField)
         loginViewStackView.addArrangedSubview(LoginViewDividerView)
         loginViewStackView.addArrangedSubview(loginViewPasswordTextField)
+        addSubview(loginViewStackView)
     }
     
     private func setupLoginViewConstraints() {
+        NSLayoutConstraint.activate([
+            loginViewStackView.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 1),
+            loginViewStackView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 1),
+            trailingAnchor.constraint(equalToSystemSpacingAfter: loginViewStackView.trailingAnchor, multiplier: 1),
+            bottomAnchor.constraint(equalToSystemSpacingBelow: loginViewStackView.bottomAnchor, multiplier: 1)
+        ])
         
+        LoginViewDividerView.heightAnchor.constraint(equalToConstant: 1).isActive = true
     }
 }
 
