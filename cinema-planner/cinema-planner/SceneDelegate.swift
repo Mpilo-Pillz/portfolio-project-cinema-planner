@@ -23,6 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UITabBarControllerDeleg
         window?.rootViewController = onboardingContainerViewController
         window?.makeKeyAndVisible()
         
+        loginViewController.delegate = self
         onboardingContainerViewController.delegate = self
         
         displayScreenBasedOnOnboardingStatus()

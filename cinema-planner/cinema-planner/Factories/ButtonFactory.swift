@@ -21,6 +21,7 @@ func makeSecondaryButton(withText text: String, withButtonType buttontype: UICon
 
 func makePrimaryButton(withText text: String) -> UIButton {
     let primaryButton = UIButton(type: .system)
+    
     primaryButton.translatesAutoresizingMaskIntoConstraints = false
     primaryButton.configuration = .filled()
     primaryButton.configuration?.imagePadding = 8
