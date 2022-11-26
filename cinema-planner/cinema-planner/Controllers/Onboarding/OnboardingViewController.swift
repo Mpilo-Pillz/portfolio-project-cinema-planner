@@ -8,7 +8,7 @@
 import UIKit
 
 class OnboardingViewController: UIViewController {
-    let stackView = UIStackView()
+    let stackView = makeStackView(withSpacing: 20, withAxis: .vertical)
     let imageView = UIImageView()
     let label = UILabel()
     
