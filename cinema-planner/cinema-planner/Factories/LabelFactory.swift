@@ -20,3 +20,22 @@ func makeLable(withText text:String, alignment: NSTextAlignment, forTextStyle: U
     
     return label
 }
+
+func makeErrorLabel(withText text:String) -> UILabel {
+    let errorLabel = UILabel()
+    
+    errorLabel.translatesAutoresizingMaskIntoConstraints = false
+    errorLabel.textAlignment = .center
+    errorLabel.textColor = .systemRed
+    errorLabel.numberOfLines = 0
+    errorLabel.text = text
+    errorLabel.isHidden = true
+    
+    return errorLabel
+}
+
+//        errorMessageLabel.textAlignment = .center
+//        errorMessageLabel.textColor = .systemRed
+//        errorMessageLabel.numberOfLines = 0 // makes it multiline
+//        errorMessageLabel.text = ""
+//        errorMessageLabel.isHidden = true

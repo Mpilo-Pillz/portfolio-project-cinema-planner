@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
     
     let loginView = LoginView()
     var signInButton = makePrimaryButton(withText: "Sign In")
-    let errorMessageLabel = UILabel()
+    let errorMessageLabel = makeErrorLabel(withText: "")
     
     weak var delegate: LoginViewControllerDelegate?
     
@@ -42,7 +42,9 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        style()
+        
+        signInButton.addTarget(self, action: #selector(signInTapped), for: .primaryActionTriggered)
+        
         layout()
     }
     

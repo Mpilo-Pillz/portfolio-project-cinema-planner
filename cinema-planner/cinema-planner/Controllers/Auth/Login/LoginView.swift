@@ -20,8 +20,7 @@ class LoginView: UIView {
         styleLoginView()
         layoutLoginView()
         setupLoginViewConstraints()
-        
-       
+             
         layer.cornerRadius = 5
         clipsToBounds = true
     }
@@ -40,8 +39,7 @@ extension LoginView {
     private func layoutLoginView() {
         loginViewStackView.addArrangedSubview(loginViewUsernameTextField)
         loginViewStackView.addArrangedSubview(loginViewDividerView)
-        loginViewStackView.addArrangedSubview(loginViewPasswordTextField)
-        
+        loginViewStackView.addArrangedSubview(loginViewPasswordTextField)      
         addSubview(loginViewStackView)
     }
     

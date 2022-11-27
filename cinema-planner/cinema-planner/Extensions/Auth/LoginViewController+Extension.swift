@@ -9,7 +9,19 @@ import UIKit
 
 extension LoginViewController {
     public func style() {
+
+        
+        loginView.translatesAutoresizingMaskIntoConstraints = false
+        
+
         signInButton.addTarget(self, action: #selector(signInTapped), for: .primaryActionTriggered)
+        
+        errorMessageLabel.translatesAutoresizingMaskIntoConstraints = false
+//        errorMessageLabel.textAlignment = .center
+//        errorMessageLabel.textColor = .systemRed
+//        errorMessageLabel.numberOfLines = 0 // makes it multiline
+//        errorMessageLabel.text = ""
+//        errorMessageLabel.isHidden = true
     }
     
     public func layout() {
