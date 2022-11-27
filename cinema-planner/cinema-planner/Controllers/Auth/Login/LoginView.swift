@@ -33,7 +33,10 @@ class LoginView: UIView {
 extension LoginView {
     private func styleLoginView() {
         translatesAutoresizingMaskIntoConstraints = false
-         backgroundColor = .secondarySystemBackground
+        loginViewDividerView.translatesAutoresizingMaskIntoConstraints = false
+        loginViewDividerView.backgroundColor = .secondarySystemFill
+        
+        backgroundColor = .secondarySystemBackground
     }
     
     private func layoutLoginView() {
