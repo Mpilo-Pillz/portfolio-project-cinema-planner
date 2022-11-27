@@ -33,9 +33,3 @@ func makeErrorLabel(withText text:String) -> UILabel {
     
     return errorLabel
 }
-
-//        errorMessageLabel.textAlignment = .center
-//        errorMessageLabel.textColor = .systemRed
-//        errorMessageLabel.numberOfLines = 0 // makes it multiline
-//        errorMessageLabel.text = ""
-//        errorMessageLabel.isHidden = true

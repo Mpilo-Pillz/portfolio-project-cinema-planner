@@ -43,7 +43,7 @@ class DataPersistenceManager {
         } catch {
             completion(.failure(DatabaseError.failedToSaveData))
         }
-    
+        
         
     }
     func fetchingTitlesFromDataBase(completion: @escaping (Result<[TitleItem], Error>) -> Void) {
