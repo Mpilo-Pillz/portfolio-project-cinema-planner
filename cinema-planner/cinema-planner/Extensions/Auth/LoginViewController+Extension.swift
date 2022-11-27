@@ -8,17 +8,6 @@
 import UIKit
 
 extension LoginViewController {
-    public func style() {
-
-        
-//        loginView.translatesAutoresizingMaskIntoConstraints = false
-//
-//
-//        signInButton.addTarget(self, action: #selector(signInTapped), for: .primaryActionTriggered)
-//
-//        errorMessageLabel.translatesAutoresizingMaskIntoConstraints = false
-
-    }
     
     public func layout() {
         view.addSubview(titleLabel)
@@ -48,7 +37,7 @@ extension LoginViewController {
         
         subtitleLeadingAnchor = subTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: leadingEdgeOffScreen)
         subtitleLeadingAnchor?.isActive = true
-
+        
         NSLayoutConstraint.activate([
             loginView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             loginView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
@@ -120,7 +109,7 @@ extension LoginViewController {
         let duration = 2.0
         let animator1 = UIViewPropertyAnimator(duration: duration, curve: .easeInOut) {
             self.titleLeadingAnchor?.constant = self.leadingEdgeOnScreen
-
+            
             self.view.layoutIfNeeded()
         }
         let animator2 = UIViewPropertyAnimator(duration: duration, curve: .easeInOut) {

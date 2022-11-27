@@ -29,10 +29,10 @@ class SearchResultsViewController: UIViewController {
         collectionView.register(TitleCollectionViewCell.self, forCellWithReuseIdentifier: TitleCollectionViewCell.identifier)
         return collectionView
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.addSubview(searchResultsCollectionView)
         
         searchResultsCollectionView.delegate = self
@@ -80,7 +80,5 @@ extension SearchResultsViewController: UICollectionViewDelegate, UICollectionVie
                 print(error.localizedDescription)
             }
         }
-        
-        
     }
 }

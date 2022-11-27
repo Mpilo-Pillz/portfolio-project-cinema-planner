@@ -44,7 +44,6 @@
 		C4D7431F292A36A200F71032 /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D7431E292A36A200F71032 /* DownloadsViewController.swift */; };
 		C4D74324292A463900F71032 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74323292A463900F71032 /* CollectionViewTableViewCell.swift */; };
 		C4D74327292A4E2300F71032 /* HomeViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74326292A4E2300F71032 /* HomeViewController+Extension.swift */; };
-		C4D74329292A4EAC00F71032 /* CollectionViewTableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74328292A4EAC00F71032 /* CollectionViewTableViewCell+Extension.swift */; };
 		C4D7432B292A4F5500F71032 /* HeroHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D7432A292A4F5500F71032 /* HeroHeaderUIView.swift */; };
 		C4D7432E292A5A7700F71032 /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D7432D292A5A7700F71032 /* ButtonFactory.swift */; };
 		C4D74331292A659B00F71032 /* LocalState+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74330292A659B00F71032 /* LocalState+Utils.swift */; };
@@ -88,7 +87,6 @@
 		C4D7431E292A36A200F71032 /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
 		C4D74323292A463900F71032 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		C4D74326292A4E2300F71032 /* HomeViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Extension.swift"; sourceTree = "<group>"; };
-		C4D74328292A4EAC00F71032 /* CollectionViewTableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewTableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		C4D7432A292A4F5500F71032 /* HeroHeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHeaderUIView.swift; sourceTree = "<group>"; };
 		C4D7432D292A5A7700F71032 /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
 		C4D74330292A659B00F71032 /* LocalState+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalState+Utils.swift"; sourceTree = "<group>"; };
@@ -247,7 +245,6 @@
 			children = (
 				C49366802931EE10003C6C3D /* Auth */,
 				C4D74326292A4E2300F71032 /* HomeViewController+Extension.swift */,
-				C4D74328292A4EAC00F71032 /* CollectionViewTableViewCell+Extension.swift */,
 				C4795F3E292B6C81003D8E64 /* String+Extension.swift */,
 				C493667629307F3F003C6C3D /* OnboardingViewController+Extension.swift */,
 				C493667A29314FF9003C6C3D /* OnboardingContainerViewController+Extension.swift */,
@@ -374,7 +371,6 @@
 				C4D7432E292A5A7700F71032 /* ButtonFactory.swift in Sources */,
 				C49366822931EE2F003C6C3D /* LoginViewController+Extension.swift in Sources */,
 				C49366862931FBB8003C6C3D /* TextFieldFactory.swift in Sources */,
-				C4D74329292A4EAC00F71032 /* CollectionViewTableViewCell+Extension.swift in Sources */,
 				C4D7431A292A363700F71032 /* UpcomingViewController.swift in Sources */,
 				C493667729307F3F003C6C3D /* OnboardingViewController+Extension.swift in Sources */,
 				C4D7432B292A4F5500F71032 /* HeroHeaderUIView.swift in Sources */,

@@ -15,7 +15,7 @@ class TitlePreviewViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 22, weight: .bold)
-        label.text = "Dummy Text"
+        label.text = "Untitled Video"
         return label
     }()
     
