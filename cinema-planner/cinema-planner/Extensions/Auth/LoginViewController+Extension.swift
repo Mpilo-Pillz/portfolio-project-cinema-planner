@@ -77,6 +77,7 @@ extension LoginViewController {
             return
         }
         
+        // TODO: Add authentication to API for sign up and sign in
         if username == "Thulani" && password == "Thapelo" {
             signInButton.configuration?.showsActivityIndicator = true
             delegate?.didLogin()
