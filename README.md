@@ -12,8 +12,10 @@ Building the Client side APP uisng Swift and UIKit. I opted to build the UI prog
 Building the API using NestJS
 
 <hr>
-## Link to video of Demo of POC can be found on
+<h2> Link to video of Demo of POC can be found on </h2>
+<div align="center">
 https://www.loom.com/share/39132ad5764c4bbb9daf50258af71e3d
+</div>
 <hr>
 <br>
 <h2> iOS skills, tools and patters displayed <h/2>
