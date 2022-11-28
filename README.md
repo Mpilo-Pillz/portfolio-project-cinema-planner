@@ -68,7 +68,7 @@ https://www.loom.com/share/39132ad5764c4bbb9daf50258af71e3d
 <img src="./images/SearchView.png" alt="Search View" height="400" width="400"/>
 </div>
 
-<h2>System Colos</h2>
+<h2>System Colors</h2>
 <p>I opted to use <i> system colors</i> for this application in order to support light and dark mode.
 
 <div align="center">
