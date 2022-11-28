@@ -9,9 +9,9 @@ import UIKit
 
 class HeroHeaderUIView: UIView {
     
-    private let downloadButton: UIButton = makeButton(withText: "Download", withButtonType: .normal)
+    private let downloadButton: UIButton = makeSecondaryButton(withText: "Download", withButtonType: .normal)
     
-    private let playButton: UIButton = makeButton(withText: "Play", withButtonType: .normal)
+    private let playButton: UIButton = makeSecondaryButton(withText: "Play", withButtonType: .normal)
     
     private let heroImageView: UIImageView = {
         
@@ -58,7 +58,7 @@ class HeroHeaderUIView: UIView {
         NSLayoutConstraint.activate(playButtonConstraints)
         NSLayoutConstraint.activate(downloadButtonConstraionts)
     }
-
+    
     public func configure(with model: TitleViewModel) {
         guard let url = URL(string: "https://image.tmdb.org/t/p/w500/\(model.posterURL)") else {
             return

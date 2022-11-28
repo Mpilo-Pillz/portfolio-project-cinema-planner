@@ -88,15 +88,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header = view as? UITableViewHeaderFooterView else { return }
         
+        //        TODO: [DEPRECATION WARNING] replace with defaultContentConfiguration
         header.textLabel?.font = .systemFont(ofSize: 18, weight: .semibold)
         header.textLabel?.frame = CGRect(x: header.bounds.origin.x + 20, y:header.bounds.origin.y, width: 100, height: header.bounds.height)
         header.textLabel?.textColor = .white
         header.textLabel?.text = header.textLabel?.text?.capitalizeFirstLetter()
-        //        var content = header.defaultContentConfiguration()
-        //        content.text = title
-        //        content.textProperties.color = .white
-        //        content.textProperties.font = .systemFont(ofSize: 25, weight: .semibold)
-        
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

@@ -10,7 +10,7 @@ import UIKit
 class DownloadsViewController: UIViewController {
     
     private var titles: [TitleItem] = [TitleItem]()
-
+    
     private let downloadedTable: UITableView = {
         let table = UITableView()
         table.register(TitleTableViewCell.self, forCellReuseIdentifier: TitleTableViewCell.identifier)
@@ -19,7 +19,7 @@ class DownloadsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         title = "Downloads"
         view.addSubview(downloadedTable)
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -27,6 +27,7 @@ class DownloadsViewController: UIViewController {
         downloadedTable.delegate = self
         downloadedTable.dataSource = self
         fetchLocalStorageForDownload()
+        
         // listen for changes that happen in notification center
         NotificationCenter.default.addObserver(forName: Notification.Name("downloaded"), object: nil, queue: nil) { _ in
             self.fetchLocalStorageForDownload()
@@ -35,20 +36,18 @@ class DownloadsViewController: UIViewController {
     }
     
     private func fetchLocalStorageForDownload() {
-
-           
-           DataPersistenceManager.shared.fetchingTitlesFromDataBase { [weak self] result in
-               switch result {
-               case .success(let titles):
-                   self?.titles = titles
-                   DispatchQueue.main.async {
-                       self?.downloadedTable.reloadData()
-                   }
-               case .failure(let error):
-                   print(error.localizedDescription)
-               }
-           }
-       }
+        DataPersistenceManager.shared.fetchingTitlesFromDataBase { [weak self] result in
+            switch result {
+            case .success(let titles):
+                self?.titles = titles
+                DispatchQueue.main.async {
+                    self?.downloadedTable.reloadData()
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

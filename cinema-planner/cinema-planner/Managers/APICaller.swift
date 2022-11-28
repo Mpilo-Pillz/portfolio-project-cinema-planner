@@ -153,28 +153,28 @@ class APICaller {
     }
     
     func getMovie(with query: String, completion: @escaping (Result<VideoItem, Error>) -> Void) {
-      
-            guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
+        
+        guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
+            return
+        }
+        
+        guard let url = URL(string: "\(Constants.localbaseURL)/api/v1/youtube/searchTrailers?query=\(query)") else {return}
+        
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
+            guard let data = data, error == nil else {
                 return
             }
-      
-            guard let url = URL(string: "\(Constants.localbaseURL)/api/v1/youtube/searchTrailers?query=\(query)") else {return}
-            
-            let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
-                guard let data = data, error == nil else {
-                    return
-                }
-                do {
-                    let results = try JSONDecoder().decode(YoutubeSearchResponse.self, from: data)//
-                    completion(.success(results.items[Constants.bestYouTubeResult]))
-                } catch {
-                    completion(.failure(APIError.failedTogetData))
-                }
+            do {
+                let results = try JSONDecoder().decode(YoutubeSearchResponse.self, from: data)//
+                completion(.success(results.items[Constants.bestYouTubeResult]))
+            } catch {
+                completion(.failure(APIError.failedTogetData))
             }
-            task.resume()
-            
         }
+        task.resume()
+        
     }
+}
 
 
 

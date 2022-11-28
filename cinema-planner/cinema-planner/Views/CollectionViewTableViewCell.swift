@@ -12,11 +12,11 @@ protocol CollectionViewTableViewCellDelegate: AnyObject {
 }
 
 class CollectionViewTableViewCell: UITableViewCell {
-
-   static let identifier = "CollectionViewTableViewCell"
+    
+    static let identifier = "CollectionViewTableViewCell"
     
     weak var delegate: CollectionViewTableViewCellDelegate?
-   
+    
     private var titles: [Title] = [Title]()
     
     private let collectionView: UICollectionView = {
@@ -37,7 +37,7 @@ class CollectionViewTableViewCell: UITableViewCell {
         collectionView.delegate = self
         collectionView.dataSource = self
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("Something went wrong in CollectionViewTableViewCell")
     }
@@ -66,7 +66,7 @@ class CollectionViewTableViewCell: UITableViewCell {
             
         }
     }
- }
+}
 
 extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -114,20 +114,17 @@ extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
-
-            let config = UIContextMenuConfiguration(
-                identifier: nil,
-                previewProvider: nil) {[weak self] _ in
-                    let downloadAction = UIAction(title: "Download", subtitle: nil, image: nil, identifier: nil, discoverabilityTitle: nil, state: .off) { _ in
-                        self?.downloadTitleAt(indexPath: indexPath)
-                    }
-                    return UIMenu(title: "", image: nil, identifier: nil, options: .displayInline, children: [downloadAction])
+        
+        let config = UIContextMenuConfiguration(
+            identifier: nil,
+            previewProvider: nil) {[weak self] _ in
+                let downloadAction = UIAction(title: "Download", subtitle: nil, image: nil, identifier: nil, discoverabilityTitle: nil, state: .off) { _ in
+                    self?.downloadTitleAt(indexPath: indexPath)
                 }
-
-            return config
-        }
-
-
+                return UIMenu(title: "", image: nil, identifier: nil, options: .displayInline, children: [downloadAction])
+            }
+        
+        return config
+    }
 }
-
 

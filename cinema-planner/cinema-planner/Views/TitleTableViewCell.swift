@@ -8,8 +8,8 @@
 import UIKit
 
 class TitleTableViewCell: UITableViewCell {
-
-   static let identifier = "TitleTableViewCell"
+    
+    static let identifier = "TitleTableViewCell"
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -68,7 +68,7 @@ class TitleTableViewCell: UITableViewCell {
     }
     
     public func configure(with model: TitleViewModel) {
-       
+        
         guard let url = URL(string: "https://image.tmdb.org/t/p/w500/\(model.posterURL)") else {
             return
         }
@@ -80,5 +80,4 @@ class TitleTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("Something went wrong in Title TableViewCell")
     }
-
 }
