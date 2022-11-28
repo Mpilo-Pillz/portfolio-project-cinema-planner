@@ -1,4 +1,4 @@
-    <h1> portfolio-project-cinema-planner </h1>
+<h1> portfolio-project-cinema-planner </h1>
 <br>
 <p>The cinema planner apps aims to help users keep track of hte movies they plan to watch this year</p>
 <p>It also helps know which movies they watched this year<p>
@@ -41,7 +41,29 @@ https://www.loom.com/share/39132ad5764c4bbb9daf50258af71e3d
 <h3>Extensions</h3>
 <p>I extended the functionality of the many built in view controllers to add some custom logic specific to the requirements of this application.</p>
 <p>I also extracted these extensions into their own files to keep the ViewControllers Lean
+<hr>
+    
+        import UIKit
 
+        extension OnboardingViewController {
+    func style() {
+        view.backgroundColor = .systemBackground
+        
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: heroImageName)
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.font = UIFont.preferredFont(forTextStyle: .title3)
+        label.adjustsFontForContentSizeCategory = true
+        label.numberOfLines = 0
+        label.text = titleText
+    }
+    }
+    
+
+<hr>
 <div align="center">
 <img src="./images/SearchView.png" alt="Search View" height="400" width="400"/>
 </div>
