@@ -1,0 +1,9 @@
+@HOST_NAME = http://localhost
+@PORT = 4000
+GET {{{{HOST_NAME}}}}:{{{{PORT}}}}/api/v1/tmdb/getTrendingMovies
+
+###
+GET {{{{HOST_NAME}}}}:{{{{PORT}}}}/api/v1/tmdb/getTrendingTvShows
+
+###
+GET {{{{HOST_NAME}}}}:{{{{PORT}}}}/api/v1/tmdb/getUpcomingMovies
