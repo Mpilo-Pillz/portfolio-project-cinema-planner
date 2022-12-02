@@ -16,4 +16,13 @@ app.get("/", (req, res) => {
 app.use("/api/v1/tmdb", tmdbRouter);
 app.use("/api/v1/youtube", youtubeRouter);
 
+app.use((error, req, res, next) => {
+  if (res.headerSent) {
+    return next(error);
+  }
+  res
+    .status(error.errorCode || 500)
+    .json({ message: error.message || "An unknown error occurred!" });
+});
+
 module.exports = app;
