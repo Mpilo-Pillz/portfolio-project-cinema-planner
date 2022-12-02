@@ -35,6 +35,7 @@ extension LoginView {
         translatesAutoresizingMaskIntoConstraints = false
         loginViewDividerView.translatesAutoresizingMaskIntoConstraints = false
         loginViewDividerView.backgroundColor = .secondarySystemFill
+        loginViewPasswordTextField.enablePasswordToggle()
         
         backgroundColor = .secondarySystemBackground
     }
