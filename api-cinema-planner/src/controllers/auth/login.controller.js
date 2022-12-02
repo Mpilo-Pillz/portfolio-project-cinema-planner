@@ -8,9 +8,12 @@ exports.login =  (req, res) => {
 
     try {
         if (existingUser.email === email && existingUser.password === password ) {
-            res.json({message: "You are logged in", status: "Authenticated"});
+            res.json({message: "You are logged in", isAuthenticated: true});
+            return
         }
+
+        res.status(404).json({message: "Invalid Credentials Provided", isAuthenticated: false})
     } catch (err) {
-        
+
     }
   };
