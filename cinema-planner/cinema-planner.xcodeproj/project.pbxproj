@@ -33,6 +33,7 @@
 		C49366862931FBB8003C6C3D /* TextFieldFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49366852931FBB8003C6C3D /* TextFieldFactory.swift */; };
 		C49366882931FEE5003C6C3D /* StackViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49366872931FEE5003C6C3D /* StackViewFactory.swift */; };
 		C493668A2932A3DB003C6C3D /* LoginView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49366892932A3DB003C6C3D /* LoginView+Extension.swift */; };
+		C493668C293A8A19003C6C3D /* UITextFieldSecureToggle+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C493668B293A8A19003C6C3D /* UITextFieldSecureToggle+Utils.swift */; };
 		C4D74303292A327700F71032 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74302292A327700F71032 /* AppDelegate.swift */; };
 		C4D74305292A327700F71032 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74304292A327700F71032 /* SceneDelegate.swift */; };
 		C4D74307292A327700F71032 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74306292A327700F71032 /* MainTabBarViewController.swift */; };
@@ -74,6 +75,7 @@
 		C49366852931FBB8003C6C3D /* TextFieldFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldFactory.swift; sourceTree = "<group>"; };
 		C49366872931FEE5003C6C3D /* StackViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewFactory.swift; sourceTree = "<group>"; };
 		C49366892932A3DB003C6C3D /* LoginView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView+Extension.swift"; sourceTree = "<group>"; };
+		C493668B293A8A19003C6C3D /* UITextFieldSecureToggle+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextFieldSecureToggle+Utils.swift"; sourceTree = "<group>"; };
 		C4D742FF292A327700F71032 /* cinema-planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cinema-planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4D74302292A327700F71032 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4D74304292A327700F71032 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				C4D74330292A659B00F71032 /* LocalState+Utils.swift */,
+				C493668B293A8A19003C6C3D /* UITextFieldSecureToggle+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				C493667929308002003C6C3D /* LabelFactory.swift in Sources */,
 				C4795F50292D2CD1003D8E64 /* TitlePreviewViewController.swift in Sources */,
 				C4795F38292B5D0A003D8E64 /* APICaller.swift in Sources */,
+				C493668C293A8A19003C6C3D /* UITextFieldSecureToggle+Utils.swift in Sources */,
 				C4795F3A292B6641003D8E64 /* Video.swift in Sources */,
 				C4795F52292D2FF7003D8E64 /* TitlePreviewViewModel.swift in Sources */,
 				C4D7431F292A36A200F71032 /* DownloadsViewController.swift in Sources */,
