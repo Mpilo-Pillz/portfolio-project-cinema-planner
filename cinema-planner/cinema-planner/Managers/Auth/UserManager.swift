@@ -8,7 +8,7 @@
 import Foundation
 
 protocol UserManageable: AnyObject {
-    func login(withEmail email: String, withPassword password: String, completion: @escaping(Result<User, NetworkError>) -> Void)
+    func login(withEmail email: String, withPassword password: String, completion: @escaping(Result<LoginResponse, NetworkError>) -> Void)
 }
 
 struct LoginResponse: Codable {
@@ -27,7 +27,7 @@ struct User: Codable {
 }
 
 class UserManager: UserManageable {
-    func login(withEmail email: String, withPassword password: String, completion: @escaping (Result<User, NetworkError>) -> Void) {
+    func login(withEmail email: String, withPassword password: String, completion: @escaping (Result<LoginResponse, NetworkError>) -> Void) {
         print("in the user")
         guard let url = URL(string: "\(Constants.localbaseURL)/api/v1/auth/login") else {
             return
@@ -53,15 +53,16 @@ class UserManager: UserManageable {
                 }
                 
                 do {
-                    let user = try JSONDecoder().decode(User.self, from: data)
-                    completion(.success(user))
-                    print("user: \(user)")
+                    let response = try JSONDecoder().decode(LoginResponse.self, from: data)
+                    completion(.success(response))
+                    print("user: \(response)")
                 } catch {
                     completion(.failure(.decodingError))
                     
                 }
             }
-        }.resume()
+        }
+            task.resume()
     }
 }
 
