@@ -17,6 +17,8 @@ protocol LoginViewControllerDelegate: AnyObject {
 
 class LoginViewController: UIViewController {
     
+    var userManager: UserManageable = UserManager()
+    
     let titleLabel = makeLable(withText: "Cinema Planner", alignment: .center, forTextStyle: .largeTitle)
     let subTitleLabel = makeLable(withText: "Never miss a movie premier again!", alignment: .center, forTextStyle: .title3)
     
