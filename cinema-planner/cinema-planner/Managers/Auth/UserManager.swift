@@ -11,7 +11,10 @@ protocol UserManageable: AnyObject {
     func login(withEmail email: String, withPassword password: String, completion: @escaping(Result<User, NetworkError>) -> Void)
 }
 
-
+struct LoginResponse: Codable {
+    let isAuthenticated: Bool
+    let message: String
+}
 
 enum NetworkError: Error {
     case serverError
@@ -37,7 +40,7 @@ class UserManager: UserManageable {
         
         let bodyData = try? JSONSerialization.data(withJSONObject: [
             "email": "thulani@karabo.co.za",
-        "password": "Thapelo"
+            "password": "Thapelo"
         ], options: .fragmentsAllowed)
         
         request.httpBody = bodyData
