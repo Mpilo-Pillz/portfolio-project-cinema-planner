@@ -8,7 +8,7 @@
 import UIKit
 
 extension LoginViewController {
-     
+    
     public func layout() {
         view.addSubview(titleLabel)
         view.addSubview(subTitleLabel)
@@ -67,31 +67,32 @@ extension LoginViewController {
     }
     
     private func login() {
-        userManager.login(withEmail: "", withPassword: "") { result in
+        guard let username = username, let password = password else {
+            assertionFailure("Username / Password should not be nil")
+            return
+        }
+        
+        if username.isEmpty || password.isEmpty {
+            configureView(withMessage: "Username / password should not be blank")
+            return
+        }
+        
+        userManager.login(withEmail: username, withPassword: password) { [self] result in
             switch result {
             case .success(let user):
+                print(user)
+                if (!user.isAuthenticated) {
+                    configureView(withMessage: "Incorrect username / password")
+                    return
+                }
+                signInButton.configuration?.showsActivityIndicator = true
+                delegate?.didLogin()
                 print("login: \(user)")
             case .failure(let error):
                 print(error)
+                
             }
         }
-//        guard let username = username, let password = password else {
-//            assertionFailure("Username / Password should not be nil")
-//            return
-//        }
-//
-//        if username.isEmpty || password.isEmpty {
-//            configureView(withMessage: "Username / password should not be blank")
-//            return
-//        }
-//
-//        // TODO: Add authentication to API for sign up and sign in
-//        if username == "Thulani" && password == "Thapelo" {
-//            signInButton.configuration?.showsActivityIndicator = true
-//            delegate?.didLogin()
-//        } else {
-//            configureView(withMessage: "Incorrect username / password")
-//        }
     }
     
     private func configureView(withMessage message: String) {

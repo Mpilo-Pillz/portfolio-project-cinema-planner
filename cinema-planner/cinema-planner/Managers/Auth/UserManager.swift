@@ -39,8 +39,8 @@ class UserManager: UserManageable {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let bodyData = try? JSONSerialization.data(withJSONObject: [
-            "email": "thulani@karabo.co.za",
-            "password": "Thapelo"
+            "email": email,
+            "password": password
         ], options: .fragmentsAllowed)
         
         request.httpBody = bodyData
