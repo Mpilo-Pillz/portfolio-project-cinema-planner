@@ -80,17 +80,16 @@ extension LoginViewController {
         userManager.login(withEmail: username, withPassword: password) { [self] result in
             switch result {
             case .success(let user):
-                print(user)
+                
                 if (!user.isAuthenticated) {
                     configureView(withMessage: "Incorrect username / password")
                     return
                 }
-                signInButton.configuration?.showsActivityIndicator = true
-                delegate?.didLogin()
-                print("login: \(user)")
-            case .failure(let error):
-                print(error)
+                onSuccessfulAuthentication()
                 
+            case .failure(let error):
+                configureView(withMessage: "Something went wrong. Please try again later")
+                print(error)
             }
         }
     }
@@ -110,6 +109,11 @@ extension LoginViewController {
         
         animation.isAdditive = true
         signInButton.layer.add(animation, forKey: "shake")
+    }
+    
+    private func onSuccessfulAuthentication() {
+        signInButton.configuration?.showsActivityIndicator = true
+        delegate?.didLogin()
     }
 }
 
