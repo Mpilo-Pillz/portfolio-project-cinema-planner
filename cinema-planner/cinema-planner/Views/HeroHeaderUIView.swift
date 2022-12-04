@@ -9,7 +9,7 @@ import UIKit
 
 class HeroHeaderUIView: UIView {
     
-    private let downloadButton: UIButton = makeSecondaryButton(withText: "Download", withButtonType: .normal)
+    private let addToWatchListButton: UIButton = makeSecondaryButton(withText: "WatchList", withButtonType: .normal)
     
     private let playButton: UIButton = makeSecondaryButton(withText: "Play", withButtonType: .normal)
     
@@ -37,7 +37,7 @@ class HeroHeaderUIView: UIView {
         addSubview(heroImageView)
         addGradient()
         addSubview(playButton)
-        addSubview(downloadButton)
+        addSubview(addToWatchListButton)
         applyConstraints()
     }
     
@@ -48,15 +48,15 @@ class HeroHeaderUIView: UIView {
             playButton.widthAnchor.constraint(equalToConstant: 100)
         ]
         
-        let downloadButtonConstraionts = [
-            downloadButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -70),
-            downloadButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50),
+        let addToWatchListButtonConstraionts = [
+            addToWatchListButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -70),
+            addToWatchListButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50),
             
-            downloadButton.widthAnchor.constraint(equalToConstant: 100)
+            addToWatchListButton.widthAnchor.constraint(equalToConstant: 100)
         ]
         
         NSLayoutConstraint.activate(playButtonConstraints)
-        NSLayoutConstraint.activate(downloadButtonConstraionts)
+        NSLayoutConstraint.activate(addToWatchListButtonConstraionts)
     }
     
     public func configure(with model: TitleViewModel) {
