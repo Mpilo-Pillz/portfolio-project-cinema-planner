@@ -77,12 +77,20 @@ extension LoginViewController {
             return
         }
         
-        // TODO: Add authentication to API for sign up and sign in
-        if username == "Thulani" && password == "Thapelo" {
-            signInButton.configuration?.showsActivityIndicator = true
-            delegate?.didLogin()
-        } else {
-            configureView(withMessage: "Incorrect username / password")
+        userManager.login(withEmail: username, withPassword: password) { [self] result in
+            switch result {
+            case .success(let user):
+                
+                if (!user.isAuthenticated) {
+                    configureView(withMessage: "Incorrect username / password")
+                    return
+                }
+                onSuccessfulAuthentication()
+                
+            case .failure(let error):
+                configureView(withMessage: "Something went wrong. Please try again later")
+                print(error)
+            }
         }
     }
     
@@ -101,6 +109,11 @@ extension LoginViewController {
         
         animation.isAdditive = true
         signInButton.layer.add(animation, forKey: "shake")
+    }
+    
+    private func onSuccessfulAuthentication() {
+        signInButton.configuration?.showsActivityIndicator = true
+        delegate?.didLogin()
     }
 }
 
