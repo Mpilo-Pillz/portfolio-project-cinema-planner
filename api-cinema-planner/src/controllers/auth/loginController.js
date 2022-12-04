@@ -4,8 +4,8 @@ exports.login = (req, res) => {
   const { email, password } = req.body;
 
   let existingUser = {
-    email: "thulani@karabo.co.za",
-    password: "Thapelo",
+    email: "Dev",
+    password: "dev",
   };
 
   try {
