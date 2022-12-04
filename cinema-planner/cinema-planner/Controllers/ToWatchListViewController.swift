@@ -20,7 +20,7 @@ class ToWatchListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Watch List"
+        title = "Watchlist"
         view.addSubview(toWatchTable)
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.largeTitleDisplayMode = .always
@@ -29,7 +29,7 @@ class ToWatchListViewController: UIViewController {
         fetchLocalStorageForWatchList()
         
         // listen for changes that happen in notification center
-        NotificationCenter.default.addObserver(forName: Notification.Name("downloaded"), object: nil, queue: nil) { _ in
+        NotificationCenter.default.addObserver(forName: Notification.Name("watchlisted"), object: nil, queue: nil) { _ in
             self.fetchLocalStorageForWatchList()
         }
         

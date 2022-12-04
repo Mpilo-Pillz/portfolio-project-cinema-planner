@@ -54,12 +54,12 @@ class CollectionViewTableViewCell: UITableViewCell {
         }
     }
     
-    private func downloadTitleAt(indexPath: IndexPath) {
+    private func addToWatchListTitleAt(indexPath: IndexPath) {
         
-        DataPersistenceManager.shared.downloadTitleWith(model: titles[indexPath.row]) { result in
+        DataPersistenceManager.shared.addToWatchListTitleWith(model: titles[indexPath.row]) { result in
             switch result {
             case .success():
-                NotificationCenter.default.post(name: Notification.Name("downloaded"), object: nil)
+                NotificationCenter.default.post(name: Notification.Name("watchlisted"), object: nil)
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -118,10 +118,10 @@ extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionVie
         let config = UIContextMenuConfiguration(
             identifier: nil,
             previewProvider: nil) {[weak self] _ in
-                let downloadAction = UIAction(title: "Download", subtitle: nil, image: nil, identifier: nil, discoverabilityTitle: nil, state: .off) { _ in
-                    self?.downloadTitleAt(indexPath: indexPath)
+                let addToWatchListAction = UIAction(title: "Add To Watchlist", subtitle: nil, image: nil, identifier: nil, discoverabilityTitle: nil, state: .off) { _ in
+                    self?.addToWatchListTitleAt(indexPath: indexPath)
                 }
-                return UIMenu(title: "", image: nil, identifier: nil, options: .displayInline, children: [downloadAction])
+                return UIMenu(title: "", image: nil, identifier: nil, options: .displayInline, children: [addToWatchListAction])
             }
         
         return config

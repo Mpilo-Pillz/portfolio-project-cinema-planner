@@ -9,7 +9,7 @@ import UIKit
 
 class HeroHeaderUIView: UIView {
     
-    private let addToWatchListButton: UIButton = makeSecondaryButton(withText: "WatchList", withButtonType: .normal)
+    private let addToWatchListButton: UIButton = makeSecondaryButton(withText: "Watchlist", withButtonType: .normal)
     
     private let playButton: UIButton = makeSecondaryButton(withText: "Play", withButtonType: .normal)
     

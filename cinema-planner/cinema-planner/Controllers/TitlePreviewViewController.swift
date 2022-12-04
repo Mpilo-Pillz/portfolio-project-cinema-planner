@@ -29,11 +29,11 @@ class TitlePreviewViewController: UIViewController {
         return label
     }()
     
-    private let downloadButton: UIButton = {
+    private let watchListButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .red
-        button.setTitle("Download", for: .normal)
+        button.setTitle("Add To Watchlist", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 8
         button.layer.masksToBounds = true
@@ -52,7 +52,7 @@ class TitlePreviewViewController: UIViewController {
         view.addSubview(webView)
         view.addSubview(titleLabel)
         view.addSubview(overviewLabel)
-        view.addSubview(downloadButton)
+        view.addSubview(watchListButton)
         configureConstraints()
     }
     
@@ -76,17 +76,17 @@ class TitlePreviewViewController: UIViewController {
             overviewLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ]
         
-        let downloadButtonConstraints = [
-            downloadButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            downloadButton.topAnchor.constraint(equalTo: overviewLabel.bottomAnchor, constant: 25),
-            downloadButton.widthAnchor.constraint(equalToConstant: 140),
-            downloadButton.heightAnchor.constraint(equalToConstant: 40)
+        let watchListButtonConstraints = [
+            watchListButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            watchListButton.topAnchor.constraint(equalTo: overviewLabel.bottomAnchor, constant: 25),
+            watchListButton.widthAnchor.constraint(equalToConstant: 240),
+            watchListButton.heightAnchor.constraint(equalToConstant: 40)
         ]
         
         NSLayoutConstraint.activate(webViewConstraints)
         NSLayoutConstraint.activate(titleLabelConstraints)
         NSLayoutConstraint.activate(overviewLabelConstraints)
-        NSLayoutConstraint.activate(downloadButtonConstraints)
+        NSLayoutConstraint.activate(watchListButtonConstraints)
     }
     
     func configure(with model: TitlePreviewViewModel) {

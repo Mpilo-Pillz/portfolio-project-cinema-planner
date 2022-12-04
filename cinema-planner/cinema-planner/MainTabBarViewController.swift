@@ -25,7 +25,7 @@ class MainTabBarViewController: UITabBarController {
         vcHome.title = "Home"
         vcUpcoming.title = "Coming Soon"
         vcSearch.title = "Top Search"
-        vcToWatchList.title = "Watch List"
+        vcToWatchList.title = "Watchlist"
         
         tabBar.tintColor = .label
         
