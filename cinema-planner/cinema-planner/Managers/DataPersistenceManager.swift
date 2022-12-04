@@ -17,7 +17,7 @@ class DataPersistenceManager {
     }
     static let shared = DataPersistenceManager()
     
-    func downloadTitleWith(model: Title, completion: @escaping (Result<Void, Error>) -> Void) {
+    func addToWatchListTitleWith(model: Title, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
