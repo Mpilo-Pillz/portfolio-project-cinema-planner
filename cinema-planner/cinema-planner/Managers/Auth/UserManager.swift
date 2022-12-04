@@ -45,7 +45,6 @@ class UserManager: UserManageable {
         
         request.httpBody = bodyData
         
-        
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
@@ -58,10 +57,9 @@ class UserManager: UserManageable {
                     print("user: \(response)")
                 } catch {
                     completion(.failure(.decodingError))
-                    
                 }
             }
         }
-            task.resume()
+        task.resume()
     }
 }
