@@ -49,7 +49,18 @@
 		C4D7432B292A4F5500F71032 /* HeroHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D7432A292A4F5500F71032 /* HeroHeaderUIView.swift */; };
 		C4D7432E292A5A7700F71032 /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D7432D292A5A7700F71032 /* ButtonFactory.swift */; };
 		C4D74331292A659B00F71032 /* LocalState+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74330292A659B00F71032 /* LocalState+Utils.swift */; };
+		C4EC1E862947D0D800DFD8B5 /* String+ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EC1E822947CD0800DFD8B5 /* String+ExtensionTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C4EC1E792947CC5E00DFD8B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4D742F7292A327700F71032 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4D742FE292A327700F71032;
+			remoteInfo = "cinema-planner";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		C4795F37292B5D0A003D8E64 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
@@ -94,6 +105,8 @@
 		C4D7432A292A4F5500F71032 /* HeroHeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHeaderUIView.swift; sourceTree = "<group>"; };
 		C4D7432D292A5A7700F71032 /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
 		C4D74330292A659B00F71032 /* LocalState+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalState+Utils.swift"; sourceTree = "<group>"; };
+		C4EC1E752947CC5E00DFD8B5 /* cinema-plannerUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cinema-plannerUnitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4EC1E822947CD0800DFD8B5 /* String+ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ExtensionTests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +116,13 @@
 			files = (
 				C4795F46292B7638003D8E64 /* SDWebImageMapKit in Frameworks */,
 				C4795F44292B7638003D8E64 /* SDWebImage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4EC1E722947CC5E00DFD8B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,7 +194,9 @@
 			isa = PBXGroup;
 			children = (
 				C4D74301292A327700F71032 /* cinema-planner */,
+				C4EC1E762947CC5E00DFD8B5 /* cinema-plannerUnitTests */,
 				C4D74300292A327700F71032 /* Products */,
+				C4EC1E7E2947CC7100DFD8B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -182,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				C4D742FF292A327700F71032 /* cinema-planner.app */,
+				C4EC1E752947CC5E00DFD8B5 /* cinema-plannerUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -285,6 +308,21 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		C4EC1E762947CC5E00DFD8B5 /* cinema-plannerUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				C4EC1E822947CD0800DFD8B5 /* String+ExtensionTests.swift */,
+			);
+			path = "cinema-plannerUnitTests";
+			sourceTree = "<group>";
+		};
+		C4EC1E7E2947CC7100DFD8B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -309,6 +347,26 @@
 			productReference = C4D742FF292A327700F71032 /* cinema-planner.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C4EC1E742947CC5E00DFD8B5 /* cinema-plannerUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4EC1E7D2947CC5E00DFD8B5 /* Build configuration list for PBXNativeTarget "cinema-plannerUnitTests" */;
+			buildPhases = (
+				C4EC1E712947CC5E00DFD8B5 /* Sources */,
+				C4EC1E722947CC5E00DFD8B5 /* Frameworks */,
+				C4EC1E732947CC5E00DFD8B5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C4EC1E7A2947CC5E00DFD8B5 /* PBXTargetDependency */,
+			);
+			name = "cinema-plannerUnitTests";
+			packageProductDependencies = (
+			);
+			productName = "cinema-plannerUnitTests";
+			productReference = C4EC1E752947CC5E00DFD8B5 /* cinema-plannerUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -321,6 +379,10 @@
 				TargetAttributes = {
 					C4D742FE292A327700F71032 = {
 						CreatedOnToolsVersion = 14.0;
+					};
+					C4EC1E742947CC5E00DFD8B5 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = C4D742FE292A327700F71032;
 					};
 				};
 			};
@@ -341,6 +403,7 @@
 			projectRoot = "";
 			targets = (
 				C4D742FE292A327700F71032 /* cinema-planner */,
+				C4EC1E742947CC5E00DFD8B5 /* cinema-plannerUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -352,6 +415,13 @@
 			files = (
 				C4D7430F292A327700F71032 /* LaunchScreen.storyboard in Resources */,
 				C4D7430C292A327700F71032 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4EC1E732947CC5E00DFD8B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,7 +473,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C4EC1E712947CC5E00DFD8B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4EC1E862947D0D800DFD8B5 /* String+ExtensionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C4EC1E7A2947CC5E00DFD8B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4D742FE292A327700F71032 /* cinema-planner */;
+			targetProxy = C4EC1E792947CC5E00DFD8B5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C4D7430D292A327700F71032 /* LaunchScreen.storyboard */ = {
@@ -583,6 +669,38 @@
 			};
 			name = Release;
 		};
+		C4EC1E7B2947CC5E00DFD8B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mpilo.pillz.cinema-plannerUnitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cinema-planner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/cinema-planner";
+			};
+			name = Debug;
+		};
+		C4EC1E7C2947CC5E00DFD8B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mpilo.pillz.cinema-plannerUnitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cinema-planner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/cinema-planner";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -600,6 +718,15 @@
 			buildConfigurations = (
 				C4D74314292A327700F71032 /* Debug */,
 				C4D74315292A327700F71032 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4EC1E7D2947CC5E00DFD8B5 /* Build configuration list for PBXNativeTarget "cinema-plannerUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4EC1E7B2947CC5E00DFD8B5 /* Debug */,
+				C4EC1E7C2947CC5E00DFD8B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
