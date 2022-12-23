@@ -29,7 +29,7 @@ struct User: Codable {
 class UserManager: UserManageable {
     func login(withEmail email: String, withPassword password: String, completion: @escaping (Result<LoginResponse, NetworkError>) -> Void) {
         print("in the user")
-        guard let url = URL(string: "\(Constants.localbaseURL)/api/v1/auth/login") else {
+        guard let url = URL(string: "\(Constants.apiBaseURL)/api/v1/auth/login") else {
             return
         }
         
