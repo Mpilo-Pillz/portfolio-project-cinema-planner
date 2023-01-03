@@ -8,3 +8,6 @@ GET {{HOST_NAME}}/api/v1/tmdb/getTrendingTvShows
 
 ### Get Upcoming Movies
 GET {{HOST_NAME}}/api/v1/tmdb/getUpcomingMovies
+
+### Search trailers
+GET {{LOCAL_HOST_NAME}}/api/v1/youtube/searchTrailers?query=avatar
