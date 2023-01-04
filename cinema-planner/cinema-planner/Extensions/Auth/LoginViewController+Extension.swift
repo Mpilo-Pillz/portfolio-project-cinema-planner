@@ -62,6 +62,7 @@ extension LoginViewController {
 // MARK: Actions
 extension LoginViewController {
     @objc func signInTapped(sender: UIButton) {
+        signInButton.configuration?.showsActivityIndicator = true
         errorMessageLabel.isHidden = true
         login()
     }
@@ -69,11 +70,13 @@ extension LoginViewController {
     private func login() {
         guard let username = username, let password = password else {
             assertionFailure("Username / Password should not be nil")
+            signInButton.configuration?.showsActivityIndicator = false
             return
         }
         
         if username.isEmpty || password.isEmpty {
             configureView(withMessage: "Username / password should not be blank")
+            signInButton.configuration?.showsActivityIndicator = false
             return
         }
         
@@ -83,12 +86,14 @@ extension LoginViewController {
                 
                 if (!user.isAuthenticated) {
                     configureView(withMessage: "Incorrect username / password")
+                    signInButton.configuration?.showsActivityIndicator = false
                     return
                 }
                 onSuccessfulAuthentication()
                 
             case .failure(let error):
                 configureView(withMessage: "Something went wrong. Please try again later")
+                signInButton.configuration?.showsActivityIndicator = false
                 print(error)
             }
         }
