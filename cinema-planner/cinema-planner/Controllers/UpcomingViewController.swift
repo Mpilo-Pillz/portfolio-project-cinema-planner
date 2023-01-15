@@ -9,7 +9,7 @@ import UIKit
 
 class UpcomingViewController: UIViewController {
     
-    private var isLoaded = true
+    private var isLoaded = false
     private var titles: [Title] = [Title]()
     
     private let upcomingTable: UITableView = {
@@ -44,8 +44,10 @@ class UpcomingViewController: UIViewController {
                 DispatchQueue.main.async {
                     self?.upcomingTable.reloadData()
                 }
+                self?.isLoaded = true
             case .failure(let error):
                 print(error.localizedDescription)
+                self?.isLoaded = true
             }
         }
     }
@@ -53,12 +55,15 @@ class UpcomingViewController: UIViewController {
 
 extension UpcomingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titles.count
+        if isLoaded {
+            return titles.count
+            
+        }
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if isLoaded {
-            
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TitleTableViewCell.identifier, for: indexPath) as? TitleTableViewCell else {
                 return UITableViewCell()
             }
