@@ -9,11 +9,13 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
+    private var isLoaded = false
     public var titles: [Title] = [Title]()
     
     private let discoverTable: UITableView = {
         let table = UITableView()
         table.register(TitleTableViewCell.self, forCellReuseIdentifier: TitleTableViewCell.identifier)
+        table.register(SkeletonTitleTableViewCell.self, forCellReuseIdentifier: SkeletonTitleTableViewCell.identifier)
         return table
     }()
     
@@ -50,9 +52,10 @@ class SearchViewController: UIViewController {
                 DispatchQueue.main.async {
                     self?.discoverTable.reloadData()
                 }
+                self?.isLoaded = true
             case .failure(let error):
                 print(error.localizedDescription)
-                
+                self?.isLoaded = true
             }
         }
     }
@@ -65,17 +68,26 @@ class SearchViewController: UIViewController {
 
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titles.count
+        if isLoaded {
+            return titles.count
+        }
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TitleTableViewCell.identifier, for: indexPath) as? TitleTableViewCell else {
+        if isLoaded {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: TitleTableViewCell.identifier, for: indexPath) as? TitleTableViewCell else {
+                return UITableViewCell()
+            }
+            let title = titles[indexPath.row]
+            let model = TitleViewModel(titleName: title.original_name ?? title.original_title ?? "Untitled Video", posterURL: title.poster_path ?? "https://picsum.photos/200/300")
+            cell.configure(with: model)
+            
+            return cell
+        }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SkeletonTitleTableViewCell.identifier, for: indexPath) as? SkeletonTitleTableViewCell else {
             return UITableViewCell()
         }
-        let title = titles[indexPath.row]
-        let model = TitleViewModel(titleName: title.original_name ?? title.original_title ?? "Untitled Video", posterURL: title.poster_path ?? "https://picsum.photos/200/300")
-        cell.configure(with: model)
-        
         return cell
     }
     
