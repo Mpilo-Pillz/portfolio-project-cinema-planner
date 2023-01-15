@@ -7,7 +7,7 @@
 
 import UIKit
 
-func makeLable(withText text:String, alignment: NSTextAlignment, forTextStyle: UIFont.TextStyle) -> UILabel {
+func makeLabel(withText text:String, alignment: NSTextAlignment, forTextStyle: UIFont.TextStyle) -> UILabel {
     let label = UILabel()
     
     label.translatesAutoresizingMaskIntoConstraints = false
@@ -33,3 +33,5 @@ func makeErrorLabel(withText text:String) -> UILabel {
     
     return errorLabel
 }
+
+
