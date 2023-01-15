@@ -19,8 +19,8 @@ class LoginViewController: UIViewController {
     
     var userManager: UserManageable = UserManager()
     
-    let titleLabel = makeLable(withText: "Cinema Planner", alignment: .center, forTextStyle: .largeTitle)
-    let subTitleLabel = makeLable(withText: "Never miss a movie premier again!", alignment: .center, forTextStyle: .title3)
+    let titleLabel = makeLabel(withText: "Cinema Planner", alignment: .center, forTextStyle: .largeTitle)
+    let subTitleLabel = makeLabel(withText: "Never miss a movie premier again!", alignment: .center, forTextStyle: .title3)
     
     let loginView = LoginView()
     var signInButton = makePrimaryButton(withText: "Sign In")
