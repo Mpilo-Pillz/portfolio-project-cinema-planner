@@ -91,7 +91,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         //        TODO: [DEPRECATION WARNING] replace with defaultContentConfiguration
         header.textLabel?.font = .systemFont(ofSize: 18, weight: .semibold)
         header.textLabel?.frame = CGRect(x: header.bounds.origin.x + 20, y:header.bounds.origin.y, width: 100, height: header.bounds.height)
-        header.textLabel?.textColor = .white
+        header.textLabel?.textColor = .label
         header.textLabel?.text = header.textLabel?.text?.capitalizeFirstLetter()
     }
     
