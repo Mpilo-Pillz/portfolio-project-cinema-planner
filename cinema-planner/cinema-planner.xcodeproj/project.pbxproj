@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C4254F3A29667B4A0058D542 /* SkeletonTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4254F3929667B4A0058D542 /* SkeletonTitleTableViewCell.swift */; };
 		C42FCFB12973D714001FC55C /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42FCFB02973D714001FC55C /* ViewFactory.swift */; };
+		C42FCFB52973FFF3001FC55C /* SkeletonLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42FCFB42973FFF3001FC55C /* SkeletonLoadable.swift */; };
 		C4795F38292B5D0A003D8E64 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4795F37292B5D0A003D8E64 /* APICaller.swift */; };
 		C4795F3A292B6641003D8E64 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4795F39292B6641003D8E64 /* Video.swift */; };
 		C4795F3D292B69F3003D8E64 /* Network+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4795F3C292B69F3003D8E64 /* Network+Enum.swift */; };
@@ -67,6 +68,7 @@
 /* Begin PBXFileReference section */
 		C4254F3929667B4A0058D542 /* SkeletonTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonTitleTableViewCell.swift; sourceTree = "<group>"; };
 		C42FCFB02973D714001FC55C /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
+		C42FCFB42973FFF3001FC55C /* SkeletonLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLoadable.swift; sourceTree = "<group>"; };
 		C4795F37292B5D0A003D8E64 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		C4795F39292B6641003D8E64 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Video.swift; path = "cinema-planner/Managers/Video.swift"; sourceTree = SOURCE_ROOT; };
 		C4795F3C292B69F3003D8E64 /* Network+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network+Enum.swift"; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 			children = (
 				C4D74330292A659B00F71032 /* LocalState+Utils.swift */,
 				C493668B293A8A19003C6C3D /* UITextFieldSecureToggle+Utils.swift */,
+				C42FCFB42973FFF3001FC55C /* SkeletonLoadable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				C4795F4E292D262E003D8E64 /* YoutubeSearchResponse.swift in Sources */,
 				C49366882931FEE5003C6C3D /* StackViewFactory.swift in Sources */,
 				C4D74327292A4E2300F71032 /* HomeViewController+Extension.swift in Sources */,
+				C42FCFB52973FFF3001FC55C /* SkeletonLoadable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
