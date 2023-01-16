@@ -10,6 +10,8 @@
 		C4254F3A29667B4A0058D542 /* SkeletonTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4254F3929667B4A0058D542 /* SkeletonTitleTableViewCell.swift */; };
 		C42FCFB12973D714001FC55C /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42FCFB02973D714001FC55C /* ViewFactory.swift */; };
 		C42FCFB52973FFF3001FC55C /* SkeletonLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42FCFB42973FFF3001FC55C /* SkeletonLoadable.swift */; };
+		C42FCFB72974665D001FC55C /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42FCFB62974665D001FC55C /* AuthManager.swift */; };
+		C42FCFBA29747027001FC55C /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42FCFB929747027001FC55C /* KeychainHelper.swift */; };
 		C4795F38292B5D0A003D8E64 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4795F37292B5D0A003D8E64 /* APICaller.swift */; };
 		C4795F3A292B6641003D8E64 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4795F39292B6641003D8E64 /* Video.swift */; };
 		C4795F3D292B69F3003D8E64 /* Network+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4795F3C292B69F3003D8E64 /* Network+Enum.swift */; };
@@ -69,6 +71,8 @@
 		C4254F3929667B4A0058D542 /* SkeletonTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonTitleTableViewCell.swift; sourceTree = "<group>"; };
 		C42FCFB02973D714001FC55C /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
 		C42FCFB42973FFF3001FC55C /* SkeletonLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLoadable.swift; sourceTree = "<group>"; };
+		C42FCFB62974665D001FC55C /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		C42FCFB929747027001FC55C /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		C4795F37292B5D0A003D8E64 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		C4795F39292B6641003D8E64 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Video.swift; path = "cinema-planner/Managers/Video.swift"; sourceTree = SOURCE_ROOT; };
 		C4795F3C292B69F3003D8E64 /* Network+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network+Enum.swift"; sourceTree = "<group>"; };
@@ -135,6 +139,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C42FCFB829747008001FC55C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C42FCFB929747027001FC55C /* KeychainHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		C4372544292B580200E31F45 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				C493668E293A926C003C6C3D /* UserManager.swift */,
+				C42FCFB62974665D001FC55C /* AuthManager.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -218,6 +231,7 @@
 		C4D74301292A327700F71032 /* cinema-planner */ = {
 			isa = PBXGroup;
 			children = (
+				C42FCFB829747008001FC55C /* Helpers */,
 				C4795F3B292B69DE003D8E64 /* Enums */,
 				C4372544292B580200E31F45 /* Managers */,
 				C4D7432F292A658000F71032 /* Utils */,
@@ -442,6 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4D7431D292A366F00F71032 /* SearchViewController.swift in Sources */,
+				C42FCFB72974665D001FC55C /* AuthManager.swift in Sources */,
 				C493668A2932A3DB003C6C3D /* LoginView+Extension.swift in Sources */,
 				C493668F293A926C003C6C3D /* UserManager.swift in Sources */,
 				C4D74307292A327700F71032 /* MainTabBarViewController.swift in Sources */,
@@ -449,6 +464,7 @@
 				C493667929308002003C6C3D /* LabelFactory.swift in Sources */,
 				C4795F50292D2CD1003D8E64 /* TitlePreviewViewController.swift in Sources */,
 				C42FCFB12973D714001FC55C /* ViewFactory.swift in Sources */,
+				C42FCFBA29747027001FC55C /* KeychainHelper.swift in Sources */,
 				C4795F38292B5D0A003D8E64 /* APICaller.swift in Sources */,
 				C493668C293A8A19003C6C3D /* UITextFieldSecureToggle+Utils.swift in Sources */,
 				C4795F3A292B6641003D8E64 /* Video.swift in Sources */,
