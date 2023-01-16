@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct AuthManager: Codable {
+    let accessToken: String
+    }
