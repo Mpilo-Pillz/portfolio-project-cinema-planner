@@ -14,6 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UITabBarControllerDeleg
     let mainTabBarViewController = MainTabBarViewController()
     let loginViewController = LoginViewController()
     
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         LocalState.hasMadeTitleBarScrollable = false
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -26,8 +27,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UITabBarControllerDeleg
         loginViewController.delegate = self
         onboardingContainerViewController.delegate = self
         
-        displayScreenBasedOnOnboardingStatus()
+//        displayScreenBasedOnOnboardingStatus()
+        displayViewBasedOnAuthStatus()
         
+    }
+    
+    private func displayViewBasedOnAuthStatus() {
+        let accessToken = KeychainHelper.keychainHelper.read(service: "accessToken", account: "backend", type: AuthManager.self)
+        
+        if accessToken?.accessToken == "th15IsS3cure" {
+            let defaultValue = "no token"
+            print("--------------access token is------\(accessToken?.accessToken ?? defaultValue)")
+            return setRootViewController(mainTabBarViewController)
+        }
+        return displayScreenBasedOnOnboardingStatus()
     }
     
     private func displayScreenBasedOnOnboardingStatus() {
