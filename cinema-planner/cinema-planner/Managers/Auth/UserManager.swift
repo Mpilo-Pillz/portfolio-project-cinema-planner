@@ -14,6 +14,7 @@ protocol UserManageable: AnyObject {
 struct LoginResponse: Codable {
     let isAuthenticated: Bool
     let message: String
+    let accessToken: String
 }
 
 enum NetworkError: Error {
@@ -54,6 +55,10 @@ class UserManager: UserManageable {
                 do {
                     let response = try JSONDecoder().decode(LoginResponse.self, from: data)
                     completion(.success(response))
+                    let auth = AuthManager(accessToken: response.accessToken)
+                    let service = "accessToken"
+                    let account = "backend"
+                    KeychainHelper.keychainHelper.save(auth, service: service, account: account)
                     print("user: \(response)")
                 } catch {
                     completion(.failure(.decodingError))
