@@ -10,7 +10,7 @@ exports.login = (req, res) => {
 
   try {
     if (existingUser.email === email && existingUser.password === password) {
-      res.json({ message: "You are logged in", isAuthenticated: true });
+      res.json({ message: "You are logged in", isAuthenticated: true, accessToken: "th15IsS3cure" });
       return;
     }
 
