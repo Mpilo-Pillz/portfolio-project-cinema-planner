@@ -1,12 +1,22 @@
 const HttpError = require("../../models/http-error");
+const { default: user } = require("../../models/user");
+const User = require("../../models/user");
 
-exports.login = (req, res) => {
+exports.login = async (req, res) => {
   const { email, password } = req.body;
+  
 
   let existingUser = {
     email: "Dev",
     password: "dev",
   };
+
+  try {
+    existingUser = await User.find({}, "-password");
+  } catch (err) {
+    const error = new HttpError("Logging in failed, please try again later", 500);
+    return next(err)
+  }
 
   try {
     if (existingUser.email === email && existingUser.password === password) {
