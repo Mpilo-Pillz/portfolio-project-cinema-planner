@@ -6,6 +6,8 @@ const bcrypt = require("bcryptjs");
 
 const User = require("../../models/user");
 
+const { accessSecret } = require("../../utils/gcp");
+
 exports.login = async (req, res, next) => {
   const { email, password } = req.body;
 
@@ -49,11 +51,11 @@ exports.login = async (req, res, next) => {
     return next(error);
   }
   let accessToken;
-
+  const secretKey = await accessSecret(process.env.SECRET_KEY)
   try {
     accessToken = jwt.sign(
       { userId: existingUser.id, email: existingUser.email },
-      process.env.SECRET_KEY,
+      secretKey,
       { expiresIn: "1h" }
     );
   } catch (err) {
@@ -133,11 +135,11 @@ exports.signup = async (req, res, next) => {
   }
 
   let accessToken;
-
+  const secretKey = await accessSecret(process.env.SECRET_KEY)
   try {
     accessToken = jwt.sign(
       { userId: createdUser.id, email: createdUser.email },
-      process.env.SECRET_KEY,
+      secretKey,
       { expiresIn: "1h" }
     );
   } catch (err) {
