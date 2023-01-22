@@ -35,7 +35,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UITabBarControllerDeleg
     private func displayViewBasedOnAuthStatus() {
         let accessToken = KeychainHelper.keychainHelper.read(service: "accessToken", account: "backend", type: AuthManager.self)
         
-        if accessToken?.accessToken == "th15IsS3cure" {
+        if accessToken?.accessToken != nil {
             let defaultValue = "no token"
             print("--------------access token is------\(accessToken?.accessToken ?? defaultValue)")
             return setRootViewController(mainTabBarViewController)

@@ -83,8 +83,7 @@ extension LoginViewController {
         userManager.login(withEmail: username, withPassword: password) { [self] result in
             switch result {
             case .success(let user):
-                
-                if (!user.isAuthenticated) {
+                if (user.accessToken == nil) {
                     configureView(withMessage: "Incorrect username / password")
                     signInButton.configuration?.showsActivityIndicator = false
                     return
@@ -119,6 +118,7 @@ extension LoginViewController {
     private func onSuccessfulAuthentication() {
         signInButton.configuration?.showsActivityIndicator = true
         delegate?.didLogin()
+    
     }
 }
 
