@@ -58,7 +58,7 @@ class HomeViewController: UIViewController {
         
         
         navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(image: UIImage(systemName: "person")?.withTintColor(.label, renderingMode: .alwaysOriginal), style: .done, target: self, action: nil),
+            UIBarButtonItem(image: UIImage(systemName: "person")?.withTintColor(.label, renderingMode: .alwaysOriginal), style: .done, target: self, action: #selector(logout)),
             UIBarButtonItem(image: UIImage(systemName: self.scrollIcon)?.withTintColor(.label, renderingMode: .alwaysOriginal), style: .done, target: self, action: #selector(toggleScroll) ),
             UIBarButtonItem(image: UIImage(systemName: "play.rectangle")?.withTintColor(.label, renderingMode: .alwaysOriginal), style: .done, target: self, action: nil)
         ]
@@ -80,5 +80,9 @@ extension HomeViewController {
         
         configureNavBar()
         
+    }
+    
+    @objc func logout() {
+        KeychainHelper.keychainHelper.delete(service: "accessToken", account: "backend")
     }
 }
