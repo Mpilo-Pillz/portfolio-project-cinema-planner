@@ -68,7 +68,9 @@ exports.login = async (req, res, next) => {
   res.json({
     userId: existingUser.id,
     user: existingUser.email,
-    token: accessToken,
+    accessToken,
+    isAuthenticated: true,
+    message: "User has successfully been authenticated, Toke expires in 1 hour"
   });
 };
 
@@ -153,6 +155,6 @@ exports.signup = async (req, res, next) => {
     .json({
       userId: createdUser.id,
       email: createdUser.email,
-      token: accessToken,
+      accessToken,
     });
 };
