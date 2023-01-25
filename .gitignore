@@ -129,3 +129,9 @@ lerna-debug.log*
 
 # env
 *.env
+
+junk.js
+readme.html
+*.yaml
+*.yml
+api-cinema-planner/app.yaml

@@ -9,9 +9,14 @@
   "dependencies": {
     "@google-cloud/secret-manager": "^4.2.0",
     "axios": "^1.2.2",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "express-validator": "^6.14.3",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.8.4",
+    "mongoose-unique-validator": "^3.1.0"
   },
   "scripts": {
     "start": "node index.js",

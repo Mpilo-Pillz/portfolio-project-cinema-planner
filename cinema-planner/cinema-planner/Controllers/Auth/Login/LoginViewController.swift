@@ -19,6 +19,8 @@ class LoginViewController: UIViewController {
     
     var userManager: UserManageable = UserManager()
     
+    let accessToken = "will-come-from-api"
+    
     let titleLabel = makeLabel(withText: "Cinema Planner", alignment: .center, forTextStyle: .largeTitle)
     let subTitleLabel = makeLabel(withText: "Never miss a movie premier again!", alignment: .center, forTextStyle: .title3)
     
