@@ -22,6 +22,7 @@ class ProfileSettingsViewController: UIViewController {
         setupNavigationBar()
         setupViews()
         setupContraints()
+        darkModeToggle.addTarget(self, action: #selector(onSwitchStateDidChange), for: .valueChanged)
     }
     
     func setupNavigationBar() {
@@ -49,5 +50,22 @@ class ProfileSettingsViewController: UIViewController {
             darkModeToggle.centerYAnchor.constraint(equalTo: darkModeLabel.centerYAnchor ),
             darkModeToggle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -spacing)
         ])
+    }
+    
+    @objc func onSwitchStateDidChange(_ sender: UISwitch) {
+        //                let appDelegate = UIApplication.shared.windows.first // deprecated
+        
+        if #available(iOS 13.0, *) {
+            let appDelegate = UIApplication
+                .shared
+                .connectedScenes
+                .compactMap { ($0 as? UIWindowScene)?.keyWindow }
+                .first
+            
+            appDelegate?.overrideUserInterfaceStyle = sender.isOn ? .dark : .light
+            return
+        }
+        print("This feature is only supported in iOS 13 upwards")
+        
     }
 }
