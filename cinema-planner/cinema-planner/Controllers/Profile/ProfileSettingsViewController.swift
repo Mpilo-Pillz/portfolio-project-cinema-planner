@@ -8,22 +8,46 @@
 import UIKit
 
 class ProfileSettingsViewController: UIViewController {
-
+    
+    let margin: CGFloat = 20
+    let spacing: CGFloat = 32
+    
+    let darkModeSubLabel = makeSubLabel(withText: "Toggle between light and dark mode")
+    let darkModeLabel = makeLabel(withText: "Switch to Dark Mode", alignment: .left, forTextStyle: .body, alpha: 1)
+    let darkModeToggle = makeSwitch(isOn: false)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemRed
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .systemBackground
+        setupNavigationBar()
+        setupViews()
+        setupContraints()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupNavigationBar() {
+        navigationItem.title = "Your Profile Settings"
     }
-    */
-
+    
+    func setupViews() {
+        view.addSubview(darkModeSubLabel)
+        view.addSubview(darkModeLabel)
+        view.addSubview(darkModeToggle)
+    }
+    
+    func setupContraints() {
+        NSLayoutConstraint.activate([
+            darkModeSubLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: margin),
+            darkModeSubLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            darkModeLabel.topAnchor.constraint(equalTo: darkModeSubLabel.topAnchor, constant: margin * 2),
+            darkModeLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: spacing),
+        ])
+        
+        NSLayoutConstraint.activate([
+            darkModeToggle.centerYAnchor.constraint(equalTo: darkModeLabel.centerYAnchor ),
+            darkModeToggle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -spacing)
+        ])
+    }
 }
