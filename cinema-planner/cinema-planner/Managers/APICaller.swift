@@ -8,8 +8,8 @@
 import Foundation
 
 struct Constants {
-    static let localbaseURL = "http://localhost:4000"
-    static let apiBaseURL = "https://cinema-planner-372520.uc.r.appspot.com"
+    static let localbaseURL =  "https://cinema-planner-372520.uc.r.appspot.com"
+    static let apiBaseURL = "http://localhost:4000"
     static let bestYouTubeResult = 0
 }
 

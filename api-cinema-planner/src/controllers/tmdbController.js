@@ -4,9 +4,11 @@ const axios = require("axios");
 const { accessSecret } = require("../utils/gcp");
 
 const baseURL = "https://api.themoviedb.org";
+const tmdb_api_key = process.env.API_KEY;
 
 exports.getTrendingMovies = async (req, res) => {
-  const tmdb_api_key = await accessSecret(process.env.API_KEY);
+  // const tmdb_api_key = await accessSecret(process.env.API_KEY);
+  // const tmdb_api_key = process.env.API_KEY;
 
   const response = await axios(
     `${baseURL}/3/trending/movie/day?api_key=${tmdb_api_key}`
@@ -18,7 +20,7 @@ exports.getTrendingMovies = async (req, res) => {
 };
 
 exports.getTrendingTvShows = async (req, res) => {
-  const tmdb_api_key = await accessSecret(process.env.API_KEY);
+  // const tmdb_api_key = await accessSecret(process.env.API_KEY);
   const response = await axios(
     `${baseURL}/3/trending/tv/day?api_key=${tmdb_api_key}`
   );
@@ -28,7 +30,7 @@ exports.getTrendingTvShows = async (req, res) => {
 };
 
 exports.getUpcomingMovies = async (req, res) => {
-  const tmdb_api_key = await accessSecret(process.env.API_KEY);
+  // const tmdb_api_key = await accessSecret(process.env.API_KEY);
   const response = await axios(
     `${baseURL}/3/movie/upcoming?api_key=${tmdb_api_key}&language=en-US&page=1`
   );
@@ -38,7 +40,7 @@ exports.getUpcomingMovies = async (req, res) => {
 };
 
 exports.getPopularMovies = async (req, res) => {
-  const tmdb_api_key = await accessSecret(process.env.API_KEY);
+  // const tmdb_api_key = await accessSecret(process.env.API_KEY);
   const response = await axios(
     `${baseURL}/3/movie/popular?api_key=${tmdb_api_key}&language=en-US&page=1`
   );
@@ -49,7 +51,7 @@ exports.getPopularMovies = async (req, res) => {
 };
 
 exports.getTopRatedMovies = async (req, res) => {
-  const tmdb_api_key = await accessSecret(process.env.API_KEY);
+  // const tmdb_api_key = await accessSecret(process.env.API_KEY);
   const response = await axios(
     `${baseURL}/3/movie/top_rated?api_key=${tmdb_api_key}&language=en-US&page=1")`
   );
@@ -59,7 +61,7 @@ exports.getTopRatedMovies = async (req, res) => {
 };
 
 exports.getDiscoverMovies = async (req, res) => {
-  const tmdb_api_key = await accessSecret(process.env.API_KEY);
+  // const tmdb_api_key = await accessSecret(process.env.API_KEY);
   const response = await axios(
     `${baseURL}/3/discover/movie?api_key=${tmdb_api_key}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`
   );
@@ -69,7 +71,7 @@ exports.getDiscoverMovies = async (req, res) => {
 };
 
 exports.searchMovies = async (req, res) => {
-  const tmdb_api_key = await accessSecret(process.env.API_KEY);
+  // const tmdb_api_key = await accessSecret(process.env.API_KEY);
   const response = await axios(
     `${baseURL}/3/search/movie?api_key=${tmdb_api_key}&query=${req.query.query}`
   );

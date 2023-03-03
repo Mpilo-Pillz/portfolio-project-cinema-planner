@@ -7,6 +7,7 @@ const bcrypt = require("bcryptjs");
 const User = require("../../models/user");
 
 const { accessSecret } = require("../../utils/gcp");
+const secretKey = process.env.SECRET_KEY;
 
 exports.login = async (req, res, next) => {
   const { email, password } = req.body;
@@ -51,7 +52,8 @@ exports.login = async (req, res, next) => {
     return next(error);
   }
   let accessToken;
-  const secretKey = await accessSecret(process.env.SECRET_KEY)
+  // const secretKey = await accessSecret(process.env.SECRET_KEY)
+  const secretKey = process.env.SECRET_KEY;
   try {
     accessToken = jwt.sign(
       { userId: existingUser.id, email: existingUser.email },
@@ -70,7 +72,7 @@ exports.login = async (req, res, next) => {
     user: existingUser.email,
     accessToken,
     isAuthenticated: true,
-    message: "User has successfully been authenticated, Toke expires in 1 hour"
+    message: "User has successfully been authenticated, Toke expires in 1 hour",
   });
 };
 
@@ -137,7 +139,7 @@ exports.signup = async (req, res, next) => {
   }
 
   let accessToken;
-  const secretKey = await accessSecret(process.env.SECRET_KEY)
+  // const secretKey = await accessSecret(process.env.SECRET_KEY);
   try {
     accessToken = jwt.sign(
       { userId: createdUser.id, email: createdUser.email },
@@ -150,11 +152,9 @@ exports.signup = async (req, res, next) => {
     const error = new HttpError("Signing up failed, please try again.", 500);
     return next(error);
   }
-  res
-    .status(201)
-    .json({
-      userId: createdUser.id,
-      email: createdUser.email,
-      accessToken,
-    });
+  res.status(201).json({
+    userId: createdUser.id,
+    email: createdUser.email,
+    accessToken,
+  });
 };
