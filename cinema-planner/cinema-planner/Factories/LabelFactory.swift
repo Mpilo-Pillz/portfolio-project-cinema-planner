@@ -7,16 +7,17 @@
 
 import UIKit
 
-func makeLabel(withText text:String, alignment: NSTextAlignment, forTextStyle: UIFont.TextStyle) -> UILabel {
+func makeLabel(withText text:String, alignment: NSTextAlignment, forTextStyle: UIFont.TextStyle, alpha: CGFloat) -> UILabel {
     let label = UILabel()
     
     label.translatesAutoresizingMaskIntoConstraints = false
-    label.textAlignment = .center
+    label.textAlignment = alignment
     label.font = UIFont.preferredFont(forTextStyle: forTextStyle)
     label.adjustsFontForContentSizeCategory = true
     label.text = text
     label.numberOfLines = 0
-    label.alpha = 0
+    
+    label.alpha = alpha
     
     return label
 }
@@ -33,5 +34,18 @@ func makeErrorLabel(withText text:String) -> UILabel {
     
     return errorLabel
 }
+
+func makeSubLabel(withText text: String) -> UILabel {
+    let label = UILabel()
+    label.translatesAutoresizingMaskIntoConstraints = false
+    label.textColor = .gray
+    label.text = text
+    label.font = UIFont.systemFont(ofSize: 13)
+    label.numberOfLines = 0
+    
+    return label
+}
+
+
 
 

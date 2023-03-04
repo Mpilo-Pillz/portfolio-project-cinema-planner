@@ -6,15 +6,14 @@ const mongoose = require("mongoose");
 const { accessSecret } = require("./src/utils/gcp");
 const port = process.env.PORT || 4000;
 
-
 app.set("port", port);
 const server = http.createServer(app);
 
 async function startUpApp() {
   mongoose
-    .connect(await accessSecret(process.env.DB_CONNECTION_STRING) || process.env.DB_CONNECTION_STRING)
+    .connect(await process.env.DB_CONNECTION_STRING)
     .then(() => server.listen(port))
     .catch((err) => console.log(err));
 }
-
+// .connect(await accessSecret(process.env.DB_CONNECTION_STRING) || process.env.DB_CONNECTION_STRING)
 startUpApp();

@@ -30,3 +30,11 @@ func makePrimaryButton(withText text: String) -> UIButton {
     return primaryButton
     
 }
+
+func makeSwitch(isOn: Bool) -> UISwitch {
+    let uiSwitch = UISwitch()
+    uiSwitch.translatesAutoresizingMaskIntoConstraints = false
+    uiSwitch.isOn = isOn
+    
+    return uiSwitch
+}
