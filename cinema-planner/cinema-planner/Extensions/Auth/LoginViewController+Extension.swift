@@ -75,7 +75,7 @@ extension LoginViewController {
     }
     
     @objc func forgotPasswordTapped(sender: UIButton) {
-        print("Forgot ya password")
+        delegate?.didForgetPassword()
     }
     
     private func login() {

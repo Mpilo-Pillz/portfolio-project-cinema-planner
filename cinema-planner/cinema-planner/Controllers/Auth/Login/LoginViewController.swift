@@ -13,6 +13,7 @@ protocol LogoutDelegate: AnyObject {
 
 protocol LoginViewControllerDelegate: AnyObject {
     func didLogin()
+    func didForgetPassword()
 }
 
 class LoginViewController: UIViewController {
