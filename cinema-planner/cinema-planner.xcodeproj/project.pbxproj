@@ -12,6 +12,7 @@
 		C42FCFB52973FFF3001FC55C /* SkeletonLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42FCFB42973FFF3001FC55C /* SkeletonLoadable.swift */; };
 		C42FCFB72974665D001FC55C /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42FCFB62974665D001FC55C /* AuthManager.swift */; };
 		C42FCFBA29747027001FC55C /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42FCFB929747027001FC55C /* KeychainHelper.swift */; };
+		C437D9CD29B3B398008C2380 /* ForgotPasswordViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C437D9CC29B3B398008C2380 /* ForgotPasswordViewController+Extension.swift */; };
 		C441780C2986B318006F3CB4 /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441780B2986B318006F3CB4 /* ProfileSettingsViewController.swift */; };
 		C4795F38292B5D0A003D8E64 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4795F37292B5D0A003D8E64 /* APICaller.swift */; };
 		C4795F3A292B6641003D8E64 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4795F39292B6641003D8E64 /* Video.swift */; };
@@ -42,6 +43,7 @@
 		C493668C293A8A19003C6C3D /* UITextFieldSecureToggle+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C493668B293A8A19003C6C3D /* UITextFieldSecureToggle+Utils.swift */; };
 		C493668F293A926C003C6C3D /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C493668E293A926C003C6C3D /* UserManager.swift */; };
 		C4A3C2C429B39B4A0028A46C /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A3C2C329B39B4A0028A46C /* ForgotPasswordViewController.swift */; };
+		C4A3C2C729B3AAA10028A46C /* ProfileViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A3C2C629B3AAA10028A46C /* ProfileViewController+Extension.swift */; };
 		C4D74303292A327700F71032 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74302292A327700F71032 /* AppDelegate.swift */; };
 		C4D74305292A327700F71032 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74304292A327700F71032 /* SceneDelegate.swift */; };
 		C4D74307292A327700F71032 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74306292A327700F71032 /* MainTabBarViewController.swift */; };
@@ -75,6 +77,7 @@
 		C42FCFB42973FFF3001FC55C /* SkeletonLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLoadable.swift; sourceTree = "<group>"; };
 		C42FCFB62974665D001FC55C /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		C42FCFB929747027001FC55C /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		C437D9CC29B3B398008C2380 /* ForgotPasswordViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForgotPasswordViewController+Extension.swift"; sourceTree = "<group>"; };
 		C441780B2986B318006F3CB4 /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewController.swift; sourceTree = "<group>"; };
 		C4795F37292B5D0A003D8E64 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		C4795F39292B6641003D8E64 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Video.swift; path = "cinema-planner/Managers/Video.swift"; sourceTree = SOURCE_ROOT; };
@@ -103,6 +106,7 @@
 		C493668B293A8A19003C6C3D /* UITextFieldSecureToggle+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextFieldSecureToggle+Utils.swift"; sourceTree = "<group>"; };
 		C493668E293A926C003C6C3D /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		C4A3C2C329B39B4A0028A46C /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		C4A3C2C629B3AAA10028A46C /* ProfileViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileViewController+Extension.swift"; sourceTree = "<group>"; };
 		C4D742FF292A327700F71032 /* cinema-planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cinema-planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4D74302292A327700F71032 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4D74304292A327700F71032 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -209,6 +213,7 @@
 			children = (
 				C49366812931EE2F003C6C3D /* LoginViewController+Extension.swift */,
 				C49366892932A3DB003C6C3D /* LoginView+Extension.swift */,
+				C437D9CC29B3B398008C2380 /* ForgotPasswordViewController+Extension.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -228,6 +233,14 @@
 				C4A3C2C329B39B4A0028A46C /* ForgotPasswordViewController.swift */,
 			);
 			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		C4A3C2C529B3AA810028A46C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C4A3C2C629B3AAA10028A46C /* ProfileViewController+Extension.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		C4D742F6292A327700F71032 = {
@@ -322,6 +335,7 @@
 		C4D74325292A4DF500F71032 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C4A3C2C529B3AA810028A46C /* Profile */,
 				C49366802931EE10003C6C3D /* Auth */,
 				C4D74326292A4E2300F71032 /* HomeViewController+Extension.swift */,
 				C4795F3E292B6C81003D8E64 /* String+Extension.swift */,
@@ -485,6 +499,7 @@
 				C4D74324292A463900F71032 /* CollectionViewTableViewCell.swift in Sources */,
 				C493667929308002003C6C3D /* LabelFactory.swift in Sources */,
 				C441780C2986B318006F3CB4 /* ProfileSettingsViewController.swift in Sources */,
+				C4A3C2C729B3AAA10028A46C /* ProfileViewController+Extension.swift in Sources */,
 				C4795F50292D2CD1003D8E64 /* TitlePreviewViewController.swift in Sources */,
 				C42FCFB12973D714001FC55C /* ViewFactory.swift in Sources */,
 				C42FCFBA29747027001FC55C /* KeychainHelper.swift in Sources */,
@@ -500,6 +515,7 @@
 				C493667F2931EBAC003C6C3D /* LoginViewController.swift in Sources */,
 				C4254F3A29667B4A0058D542 /* SkeletonTitleTableViewCell.swift in Sources */,
 				C493667529307DC2003C6C3D /* OnboardingViewController.swift in Sources */,
+				C437D9CD29B3B398008C2380 /* ForgotPasswordViewController+Extension.swift in Sources */,
 				C4795F3F292B6C81003D8E64 /* String+Extension.swift in Sources */,
 				C4795F4A292B8EC6003D8E64 /* TitleViewModel.swift in Sources */,
 				C4D74303292A327700F71032 /* AppDelegate.swift in Sources */,

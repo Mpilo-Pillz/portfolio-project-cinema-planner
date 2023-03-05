@@ -14,6 +14,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UITabBarControllerDeleg
     let mainTabBarViewController = MainTabBarViewController()
     let loginViewController = LoginViewController()
     let forgotPasswordViewController = ForgotPasswordViewController()
+    let homeViewController = HomeViewController()
+    let profileSettingsViewController = ProfileSettingsViewController()
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         LocalState.hasMadeTitleBarScrollable = false
@@ -26,6 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UITabBarControllerDeleg
         
         loginViewController.delegate = self
         onboardingContainerViewController.delegate = self
+        profileSettingsViewController.delegate = self
         
 //        displayScreenBasedOnOnboardingStatus()
         displayViewBasedOnAuthStatus()
@@ -94,7 +97,8 @@ extension SceneDelegate {
     }
 }
 
-extension SceneDelegate: LoginViewControllerDelegate, OnboardingContainerViewControllerDelegate {
+extension SceneDelegate: LoginViewControllerDelegate, OnboardingContainerViewControllerDelegate, ProfileSettingsViewControllerDelegate {
+    
     func didLogin() {
         setRootViewController(mainTabBarViewController)
     }
@@ -104,8 +108,13 @@ extension SceneDelegate: LoginViewControllerDelegate, OnboardingContainerViewCon
         displayNextScreen()
     }
     
-    func didForgetPassword(){
+    func didForgetPassword() {
         setRootViewController(forgotPasswordViewController)
+    }
+    
+    func didLogout() {
+        
+        setRootViewController(mainTabBarViewController)
     }
 }
 
