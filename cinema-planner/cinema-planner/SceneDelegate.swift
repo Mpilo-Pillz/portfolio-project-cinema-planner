@@ -11,7 +11,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UITabBarControllerDeleg
     
     var window: UIWindow?
     let onboardingContainerViewController = OnboardingContainerViewController()
-    let mainTabBarViewController = MainTabBarViewController()
+    var mainTabBarViewController = MainTabBarViewController()
+        
+    
     let loginViewController = LoginViewController()
     let forgotPasswordViewController = ForgotPasswordViewController()
     let homeViewController = HomeViewController()
@@ -29,7 +31,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UITabBarControllerDeleg
         loginViewController.delegate = self
         onboardingContainerViewController.delegate = self
         profileSettingsViewController.delegate = self
-        
+        mainTabBarViewController.profileSettingsVC = profileSettingsViewController
+       
+    
 //        displayScreenBasedOnOnboardingStatus()
         displayViewBasedOnAuthStatus()
         
@@ -113,8 +117,8 @@ extension SceneDelegate: LoginViewControllerDelegate, OnboardingContainerViewCon
     }
     
     func didLogout() {
-        
-        setRootViewController(mainTabBarViewController)
+        KeychainHelper.keychainHelper.delete(service: "accessToken", account: "backend")
+        setRootViewController(loginViewController)
     }
 }
 
