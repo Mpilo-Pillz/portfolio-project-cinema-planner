@@ -106,9 +106,18 @@ extension AdvancedTextfieldUIView {
     }
 }
 
-// MARK: - UITextFieldDelegate
+// MARK: - UITextFieldDelegate, Gontse
 extension AdvancedTextfieldUIView: UITextFieldDelegate {
     @objc func textFieldEditingChanged(_ sender: UITextField) {
         delegate?.editingChanged(self)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print("Ola Gontse, this is supposed to run when I click outside the textfield\(textField.text ?? "")")
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("Ola Gontse, this should run when I click enter: \(textField.text ?? "")")
+        return true
     }
 }
