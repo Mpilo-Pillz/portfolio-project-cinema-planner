@@ -5,4 +5,11 @@
 //  Created by Mpilo Pillz on 2023/03/18.
 //
 
-import Foundation
+import UIKit
+
+func makeIconImageView() {
+    let iconImageView = UIImageView()
+    
+    iconImageView.translatesAutoresizingMaskIntoConstraints = false
+    
+}
