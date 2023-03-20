@@ -25,8 +25,10 @@ class ForgotPasswordViewController: UIViewController, AdvancedTextFielDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Assining the currwnt password textfield delegate to self
         currentPasswordTextField.delegate = self
         
+//        setup()
         layoutForgotPasswordTopScreen()
         styleForgotPasswordViewController()
         layoutForgotPasswordViewController()
