@@ -9,7 +9,7 @@ import UIKit
 
 class PasswordCriteriaUIView: UIView {
     
-    let passwordCriteriaStackView = makeStackView(withSpacing: 8, withAxis: .vertical)
+    let passwordCriteriaStackView = makeStackView(withSpacing: 8, withAxis: .horizontal)
     let passwordCriteriaImageView = UIImageView()
     let passwordCriteriaLabel = UILabel()
     
