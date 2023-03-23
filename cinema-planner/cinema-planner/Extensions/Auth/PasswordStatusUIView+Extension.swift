@@ -10,6 +10,7 @@ import UIKit
 extension PasswordStatusUIView {
     
     func stylePasswordStatusUIView() {
+        backgroundColor = .tertiarySystemFill
         
         criteriaLabel.numberOfLines = 0
         criteriaLabel.lineBreakMode = .byWordWrapping
@@ -20,10 +21,12 @@ extension PasswordStatusUIView {
         lowercaseCriteriaView.translatesAutoresizingMaskIntoConstraints = false
         digitCriteriaView.translatesAutoresizingMaskIntoConstraints = false
         specialCharacterCriteriaView.translatesAutoresizingMaskIntoConstraints = false
+        
+        passwordStatusStackView.distribution = .equalCentering
     }
     
     func passwordStatusUIViewLayout() {
-        passwordStatusStackView.distribution = .equalCentering
+        
         
         passwordStatusStackView.addArrangedSubview(lengthCriteriaView)
         passwordStatusStackView.addArrangedSubview(criteriaLabel)
