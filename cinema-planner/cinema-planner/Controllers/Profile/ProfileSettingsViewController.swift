@@ -7,7 +7,14 @@
 
 import UIKit
 
+
+
+protocol ProfileSettingsViewControllerDelegate: AnyObject {
+    func didLogout()
+}
+
 class ProfileSettingsViewController: UIViewController {
+    weak var delegate: ProfileSettingsViewControllerDelegate?
     
     let margin: CGFloat = 20
     let spacing: CGFloat = 32
@@ -16,6 +23,10 @@ class ProfileSettingsViewController: UIViewController {
     let darkModeLabel = makeLabel(withText: "Switch to Dark Mode", alignment: .left, forTextStyle: .body, alpha: 1)
     let darkModeToggle = makeSwitch(isOn: false)
     
+    let logoutButton = makeLinkButton(withText: "Logout")
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -23,6 +34,8 @@ class ProfileSettingsViewController: UIViewController {
         setupViews()
         setupContraints()
         darkModeToggle.addTarget(self, action: #selector(onSwitchStateDidChange), for: .valueChanged)
+        logoutButton.addTarget(self, action: #selector(logoutTapped), for: .primaryActionTriggered)
+        
     }
     
     func setupNavigationBar() {
@@ -33,6 +46,11 @@ class ProfileSettingsViewController: UIViewController {
         view.addSubview(darkModeSubLabel)
         view.addSubview(darkModeLabel)
         view.addSubview(darkModeToggle)
+        view.addSubview(logoutButton)
+    }
+    
+   func logout() {
+        delegate?.didLogout()
     }
     
     func setupContraints() {
@@ -49,6 +67,11 @@ class ProfileSettingsViewController: UIViewController {
         NSLayoutConstraint.activate([
             darkModeToggle.centerYAnchor.constraint(equalTo: darkModeLabel.centerYAnchor ),
             darkModeToggle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -spacing)
+        ])
+        
+        NSLayoutConstraint.activate([
+            logoutButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            logoutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -10)
         ])
     }
     
@@ -67,5 +90,5 @@ class ProfileSettingsViewController: UIViewController {
         }
         print("This feature is only supported in iOS 13 upwards")
         
-    }
+    }  
 }

@@ -31,6 +31,15 @@ func makePrimaryButton(withText text: String) -> UIButton {
     
 }
 
+func makeLinkButton(withText text: String) -> UIButton {
+    let linkButton = UIButton(type: .system)
+    
+    linkButton.translatesAutoresizingMaskIntoConstraints = false
+    linkButton.setTitle(text, for: [])
+    
+    return linkButton
+}
+
 func makeSwitch(isOn: Bool) -> UISwitch {
     let uiSwitch = UISwitch()
     uiSwitch.translatesAutoresizingMaskIntoConstraints = false

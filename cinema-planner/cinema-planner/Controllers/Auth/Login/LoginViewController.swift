@@ -7,12 +7,11 @@
 
 import UIKit
 
-protocol LogoutDelegate: AnyObject {
-    func didLogout()
-}
+
 
 protocol LoginViewControllerDelegate: AnyObject {
     func didLogin()
+    func didForgetPassword()
 }
 
 class LoginViewController: UIViewController {
@@ -27,6 +26,7 @@ class LoginViewController: UIViewController {
     let loginView = LoginView()
     var signInButton = makePrimaryButton(withText: "Sign In")
     let errorMessageLabel = makeErrorLabel(withText: "")
+    let forgotPasswordLinkButton = makeLinkButton(withText: "Forgot your password?")
     
     weak var delegate: LoginViewControllerDelegate?
     
@@ -48,6 +48,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         signInButton.addTarget(self, action: #selector(signInTapped), for: .primaryActionTriggered)
+        forgotPasswordLinkButton.addTarget(self, action: #selector(forgotPasswordTapped), for: .primaryActionTriggered)
         
         layout()
     }

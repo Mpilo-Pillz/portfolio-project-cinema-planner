@@ -11,9 +11,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UITabBarControllerDeleg
     
     var window: UIWindow?
     let onboardingContainerViewController = OnboardingContainerViewController()
-    let mainTabBarViewController = MainTabBarViewController()
-    let loginViewController = LoginViewController()
+    var mainTabBarViewController = MainTabBarViewController()
+        
     
+    let loginViewController = LoginViewController()
+    let forgotPasswordViewController = ForgotPasswordViewController()
+    let homeViewController = HomeViewController()
+    let profileSettingsViewController = ProfileSettingsViewController()
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         LocalState.hasMadeTitleBarScrollable = false
@@ -26,7 +30,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UITabBarControllerDeleg
         
         loginViewController.delegate = self
         onboardingContainerViewController.delegate = self
-        
+        profileSettingsViewController.delegate = self
+        mainTabBarViewController.profileSettingsVC = profileSettingsViewController
+       
+    
 //        displayScreenBasedOnOnboardingStatus()
         displayViewBasedOnAuthStatus()
         
@@ -94,7 +101,8 @@ extension SceneDelegate {
     }
 }
 
-extension SceneDelegate: LoginViewControllerDelegate, OnboardingContainerViewControllerDelegate {
+extension SceneDelegate: LoginViewControllerDelegate, OnboardingContainerViewControllerDelegate, ProfileSettingsViewControllerDelegate {
+    
     func didLogin() {
         setRootViewController(mainTabBarViewController)
     }
@@ -102,6 +110,15 @@ extension SceneDelegate: LoginViewControllerDelegate, OnboardingContainerViewCon
     func didfinishOnboarding() {
         LocalState.hasOnboarded = true
         displayNextScreen()
+    }
+    
+    func didForgetPassword() {
+        setRootViewController(forgotPasswordViewController)
+    }
+    
+    func didLogout() {
+        KeychainHelper.keychainHelper.delete(service: "accessToken", account: "backend")
+        setRootViewController(loginViewController)
     }
 }
 

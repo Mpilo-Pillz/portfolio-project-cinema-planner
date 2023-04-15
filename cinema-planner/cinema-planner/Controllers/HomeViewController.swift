@@ -7,6 +7,10 @@
 
 import UIKit
 
+//protocol HomeViewControllerDelegate: AnyObject {
+//    func didLogout()
+//}
+
 class HomeViewController: UIViewController {
     
     private var randomTrendingMovie: Title?
@@ -14,6 +18,9 @@ class HomeViewController: UIViewController {
     
     let sectionTitles: [String] = ["Trending Movies", "Trending Tv", "Popular",  "Upcoming Movies", "Top rated"]
     var scrollIcon = "scroll.fill"
+    
+//    weak var delegate: HomeViewControllerDelegate?
+    
     private let homeFeedTable: UITableView = {
         
         let table = UITableView(frame: .zero, style: .grouped) // adds the header and makes it the same as ios settings page
@@ -84,5 +91,6 @@ extension HomeViewController {
     
     @objc func logout() {
         KeychainHelper.keychainHelper.delete(service: "accessToken", account: "backend")
+
     }
 }

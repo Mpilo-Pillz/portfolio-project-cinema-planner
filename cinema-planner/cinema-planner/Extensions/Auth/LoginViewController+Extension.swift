@@ -15,6 +15,7 @@ extension LoginViewController {
         view.addSubview(loginView)
         view.addSubview(signInButton)
         view.addSubview(errorMessageLabel)
+        view.addSubview(forgotPasswordLinkButton)
         
         setUpConstraints()
     }
@@ -56,6 +57,12 @@ extension LoginViewController {
             errorMessageLabel.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
             errorMessageLabel.trailingAnchor.constraint(equalTo: loginView.trailingAnchor)
         ])
+        
+        NSLayoutConstraint.activate([
+            forgotPasswordLinkButton.topAnchor.constraint(equalToSystemSpacingBelow: signInButton.bottomAnchor, multiplier: 5),
+            forgotPasswordLinkButton.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
+            forgotPasswordLinkButton.trailingAnchor.constraint(equalTo: loginView.trailingAnchor)
+        ])
     }
 }
 
@@ -65,6 +72,10 @@ extension LoginViewController {
         signInButton.configuration?.showsActivityIndicator = true
         errorMessageLabel.isHidden = true
         login()
+    }
+    
+    @objc func forgotPasswordTapped(sender: UIButton) {
+        delegate?.didForgetPassword()
     }
     
     private func login() {

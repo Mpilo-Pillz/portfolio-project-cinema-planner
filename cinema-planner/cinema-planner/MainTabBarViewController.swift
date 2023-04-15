@@ -7,16 +7,21 @@
 
 import UIKit
 
+
 class MainTabBarViewController: UITabBarController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    var profileSettingsVC: ProfileSettingsViewController?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         let vcHome = UINavigationController(rootViewController: HomeViewController())
         let vcUpcoming = UINavigationController(rootViewController: UpcomingViewController())
         let vcSearch = UINavigationController(rootViewController: SearchViewController())
         let vcToWatchList = UINavigationController(rootViewController: ToWatchListViewController())
-        let vcProfileSettings = UINavigationController(rootViewController: ProfileSettingsViewController())
+        let vcProfileSettings = UINavigationController(rootViewController: profileSettingsVC!)
+        
+//        weak var delegate: MainTabBarViewControllerDelegate?
         
         vcHome.tabBarItem.image = UIImage(systemName: "house")
         vcUpcoming.tabBarItem.image = UIImage(systemName: "play.circle")
