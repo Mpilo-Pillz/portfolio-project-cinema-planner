@@ -11,6 +11,8 @@ extension ForgotPasswordViewController {
     func layoutForgotPasswordViewController() {
         forgotPasswordStackView.addArrangedSubview(currentPasswordTextField)
         forgotPasswordStackView.addArrangedSubview(passwordStatusUIView)
+        forgotPasswordStackView.addArrangedSubview(confirmPasswordTextField)
+        forgotPasswordStackView.addArrangedSubview(resetPasswordButton)
         
         view.addSubview(forgotPasswordStackView)
         
