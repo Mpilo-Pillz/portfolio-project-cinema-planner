@@ -8,6 +8,17 @@
 import UIKit
 
 extension ForgotPasswordViewController {
+    
+    
+    
+    func layoutForgotPasswordTopScreen() {
+        view.addSubview(forgotPasswordBackButton)
+        
+        NSLayoutConstraint.activate([
+            forgotPasswordBackButton.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
+            forgotPasswordBackButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 2)
+        ])
+    }
     func layoutForgotPasswordViewController() {
         forgotPasswordStackView.addArrangedSubview(currentPasswordTextField)
         forgotPasswordStackView.addArrangedSubview(passwordStatusUIView)

@@ -9,6 +9,7 @@ import UIKit
 
 class ForgotPasswordViewController: UIViewController {
     
+    let forgotPasswordBackButton = makeLinkButton(withText: "Back")
     let forgotPasswordStackView = makeStackView(withSpacing: 20, withAxis: .vertical)
     let currentPasswordTextField = AdvancedTextfieldUIView(placeholderText: "Current Password", isSecureTextEntry: false)
     let passwordStatusUIView = PasswordStatusUIView()
@@ -18,6 +19,7 @@ class ForgotPasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        layoutForgotPasswordTopScreen()
         styleForgotPasswordViewController()
         layoutForgotPasswordViewController()
         
