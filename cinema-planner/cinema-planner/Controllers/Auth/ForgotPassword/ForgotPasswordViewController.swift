@@ -10,9 +10,9 @@ import UIKit
 class ForgotPasswordViewController: UIViewController {
     
     let forgotPasswordStackView = makeStackView(withSpacing: 20, withAxis: .vertical)
-    let currentPasswordTextField = makeTextField(withPlaceholder: "Current Password", isSecureTextEntry: false)
+    let currentPasswordTextField = AdvancedTextfieldUIView(placeholderText: "Current Password", isSecureTextEntry: false)
     let passwordStatusUIView = PasswordStatusUIView()
-    let confirmPasswordTextField = makeTextField(withPlaceholder: "Confrm Password", isSecureTextEntry: false)
+    let confirmPasswordTextField = AdvancedTextfieldUIView(placeholderText: "Confrm Password", isSecureTextEntry: false)
     let resetPasswordButton = makePrimaryButton(withText: "Reset Password")
     
     override func viewDidLoad() {
