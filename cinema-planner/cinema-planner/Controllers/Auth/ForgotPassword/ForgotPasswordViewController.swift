@@ -7,18 +7,26 @@
 
 import UIKit
 
+protocol ForgotPasswordViewControllerDelegate: AnyObject {
+    func didGoBackToLogin()
+}
+
 class ForgotPasswordViewController: UIViewController {
-    
+    weak var delegate: ForgotPasswordViewControllerDelegate?
+    let forgotPasswordBackButton = makeLinkButton(withText: "Back")
     let forgotPasswordStackView = makeStackView(withSpacing: 20, withAxis: .vertical)
-    let currentPasswordTextField = makeTextField(withPlaceholder: "Current Password", isSecureTextEntry: false)
+    let currentPasswordTextField = AdvancedTextfieldUIView(placeholderText: "Current Password", isSecureTextEntry: false)
     let passwordStatusUIView = PasswordStatusUIView()
+    let confirmPasswordTextField = AdvancedTextfieldUIView(placeholderText: "Confrm Password", isSecureTextEntry: false)
+    let resetPasswordButton = makePrimaryButton(withText: "Reset Password")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        layoutForgotPasswordTopScreen()
         styleForgotPasswordViewController()
         layoutForgotPasswordViewController()
-        
+            
     }
     
 

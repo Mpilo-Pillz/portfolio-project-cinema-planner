@@ -31,6 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UITabBarControllerDeleg
         loginViewController.delegate = self
         onboardingContainerViewController.delegate = self
         profileSettingsViewController.delegate = self
+        forgotPasswordViewController.delegate = self
         mainTabBarViewController.profileSettingsVC = profileSettingsViewController
        
     
@@ -101,7 +102,7 @@ extension SceneDelegate {
     }
 }
 
-extension SceneDelegate: LoginViewControllerDelegate, OnboardingContainerViewControllerDelegate, ProfileSettingsViewControllerDelegate {
+extension SceneDelegate: LoginViewControllerDelegate, OnboardingContainerViewControllerDelegate, ProfileSettingsViewControllerDelegate, ForgotPasswordViewControllerDelegate {
     
     func didLogin() {
         setRootViewController(mainTabBarViewController)
@@ -118,6 +119,10 @@ extension SceneDelegate: LoginViewControllerDelegate, OnboardingContainerViewCon
     
     func didLogout() {
         KeychainHelper.keychainHelper.delete(service: "accessToken", account: "backend")
+        setRootViewController(loginViewController)
+    }
+    
+    func didGoBackToLogin() {
         setRootViewController(loginViewController)
     }
 }
