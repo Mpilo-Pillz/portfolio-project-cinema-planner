@@ -101,5 +101,5 @@ extension AdvancedTextfieldUIView {
     @objc func togglePasswordView(_ sender: Any) {
         textField.isSecureTextEntry.toggle()
         eyeButton.isSelected.toggle()
-    }
+    }  
 }

@@ -7,8 +7,12 @@
 
 import UIKit
 
+protocol ForgotPasswordViewControllerDelegate: AnyObject {
+    func didGoBackToLogin()
+}
+
 class ForgotPasswordViewController: UIViewController {
-    
+    weak var delegate: ForgotPasswordViewControllerDelegate?
     let forgotPasswordBackButton = makeLinkButton(withText: "Back")
     let forgotPasswordStackView = makeStackView(withSpacing: 20, withAxis: .vertical)
     let currentPasswordTextField = AdvancedTextfieldUIView(placeholderText: "Current Password", isSecureTextEntry: false)
@@ -22,7 +26,7 @@ class ForgotPasswordViewController: UIViewController {
         layoutForgotPasswordTopScreen()
         styleForgotPasswordViewController()
         layoutForgotPasswordViewController()
-        
+            
     }
     
 

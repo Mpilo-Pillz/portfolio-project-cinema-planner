@@ -27,6 +27,8 @@ extension ForgotPasswordViewController {
         
         view.addSubview(forgotPasswordStackView)
         
+        forgotPasswordBackButton.addTarget(self, action: #selector(forgotPasswordBackButtonTapped), for: .primaryActionTriggered)
+        
         NSLayoutConstraint.activate([
             forgotPasswordStackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: forgotPasswordStackView.trailingAnchor, multiplier: 2),
@@ -38,5 +40,15 @@ extension ForgotPasswordViewController {
         passwordStatusUIView.translatesAutoresizingMaskIntoConstraints = false
         passwordStatusUIView.layer.cornerRadius = 5
         passwordStatusUIView.clipsToBounds = true
+    }
+    
+
+}
+
+// MARK: - Actions
+extension ForgotPasswordViewController {
+    @objc func forgotPasswordBackButtonTapped(_ sender: Any) {
+        print("tapped")
+        delegate?.didGoBackToLogin()
     }
 }
