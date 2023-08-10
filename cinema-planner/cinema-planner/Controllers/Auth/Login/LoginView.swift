@@ -10,8 +10,8 @@ import UIKit
 class LoginView: UIView {
     
     let loginViewStackView =  makeStackView(withSpacing: 8, withAxis: .vertical)
-    let loginViewUsernameTextField = makeTextField(withPlaceholder: "Username", isSecureTextEntry: false)
-    let loginViewPasswordTextField = makeTextField(withPlaceholder: "Password", isSecureTextEntry: true)
+    let loginViewUsernameTextField = makeTextField(withPlaceholder: "Username", isSecureTextEntry: false, autoCapitalizationType: .none)
+    let loginViewPasswordTextField = makeTextField(withPlaceholder: "Password", isSecureTextEntry: true, autoCapitalizationType: .none)
     let loginViewDividerView = UIView()
     
     override init(frame: CGRect) {

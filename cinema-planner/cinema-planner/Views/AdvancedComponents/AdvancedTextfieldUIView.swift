@@ -20,7 +20,7 @@ class AdvancedTextfieldUIView: UIView {
     init(placeholderText: String, isSecureTextEntry: Bool) {
         self.placeholderText = placeholderText
         self.isSecureTextEntry = isSecureTextEntry
-        self.textField = makeTextField(withPlaceholder: self.placeholderText, isSecureTextEntry: self.isSecureTextEntry)
+        self.textField = makeTextField(withPlaceholder: self.placeholderText, isSecureTextEntry: self.isSecureTextEntry, autoCapitalizationType: .none)
         super.init(frame: .zero)
         
         styleAdvancedTextfieldUIView()
