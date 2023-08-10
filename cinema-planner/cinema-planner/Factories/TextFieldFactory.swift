@@ -13,6 +13,7 @@ func makeTextField(withPlaceholder placeholder: String, isSecureTextEntry: Bool)
     textField.translatesAutoresizingMaskIntoConstraints = false
     textField.placeholder = placeholder
     textField.isSecureTextEntry = isSecureTextEntry
+    textField.autocapitalizationType = .none
     
     return textField
 }
