@@ -43,6 +43,11 @@ extension PasswordStatusUIView {
             bottomAnchor.constraint(equalToSystemSpacingBelow: passwordStatusStackView.bottomAnchor, multiplier: 2)
         ])
     }
+   
+}
+
+// MARK: Make Criteria
+extension PasswordStatusUIView {
     private func makeCriteriaMessage() -> NSAttributedString {
         var plainTextAttributes = [NSAttributedString.Key: AnyObject]()
         plainTextAttributes[.font] = UIFont.preferredFont(forTextStyle: .subheadline)

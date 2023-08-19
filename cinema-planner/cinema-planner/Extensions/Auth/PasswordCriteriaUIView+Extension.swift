@@ -35,11 +35,11 @@ extension PasswordCriteriaUIView {
         NSLayoutConstraint.activate([
             passwordCriteriaImageView.heightAnchor.constraint(equalTo: passwordCriteriaImageView.widthAnchor),
             
-                    ])
+        ])
         
         //CHCR
         passwordCriteriaImageView.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
         passwordCriteriaLabel.setContentHuggingPriority(UILayoutPriority.defaultLow, for: .horizontal)
-
+        
     }
 }
