@@ -9,8 +9,6 @@ import UIKit
 
 extension ForgotPasswordViewController {
     
-    
-    
     func layoutForgotPasswordTopScreen() {
         view.addSubview(forgotPasswordBackButton)
         

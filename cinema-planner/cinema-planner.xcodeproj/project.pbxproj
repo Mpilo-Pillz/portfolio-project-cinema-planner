@@ -51,6 +51,7 @@
 		C493668F293A926C003C6C3D /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C493668E293A926C003C6C3D /* UserManager.swift */; };
 		C4A3C2C429B39B4A0028A46C /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A3C2C329B39B4A0028A46C /* ForgotPasswordViewController.swift */; };
 		C4A3C2C729B3AAA10028A46C /* ProfileViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A3C2C629B3AAA10028A46C /* ProfileViewController+Extension.swift */; };
+		C4B3368B2A9146D000EC8A1C /* PasswordCriteriaHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B3368A2A9146D000EC8A1C /* PasswordCriteriaHelper.swift */; };
 		C4D74303292A327700F71032 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74302292A327700F71032 /* AppDelegate.swift */; };
 		C4D74305292A327700F71032 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74304292A327700F71032 /* SceneDelegate.swift */; };
 		C4D74307292A327700F71032 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74306292A327700F71032 /* MainTabBarViewController.swift */; };
@@ -121,6 +122,7 @@
 		C493668E293A926C003C6C3D /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		C4A3C2C329B39B4A0028A46C /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		C4A3C2C629B3AAA10028A46C /* ProfileViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileViewController+Extension.swift"; sourceTree = "<group>"; };
+		C4B3368A2A9146D000EC8A1C /* PasswordCriteriaHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCriteriaHelper.swift; sourceTree = "<group>"; };
 		C4D742FF292A327700F71032 /* cinema-planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cinema-planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4D74302292A327700F71032 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4D74304292A327700F71032 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				C42FCFB929747027001FC55C /* KeychainHelper.swift */,
+				C4B3368A2A9146D000EC8A1C /* PasswordCriteriaHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -582,6 +585,7 @@
 				C4D74318292A35FA00F71032 /* HomeViewController.swift in Sources */,
 				C4795F4C292BA0B1003D8E64 /* SearchResultsViewController.swift in Sources */,
 				C4795F55292E7073003D8E64 /* CinemaPlannerModel.xcdatamodeld in Sources */,
+				C4B3368B2A9146D000EC8A1C /* PasswordCriteriaHelper.swift in Sources */,
 				C404A0EC29EC379A00C03C44 /* AdvancedTextfieldUIView+Extension.swift in Sources */,
 				C4795F57292E75A3003D8E64 /* DataPersistenceManager.swift in Sources */,
 				C4795F4E292D262E003D8E64 /* YoutubeSearchResponse.swift in Sources */,
