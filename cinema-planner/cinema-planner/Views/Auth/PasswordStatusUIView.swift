@@ -8,7 +8,7 @@
 import UIKit
 
 class PasswordStatusUIView: UIView {
-let passwordStatusStackView = makeStackView(withSpacing: 8, withAxis: .vertical)
+    let passwordStatusStackView = makeStackView(withSpacing: 8, withAxis: .vertical)
     
     let criteriaLabel = UILabel()
     
@@ -18,6 +18,7 @@ let passwordStatusStackView = makeStackView(withSpacing: 8, withAxis: .vertical)
     let digitCriteriaView = PasswordCriteriaUIView(text: "digit (0-9)")
     let specialCharacterCriteriaView = PasswordCriteriaUIView(text: "special character (e.g. !@#$%^)")
     
+    private var shouldResetCriteria: Bool = true
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,7 +35,24 @@ let passwordStatusStackView = makeStackView(withSpacing: 8, withAxis: .vertical)
     override var intrinsicContentSize: CGSize {
         return CGSize(width: 200, height: 200)
     }
-    
-   
+}
 
+// MARK: - Update Display
+extension PasswordStatusUIView {
+    func updateDisplay(_ text: String) {
+        let lengthAndNoSpaceMet = PasswordCriteria.lengthAndNoSpaceMet(text)
+        let uppercaseMet = PasswordCriteria.uppercaseMet(text)
+        let lowercaseMet = PasswordCriteria.lowercaseMet(text)
+        let digitMet = PasswordCriteria.digitMet(text)
+        let specialCharacterMet = PasswordCriteria.specialCharacterMet(text)
+        
+        if shouldResetCriteria {
+            lengthAndNoSpaceMet ? lengthCriteriaView.isCriteriaMet = true : lengthCriteriaView.reset()
+            uppercaseMet ? uppercaseCriteriaView.isCriteriaMet = true : uppercaseCriteriaView.reset()
+            lowercaseMet ? lowercaseCriteriaView.isCriteriaMet = true : lowercaseCriteriaView.reset()
+            digitMet ? digitCriteriaView.isCriteriaMet = true : digitCriteriaView.reset()
+            specialCharacterMet ? specialCharacterCriteriaView.isCriteriaMet = true : specialCharacterCriteriaView.reset()
+        }
+        
+    }
 }

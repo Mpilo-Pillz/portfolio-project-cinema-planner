@@ -9,8 +9,6 @@ import UIKit
 
 extension ForgotPasswordViewController {
     
-    
-    
     func layoutForgotPasswordTopScreen() {
         view.addSubview(forgotPasswordBackButton)
         
@@ -45,7 +43,15 @@ extension ForgotPasswordViewController {
 
 }
 
-// MARK: - Actions
+// MARK: - AdvancedTextFielDelegate
+extension ForgotPasswordViewController {
+    func editingChanged(_ sender: AdvancedTextfieldUIView) {
+        if sender === currentPasswordTextField {
+            passwordStatusUIView.updateDisplay(sender.textField.text ?? "")
+        }
+    }
+}
+// MARK: - Actions Forgot PAssword Back Button tapped
 extension ForgotPasswordViewController {
     @objc func forgotPasswordBackButtonTapped(_ sender: Any) {
         print("tapped")

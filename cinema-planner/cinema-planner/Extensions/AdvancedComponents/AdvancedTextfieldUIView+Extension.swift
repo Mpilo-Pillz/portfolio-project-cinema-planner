@@ -21,12 +21,13 @@ extension AdvancedTextfieldUIView {
         textField.attributedPlaceholder = NSAttributedString(string:placeholderText,
                                                              attributes: [NSAttributedString.Key.foregroundColor: UIColor.secondaryLabel]) // text color of placeholder
         
-        
+        textField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
         
         eyeButton.translatesAutoresizingMaskIntoConstraints = false
         eyeButton.setImage(UIImage(systemName: "eye.circle"), for: .normal)
         eyeButton.setImage(UIImage(systemName: "eye.slash.circle"), for: .selected)
         eyeButton.addTarget(self, action: #selector(togglePasswordView), for: .touchUpInside)
+        
         
         dividerView.translatesAutoresizingMaskIntoConstraints = false
         dividerView.backgroundColor = .separator
@@ -96,10 +97,18 @@ extension AdvancedTextfieldUIView {
     
 }
 
-// MARK: - Actions
+// The actions below are needed to add a target to actually add actions to the fields
+// MARK: - Actions Toggle Password View
 extension AdvancedTextfieldUIView {
     @objc func togglePasswordView(_ sender: Any) {
         textField.isSecureTextEntry.toggle()
         eyeButton.isSelected.toggle()
-    }  
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension AdvancedTextfieldUIView: UITextFieldDelegate {
+    @objc func textFieldEditingChanged(_ sender: UITextField) {
+        delegate?.editingChanged(self)
+    }
 }

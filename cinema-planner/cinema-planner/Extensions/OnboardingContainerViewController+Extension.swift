@@ -40,7 +40,7 @@ OnboardingContainerViewController: UIPageViewControllerDataSource {
     }
 }
 
-// MARK: Actions
+// MARK: - Onboarding Actions Tapped
 extension OnboardingContainerViewController {
     @objc func nextTapped(_ sender: UIButton) {
         guard let nextViewController = getNextViewController(from: currentOnboardingViewController) else { return }

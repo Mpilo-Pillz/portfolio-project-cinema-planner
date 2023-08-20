@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol AdvancedTextFielDelegate: AnyObject {
+    func editingChanged(_ sender: AdvancedTextfieldUIView)
+}
+
 class AdvancedTextfieldUIView: UIView {
 
     let lockImageView = UIImageView(image: UIImage(systemName: "lock.fill"))
@@ -17,10 +21,12 @@ class AdvancedTextfieldUIView: UIView {
     let placeholderText: String
     let isSecureTextEntry: Bool
     
+    weak var delegate: AdvancedTextFielDelegate?
+    
     init(placeholderText: String, isSecureTextEntry: Bool) {
         self.placeholderText = placeholderText
         self.isSecureTextEntry = isSecureTextEntry
-        self.textField = makeTextField(withPlaceholder: self.placeholderText, isSecureTextEntry: self.isSecureTextEntry)
+        self.textField = makeTextField(withPlaceholder: self.placeholderText, isSecureTextEntry: self.isSecureTextEntry, autoCapitalizationType: .none)
         super.init(frame: .zero)
         
         styleAdvancedTextfieldUIView()

@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK: Actions
+// MARK: - Actions Logout Tapped
 extension ProfileSettingsViewController {
     @objc func logoutTapped(_ sender: UIButton) {
         logout()

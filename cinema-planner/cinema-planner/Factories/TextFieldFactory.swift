@@ -7,12 +7,13 @@
 
 import UIKit
 
-func makeTextField(withPlaceholder placeholder: String, isSecureTextEntry: Bool) -> UITextField {
+func makeTextField(withPlaceholder placeholder: String, isSecureTextEntry: Bool, autoCapitalizationType: UITextAutocapitalizationType) -> UITextField {
     let textField = UITextField()
     
     textField.translatesAutoresizingMaskIntoConstraints = false
     textField.placeholder = placeholder
     textField.isSecureTextEntry = isSecureTextEntry
+    textField.autocapitalizationType = autoCapitalizationType
     
     return textField
 }
