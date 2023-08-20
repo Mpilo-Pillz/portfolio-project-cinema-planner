@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol AdvancedTextFielDelegate: AnyObject {
+    func editingChanged(_ sender: AdvancedTextfieldUIView)
+}
+
 class AdvancedTextfieldUIView: UIView {
 
     let lockImageView = UIImageView(image: UIImage(systemName: "lock.fill"))
@@ -16,6 +20,8 @@ class AdvancedTextfieldUIView: UIView {
     let errorLabel = makeErrorLabel(withText: "Your password must meet the requirements below")
     let placeholderText: String
     let isSecureTextEntry: Bool
+    
+    weak var delegate: AdvancedTextFielDelegate?
     
     init(placeholderText: String, isSecureTextEntry: Bool) {
         self.placeholderText = placeholderText
