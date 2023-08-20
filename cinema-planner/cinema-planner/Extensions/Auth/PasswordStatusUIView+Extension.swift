@@ -46,7 +46,7 @@ extension PasswordStatusUIView {
    
 }
 
-// MARK: Make Criteria
+// MARK: - Make Criteria
 extension PasswordStatusUIView {
     private func makeCriteriaMessage() -> NSAttributedString {
         var plainTextAttributes = [NSAttributedString.Key: AnyObject]()

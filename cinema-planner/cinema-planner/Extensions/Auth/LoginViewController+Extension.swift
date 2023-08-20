@@ -66,7 +66,7 @@ extension LoginViewController {
     }
 }
 
-// MARK: Actions
+// MARK: - Login Actions
 extension LoginViewController {
     @objc func signInTapped(sender: UIButton) {
         signInButton.configuration?.showsActivityIndicator = true
