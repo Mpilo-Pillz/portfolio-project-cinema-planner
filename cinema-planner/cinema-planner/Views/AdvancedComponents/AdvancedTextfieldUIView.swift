@@ -27,7 +27,9 @@ class AdvancedTextfieldUIView: UIView {
         self.placeholderText = placeholderText
         self.isSecureTextEntry = isSecureTextEntry
         self.textField = makeTextField(withPlaceholder: self.placeholderText, isSecureTextEntry: self.isSecureTextEntry, autoCapitalizationType: .none)
+        // textField.tag = 1 //TODO: add enum
         super.init(frame: .zero)
+        // textField.delegate = self
         
         styleAdvancedTextfieldUIView()
         layoutAdvancedTextfieldUIView()
@@ -42,6 +44,8 @@ class AdvancedTextfieldUIView: UIView {
     }
 
 }
+
+
 
 
 

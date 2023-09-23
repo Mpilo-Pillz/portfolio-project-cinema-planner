@@ -26,8 +26,10 @@ class ForgotPasswordViewController: UIViewController, AdvancedTextFielDelegate {
         super.viewDidLoad()
         
         // Assining the currwnt password textfield delegate to self
-        currentPasswordTextField.delegate = self
+        currentPasswordTextField.delegate = self // this was not the delegate fo the textfield it was of the class
+        currentPasswordTextField.textField.delegate = self
         
+        currentPasswordTextField.textField.tag = 1
 //        setup()
         layoutForgotPasswordTopScreen()
         styleForgotPasswordViewController()
@@ -36,4 +38,21 @@ class ForgotPasswordViewController: UIViewController, AdvancedTextFielDelegate {
     }
     
 
+}
+
+// MARK: - UITextFieldDelegate, Gontse
+extension ForgotPasswordViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print("Ola Gontse, this is supposed to run when I click outside the textfield\(textField.text ?? "")")
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("Ola Gontse, this should run when I click enter: \(textField.text ?? "")")
+        switch textField.tag {
+        case 1:
+            //            TODO: add logic
+            return false
+        default: return false
+        }
+    }
 }
