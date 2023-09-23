@@ -9,6 +9,24 @@ import UIKit
 
 extension ForgotPasswordViewController {
     
+    func setUpForgotPasswordViewController() {
+        setupDissmissKeyboardGesture()
+    }
+    
+    private func setupDissmissKeyboardGesture() {
+        let dismissKeyboardTap = UITapGestureRecognizer(target: self, action: #selector(ViewTapped(_:)))
+        view.addGestureRecognizer(dismissKeyboardTap)
+    }
+    
+    @objc func ViewTapped(_ recognizer: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
+    private func setupKeyboardHiding() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
     func layoutForgotPasswordTopScreen() {
         view.addSubview(forgotPasswordBackButton)
         
@@ -56,5 +74,16 @@ extension ForgotPasswordViewController {
     @objc func forgotPasswordBackButtonTapped(_ sender: Any) {
         print("tapped")
         delegate?.didGoBackToLogin()
+    }
+}
+
+// MARK: - Keyboard
+extension ForgotPasswordViewController {
+    @objc func keyboardWillShow(sender: NSNotification) {
+        print("Show keybpard")
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        view.frame.origin.y = 0
     }
 }

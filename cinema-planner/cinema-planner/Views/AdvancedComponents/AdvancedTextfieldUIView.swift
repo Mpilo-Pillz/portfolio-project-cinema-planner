@@ -7,9 +7,10 @@
 
 import UIKit
 
-protocol AdvancedTextFielDelegate: AnyObject {
-    func editingChanged(_ sender: AdvancedTextfieldUIView)
-}
+//protocol AdvancedTextFielDelegate: AnyObject {
+//    func editingChanged(_ sender: AdvancedTextfieldUIView)
+//    func editingDidEnd(_ sender: AdvancedTextfieldUIView)
+//}
 
 class AdvancedTextfieldUIView: UIView {
 
@@ -21,7 +22,7 @@ class AdvancedTextfieldUIView: UIView {
     let placeholderText: String
     let isSecureTextEntry: Bool
     
-    weak var delegate: AdvancedTextFielDelegate?
+    weak var delegate: AdvancedTextFieldDelegate?
     
     init(placeholderText: String, isSecureTextEntry: Bool) {
         self.placeholderText = placeholderText
@@ -29,7 +30,7 @@ class AdvancedTextfieldUIView: UIView {
         self.textField = makeTextField(withPlaceholder: self.placeholderText, isSecureTextEntry: self.isSecureTextEntry, autoCapitalizationType: .none)
         // textField.tag = 1 //TODO: add enum
         super.init(frame: .zero)
-        // textField.delegate = self
+        // textField.delegate = self 
         
         styleAdvancedTextfieldUIView()
         layoutAdvancedTextfieldUIView()

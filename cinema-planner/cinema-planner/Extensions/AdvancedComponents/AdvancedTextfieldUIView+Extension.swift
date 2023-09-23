@@ -112,12 +112,16 @@ extension AdvancedTextfieldUIView: UITextFieldDelegate {
         delegate?.editingChanged(self)
     }
     
+    func textFieldDidEndEditing() {
+        delegate?.editingDidEnd(self)
+    }
+    
 //    func textFieldDidEndEditing(_ textField: UITextField) {
-//        print("Ola Gontse, this is supposed to run when I click outside the textfield\(textField.text ?? "")")
+//        print("Ola , this is supposed to run when I click outside the textfield\(textField.text ?? "")")
 //    }
 //    
 //    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        print("Ola Gontse, this should run when I click enter: \(textField.text ?? "")")
+//        print("Ola , this should run when I click enter: \(textField.text ?? "")")
 //        switch textField.tag {
 //        case 1:
 //            //            TODO: add logic

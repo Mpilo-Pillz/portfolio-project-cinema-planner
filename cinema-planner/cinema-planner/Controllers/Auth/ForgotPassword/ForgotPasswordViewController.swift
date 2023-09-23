@@ -11,8 +11,13 @@ protocol ForgotPasswordViewControllerDelegate: AnyObject {
     func didGoBackToLogin()
 }
 
-class ForgotPasswordViewController: UIViewController, AdvancedTextFielDelegate {
-    
+//protocol AdvancedTextFieldDelegate: AnyObject {
+//    func editingChanged(_ sender: AdvancedTextfieldUIView)
+//    func editingDidEnd(_ sender: AdvancedTextfieldUIView)
+//}
+
+class ForgotPasswordViewController: UIViewController {
+   
     weak var delegate: ForgotPasswordViewControllerDelegate?
     let forgotPasswordBackButton = makeLinkButton(withText: "Back")
     let forgotPasswordStackView = makeStackView(withSpacing: 20, withAxis: .vertical)
@@ -25,11 +30,11 @@ class ForgotPasswordViewController: UIViewController, AdvancedTextFielDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Assining the currwnt password textfield delegate to self
         currentPasswordTextField.delegate = self // this was not the delegate fo the textfield it was of the class
+        // Assining the currwnt password textfield delegate to self
         currentPasswordTextField.textField.delegate = self
         
-        currentPasswordTextField.textField.tag = 1
+//        currentPasswordTextField.textField.tag = 1
 //        setup()
         layoutForgotPasswordTopScreen()
         styleForgotPasswordViewController()
@@ -40,19 +45,25 @@ class ForgotPasswordViewController: UIViewController, AdvancedTextFielDelegate {
 
 }
 
-// MARK: - UITextFieldDelegate, Gontse
+// MARK: - UITextFieldDelegate
+extension ForgotPasswordViewController: AdvancedTextFieldDelegate {
+g
+    
+}
+
+// MARK: - UITextFieldDelegate
+// TODO see what happens when I move this back to the AdvancedTextFieldUIVIew Child class
 extension ForgotPasswordViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        print("Ola Gontse, this is supposed to run when I click outside the textfield\(textField.text ?? "")")
+//        delegate?.editingDidEnd(textField)
+//        delegate?.editingDidEnd(self)
+        currentPasswordTextField.textFieldDidEndEditing()
+//        print("Delegate---->\(delegate)")
+        print(" this is supposed to run when I click outside the textfield\(textField.text ?? "")")
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("Ola Gontse, this should run when I click enter: \(textField.text ?? "")")
-        switch textField.tag {
-        case 1:
-            //            TODO: add logic
-            return false
-        default: return false
-        }
+        textField.endEditing(true) // Resign first responder
+        return true
     }
 }

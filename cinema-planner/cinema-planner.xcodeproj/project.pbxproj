@@ -52,6 +52,7 @@
 		C4A3C2C429B39B4A0028A46C /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A3C2C329B39B4A0028A46C /* ForgotPasswordViewController.swift */; };
 		C4A3C2C729B3AAA10028A46C /* ProfileViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A3C2C629B3AAA10028A46C /* ProfileViewController+Extension.swift */; };
 		C4B3368B2A9146D000EC8A1C /* PasswordCriteriaHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B3368A2A9146D000EC8A1C /* PasswordCriteriaHelper.swift */; };
+		C4CB6BAE2ABECFBF00F90A46 /* AdvancedTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB6BAD2ABECFBF00F90A46 /* AdvancedTextFieldDelegate.swift */; };
 		C4D74303292A327700F71032 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74302292A327700F71032 /* AppDelegate.swift */; };
 		C4D74305292A327700F71032 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74304292A327700F71032 /* SceneDelegate.swift */; };
 		C4D74307292A327700F71032 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D74306292A327700F71032 /* MainTabBarViewController.swift */; };
@@ -123,6 +124,7 @@
 		C4A3C2C329B39B4A0028A46C /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		C4A3C2C629B3AAA10028A46C /* ProfileViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileViewController+Extension.swift"; sourceTree = "<group>"; };
 		C4B3368A2A9146D000EC8A1C /* PasswordCriteriaHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCriteriaHelper.swift; sourceTree = "<group>"; };
+		C4CB6BAD2ABECFBF00F90A46 /* AdvancedTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedTextFieldDelegate.swift; sourceTree = "<group>"; };
 		C4D742FF292A327700F71032 /* cinema-planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cinema-planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4D74302292A327700F71032 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4D74304292A327700F71032 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				C404A0E829EBFDE400C03C44 /* AdvancedTextfieldUIView.swift */,
+				C4CB6BAD2ABECFBF00F90A46 /* AdvancedTextFieldDelegate.swift */,
 			);
 			path = AdvancedComponents;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				C427E53729C6574700C1A002 /* PasswordCriteriaUIView+Extension.swift in Sources */,
 				C4795F3A292B6641003D8E64 /* Video.swift in Sources */,
 				C4795F52292D2FF7003D8E64 /* TitlePreviewViewModel.swift in Sources */,
+				C4CB6BAE2ABECFBF00F90A46 /* AdvancedTextFieldDelegate.swift in Sources */,
 				C4D7431F292A36A200F71032 /* ToWatchListViewController.swift in Sources */,
 				C4D74331292A659B00F71032 /* LocalState+Utils.swift in Sources */,
 				C49366842931FB86003C6C3D /* LoginView.swift in Sources */,
