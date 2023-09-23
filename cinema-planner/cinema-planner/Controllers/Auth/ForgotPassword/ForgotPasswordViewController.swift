@@ -11,11 +11,6 @@ protocol ForgotPasswordViewControllerDelegate: AnyObject {
     func didGoBackToLogin()
 }
 
-//protocol AdvancedTextFieldDelegate: AnyObject {
-//    func editingChanged(_ sender: AdvancedTextfieldUIView)
-//    func editingDidEnd(_ sender: AdvancedTextfieldUIView)
-//}
-
 class ForgotPasswordViewController: UIViewController {
    
     weak var delegate: ForgotPasswordViewControllerDelegate?
@@ -45,11 +40,7 @@ class ForgotPasswordViewController: UIViewController {
 
 }
 
-// MARK: - UITextFieldDelegate
-extension ForgotPasswordViewController: AdvancedTextFieldDelegate {
-g
-    
-}
+
 
 // MARK: - UITextFieldDelegate
 // TODO see what happens when I move this back to the AdvancedTextFieldUIVIew Child class

@@ -61,6 +61,14 @@ extension ForgotPasswordViewController {
 
 }
 
+// MARK: - UITextFieldDelegate
+extension ForgotPasswordViewController: AdvancedTextFieldDelegate {
+    func editingDidEnd(_ sender: AdvancedTextfieldUIView) {
+        
+        print("DID END EDITING \(sender.textField.text ?? "")")
+    }
+}
+
 // MARK: - AdvancedTextFielDelegate
 extension ForgotPasswordViewController {
     func editingChanged(_ sender: AdvancedTextfieldUIView) {
