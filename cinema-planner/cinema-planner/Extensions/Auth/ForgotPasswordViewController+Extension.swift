@@ -18,11 +18,12 @@ extension ForgotPasswordViewController {
         let newPasswordValidation: CustomValidation = { text in
             guard let text = text, !text.isEmpty else {
                 self.passwordStatusUIView.reset()
+                return (false, "Enter your password")
             }
             
             return (true, "")
         }
-        
+        newPasswordTextField.customValidation = newPasswordValidation
     }
     
     private func setupDissmissKeyboardGesture() {
@@ -48,7 +49,7 @@ extension ForgotPasswordViewController {
         ])
     }
     func layoutForgotPasswordViewController() {
-        forgotPasswordStackView.addArrangedSubview(currentPasswordTextField)
+        forgotPasswordStackView.addArrangedSubview(newPasswordTextField)
         forgotPasswordStackView.addArrangedSubview(passwordStatusUIView)
         forgotPasswordStackView.addArrangedSubview(confirmPasswordTextField)
         forgotPasswordStackView.addArrangedSubview(resetPasswordButton)
@@ -76,15 +77,16 @@ extension ForgotPasswordViewController {
 // MARK: - UITextFieldDelegate
 extension ForgotPasswordViewController: AdvancedTextFieldDelegate {
     func editingDidEnd(_ sender: AdvancedTextfieldUIView) {
-        
-        print("DID END EDITING \(sender.textField.text ?? "")")
+        if sender === newPasswordTextField {
+            _ = newPasswordTextField.validate()
+        }
     }
 }
 
 // MARK: - AdvancedTextFielDelegate
 extension ForgotPasswordViewController {
     func editingChanged(_ sender: AdvancedTextfieldUIView) {
-        if sender === currentPasswordTextField {
+        if sender === newPasswordTextField {
             passwordStatusUIView.updateDisplay(sender.textField.text ?? "")
         }
     }

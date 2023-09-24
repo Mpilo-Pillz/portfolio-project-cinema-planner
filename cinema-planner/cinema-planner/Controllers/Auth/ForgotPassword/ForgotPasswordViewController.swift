@@ -12,47 +12,39 @@ protocol ForgotPasswordViewControllerDelegate: AnyObject {
 }
 
 class ForgotPasswordViewController: UIViewController {
-   
+    
     typealias CustomValidation = AdvancedTextfieldUIView.CustomValidation
     weak var delegate: ForgotPasswordViewControllerDelegate?
     let forgotPasswordBackButton = makeLinkButton(withText: "Back")
     let forgotPasswordStackView = makeStackView(withSpacing: 20, withAxis: .vertical)
-    let currentPasswordTextField = AdvancedTextfieldUIView(placeholderText: "Current Password", isSecureTextEntry: false)
+    let newPasswordTextField = AdvancedTextfieldUIView(placeholderText: "Current Password", isSecureTextEntry: false)
     let passwordStatusUIView = PasswordStatusUIView()
     let confirmPasswordTextField = AdvancedTextfieldUIView(placeholderText: "Confrm Password", isSecureTextEntry: false)
     let resetPasswordButton = makePrimaryButton(withText: "Reset Password")
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        currentPasswordTextField.delegate = self // this was not the delegate fo the textfield it was of the class
+        newPasswordTextField.delegate = self // this was not the delegate fo the textfield it was of the class
         // Assining the currwnt password textfield delegate to self
-        currentPasswordTextField.textField.delegate = self
+        newPasswordTextField.textField.delegate = self
         
-//        currentPasswordTextField.textField.tag = 1
+        //        currentPasswordTextField.textField.tag = 1
         setUpForgotPasswordViewController()
         layoutForgotPasswordTopScreen()
         styleForgotPasswordViewController()
         layoutForgotPasswordViewController()
-            
     }
     
-
 }
 
 
 
 // MARK: - UITextFieldDelegate
-// TODO see what happens when I move this back to the AdvancedTextFieldUIVIew Child class
 extension ForgotPasswordViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-//        delegate?.editingDidEnd(textField)
-//        delegate?.editingDidEnd(self)
-        currentPasswordTextField.textFieldDidEndEditing()
-//        print("Delegate---->\(delegate)")
-        print(" this is supposed to run when I click outside the textfield\(textField.text ?? "")")
+        //        delegate?.editingDidEnd(self)
+        newPasswordTextField.textFieldDidEndEditing()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
