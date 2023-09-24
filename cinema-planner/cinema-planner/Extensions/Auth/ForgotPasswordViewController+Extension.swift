@@ -21,8 +21,16 @@ extension ForgotPasswordViewController {
                 return (false, "Enter your password")
             }
             
+            let validChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,@:?!()$\\/#"
+            let invalidSet = CharacterSet(charactersIn: validChars).inverted
+            
+            guard text.rangeOfCharacter(from: invalidSet) == nil else {
+                self.passwordStatusUIView.reset()
+                return (false, "Enter valid special chars (.,@:?!()$\\/#) with no spaces")
+            }
+            
             return (true, "")
-        }
+        }       
         newPasswordTextField.customValidation = newPasswordValidation
     }
     
