@@ -10,6 +10,7 @@ import UIKit
 // MARK: - UITextFieldDelegate
 extension LoginView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("this also does not run")
         loginViewUsernameTextField.endEditing(true)
         loginViewPasswordTextField.endEditing(true)
         
@@ -17,6 +18,7 @@ extension LoginView: UITextFieldDelegate {
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        print(" neither does this run")
         return true
     }
     

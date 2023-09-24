@@ -10,7 +10,7 @@ import UIKit
 extension AdvancedTextfieldUIView {
     func styleAdvancedTextfieldUIView() {
         translatesAutoresizingMaskIntoConstraints = false
-
+        
         lockImageView.translatesAutoresizingMaskIntoConstraints = false
         
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -32,16 +32,16 @@ extension AdvancedTextfieldUIView {
         dividerView.translatesAutoresizingMaskIntoConstraints = false
         dividerView.backgroundColor = .separator
         
-//        errorLabel.translatesAutoresizingMaskIntoConstraints = false
-//        errorLabel.textColor = .systemRed
+        //        errorLabel.translatesAutoresizingMaskIntoConstraints = false
+        //        errorLabel.textColor = .systemRed
         errorLabel.font = .preferredFont(forTextStyle: .footnote)
-//
+        //
         errorLabel.text = "Your password must meet the requirements below" // requirements below will go down to a new line so there are no orphan words
-        errorLabel.isHidden = false // true
+        errorLabel.isHidden = true
         
         
-//        Going multiline
-//        We can make a label multiline like this:
+        //        Going multiline
+        //        We can make a label multiline like this:
         errorLabel.numberOfLines = 0
         errorLabel.lineBreakMode = .byWordWrapping // prevents orphan words by default
     }
@@ -86,15 +86,39 @@ extension AdvancedTextfieldUIView {
             errorLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             errorLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
         ])
-
+        
         
         // CHCR
         lockImageView.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal) // lock image view i need you to hug yourself and i dont want you to tretch
         textField.setContentHuggingPriority(UILayoutPriority.defaultLow, for: .horizontal) // text field I need you to stretch
         eyeButton.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal) // eye button i need your content hugging to be high, I also need you to hug your self and not streych
-
+        
     }
     
+}
+
+// MARK: - Valiation
+extension AdvancedTextfieldUIView {
+    func validate() -> Bool {
+        if let customValidation = customValidation,
+        let customValidationResult = customValidation(text),
+           customValidationResult.0 == false {
+            showError(customValidationResult.1)
+            return false
+        }
+        clearError()
+        return true
+    }
+    
+    private func showError(_ errorMessage: String) {
+        errorLabel.isHidden = false
+        errorLabel.text = errorMessage
+    }
+    
+    private func clearError() {
+        errorLabel.isHidden = true
+        errorLabel.text = ""
+    }
 }
 
 // The actions below are needed to add a target to actually add actions to the fields
@@ -111,4 +135,22 @@ extension AdvancedTextfieldUIView: UITextFieldDelegate {
     @objc func textFieldEditingChanged(_ sender: UITextField) {
         delegate?.editingChanged(self)
     }
+    
+    func textFieldDidEndEditing() {
+        delegate?.editingDidEnd(self)
+    }
+    
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        print("Ola , this is supposed to run when I click outside the textfield\(textField.text ?? "")")
+//    }
+//    
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        print("Ola , this should run when I click enter: \(textField.text ?? "")")
+//        switch textField.tag {
+//        case 1:
+//            //            TODO: add logic
+//            return false
+//        default: return false
+//        }
+//    }
 }
