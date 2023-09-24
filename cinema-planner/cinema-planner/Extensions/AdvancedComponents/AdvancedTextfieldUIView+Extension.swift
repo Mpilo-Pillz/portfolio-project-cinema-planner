@@ -37,7 +37,7 @@ extension AdvancedTextfieldUIView {
         errorLabel.font = .preferredFont(forTextStyle: .footnote)
         //
         errorLabel.text = "Your password must meet the requirements below" // requirements below will go down to a new line so there are no orphan words
-        errorLabel.isHidden = false // true
+        errorLabel.isHidden = true
         
         
         //        Going multiline
@@ -95,6 +95,30 @@ extension AdvancedTextfieldUIView {
         
     }
     
+}
+
+// MARK: - Valiation
+extension AdvancedTextfieldUIView {
+    func validate() -> Bool {
+        if let customValidation = customValidation,
+        let customValidationResult = customValidation(text),
+           customValidationResult.0 == false {
+            showError(customValidationResult.1)
+            return false
+        }
+        clearError()
+        return true
+    }
+    
+    private func showError(_ errorMessage: String) {
+        errorLabel.isHidden = false
+        errorLabel.text = errorMessage
+    }
+    
+    private func clearError() {
+        errorLabel.isHidden = true
+        errorLabel.text = ""
+    }
 }
 
 // The actions below are needed to add a target to actually add actions to the fields

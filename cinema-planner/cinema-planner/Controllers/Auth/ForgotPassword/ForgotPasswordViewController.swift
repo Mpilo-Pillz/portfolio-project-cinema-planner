@@ -13,6 +13,7 @@ protocol ForgotPasswordViewControllerDelegate: AnyObject {
 
 class ForgotPasswordViewController: UIViewController {
    
+    typealias CustomValidation = AdvancedTextfieldUIView.CustomValidation
     weak var delegate: ForgotPasswordViewControllerDelegate?
     let forgotPasswordBackButton = makeLinkButton(withText: "Back")
     let forgotPasswordStackView = makeStackView(withSpacing: 20, withAxis: .vertical)
@@ -20,6 +21,7 @@ class ForgotPasswordViewController: UIViewController {
     let passwordStatusUIView = PasswordStatusUIView()
     let confirmPasswordTextField = AdvancedTextfieldUIView(placeholderText: "Confrm Password", isSecureTextEntry: false)
     let resetPasswordButton = makePrimaryButton(withText: "Reset Password")
+    
     
     
     override func viewDidLoad() {
@@ -30,7 +32,7 @@ class ForgotPasswordViewController: UIViewController {
         currentPasswordTextField.textField.delegate = self
         
 //        currentPasswordTextField.textField.tag = 1
-//        setup()
+        setUpForgotPasswordViewController()
         layoutForgotPasswordTopScreen()
         styleForgotPasswordViewController()
         layoutForgotPasswordViewController()

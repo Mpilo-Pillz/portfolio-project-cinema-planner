@@ -10,7 +10,19 @@ import UIKit
 extension ForgotPasswordViewController {
     
     func setUpForgotPasswordViewController() {
+        setUpNewPasswordTextField()
         setupDissmissKeyboardGesture()
+    }
+    
+    private func setUpNewPasswordTextField() {
+        let newPasswordValidation: CustomValidation = { text in
+            guard let text = text, !text.isEmpty else {
+                self.passwordStatusUIView.reset()
+            }
+            
+            return (true, "")
+        }
+        
     }
     
     private func setupDissmissKeyboardGesture() {

@@ -7,13 +7,10 @@
 
 import UIKit
 
-//protocol AdvancedTextFielDelegate: AnyObject {
-//    func editingChanged(_ sender: AdvancedTextfieldUIView)
-//    func editingDidEnd(_ sender: AdvancedTextfieldUIView)
-//}
-
 class AdvancedTextfieldUIView: UIView {
 
+    typealias CustomValidation = (_ textValue: String?) -> (Bool, String)?
+    
     let lockImageView = UIImageView(image: UIImage(systemName: "lock.fill"))
     let textField: UITextField
     let eyeButton = UIButton(type: .custom)
@@ -21,7 +18,12 @@ class AdvancedTextfieldUIView: UIView {
     let errorLabel = makeErrorLabel(withText: "Your password must meet the requirements below")
     let placeholderText: String
     let isSecureTextEntry: Bool
+    var customValidation: CustomValidation?
     
+    var text: String? {
+        get {return textField.text}
+        set { textField.text = newValue }
+    }
     weak var delegate: AdvancedTextFieldDelegate?
     
     init(placeholderText: String, isSecureTextEntry: Bool) {
