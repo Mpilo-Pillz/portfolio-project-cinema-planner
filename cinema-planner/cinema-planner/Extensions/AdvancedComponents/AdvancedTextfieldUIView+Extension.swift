@@ -130,7 +130,7 @@ extension AdvancedTextfieldUIView {
     }
 }
 
-// MARK: - UITextFieldDelegate, Gontse
+// MARK: - UITextFieldDelegate
 extension AdvancedTextfieldUIView: UITextFieldDelegate {
     @objc func textFieldEditingChanged(_ sender: UITextField) {
         delegate?.editingChanged(self)
