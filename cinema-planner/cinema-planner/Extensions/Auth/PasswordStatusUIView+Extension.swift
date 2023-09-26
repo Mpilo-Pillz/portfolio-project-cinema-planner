@@ -9,6 +9,25 @@ import UIKit
 
 extension PasswordStatusUIView {
     
+    func validate(_ text: String) -> Bool {
+        let uppercaseMet = PasswordCriteria.uppercaseMet(text)
+        let lowercaseMet = PasswordCriteria.lowercaseMet(text)
+        let digitMet = PasswordCriteria.digitMet(text)
+        let specialCharacterMet = PasswordCriteria.specialCharacterMet(text)
+        
+        let checkable = [uppercaseMet, lowercaseMet, digitMet, specialCharacterMet]
+        
+//        _ = checkable.filter { (criteria: Bool) -> Bool in return criteria }
+        let metCriteria = checkable.filter { $0 }
+        
+        let lengthAndNoSpaceMet = PasswordCriteria.lengthAndNoSpaceMet(text)
+        
+        if lengthAndNoSpaceMet && metCriteria.count >= 3 {
+            return true
+        }
+        return false
+    }
+    
     func stylePasswordStatusUIView() {
         backgroundColor = .tertiarySystemFill
         

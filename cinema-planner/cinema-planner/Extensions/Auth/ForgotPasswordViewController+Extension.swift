@@ -17,7 +17,7 @@ extension ForgotPasswordViewController {
     private func setUpNewPasswordTextField() {
         let newPasswordValidation: CustomValidation = { text in
             guard let text = text, !text.isEmpty else {
-                self.passwordStatusUIView.reset()
+//                self.passwordStatusUIView.reset()
                 return (false, "Enter your password")
             }
             
@@ -25,13 +25,20 @@ extension ForgotPasswordViewController {
             let invalidSet = CharacterSet(charactersIn: validChars).inverted
             
             guard text.rangeOfCharacter(from: invalidSet) == nil else {
-                self.passwordStatusUIView.reset()
+//                self.passwordStatusUIView.reset()
                 return (false, "Enter valid special chars (.,@:?!()$\\/#) with no spaces")
             }
+            
+            // Criteria met
+            self.passwordStatusUIView.updateDisplay(text)
+//            if !self.passwordStatusUIView.validate(text) {
+//                return (false, "Your password must meet the requirements below")
+//            }
             
             return (true, "")
         }       
         newPasswordTextField.customValidation = newPasswordValidation
+        newPasswordTextField.delegate = self
     }
     
     private func setupDissmissKeyboardGesture() {
@@ -86,6 +93,7 @@ extension ForgotPasswordViewController {
 extension ForgotPasswordViewController: AdvancedTextFieldDelegate {
     func editingDidEnd(_ sender: AdvancedTextfieldUIView) {
         if sender === newPasswordTextField {
+            passwordStatusUIView.shouldResetCriteria = false
             _ = newPasswordTextField.validate()
         }
     }
