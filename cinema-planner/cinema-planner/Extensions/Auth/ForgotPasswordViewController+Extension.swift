@@ -11,6 +11,7 @@ extension ForgotPasswordViewController {
     
     func setUpForgotPasswordViewController() {
         setUpNewPasswordTextField()
+        setupConfirmPassword()
         setupDissmissKeyboardGesture()
     }
     
@@ -39,6 +40,20 @@ extension ForgotPasswordViewController {
         }       
         newPasswordTextField.customValidation = newPasswordValidation
         newPasswordTextField.delegate = self
+    }
+    
+    private func setupConfirmPassword() {
+        let confirmPasswordValidation: CustomValidation = { text in
+            guard let text = text, !text.isEmpty else {
+                return (false, "Enter your password.")
+            }
+            guard text == self.newPasswordTextField.text else {
+                return (false, "Passwords do not match.")
+            }
+            return (true, "")
+        }
+        confirmPasswordTextField.customValidation = confirmPasswordValidation
+        confirmPasswordTextField.delegate = self
     }
     
     private func setupDissmissKeyboardGesture() {
@@ -104,6 +119,8 @@ extension ForgotPasswordViewController {
     func editingChanged(_ sender: AdvancedTextfieldUIView) {
         if sender === newPasswordTextField {
             passwordStatusUIView.updateDisplay(sender.textField.text ?? "")
+        } else if sender == confirmPasswordTextField {
+            _ = confirmPasswordTextField.validate()
         }
     }
 }
