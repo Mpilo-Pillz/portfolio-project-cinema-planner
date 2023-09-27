@@ -22,6 +22,9 @@ class ForgotPasswordViewController: UIViewController {
     let confirmPasswordTextField = AdvancedTextfieldUIView(placeholderText: "Confrm Password", isSecureTextEntry: false)
     let resetPasswordButton = makePrimaryButton(withText: "Reset Password")
     
+    // check if the top of the keyboard is above the bottom of the currently focused textbox
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

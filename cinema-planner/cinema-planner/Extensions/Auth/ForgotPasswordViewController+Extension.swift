@@ -13,8 +13,10 @@ extension ForgotPasswordViewController {
         setUpNewPasswordTextField()
         setupConfirmPassword()
         setupDissmissKeyboardGesture()
+        setupKeyboardHiding()
     }
     
+
     private func setUpNewPasswordTextField() {
         let newPasswordValidation: CustomValidation = { text in
             guard let text = text, !text.isEmpty else {
@@ -87,6 +89,7 @@ extension ForgotPasswordViewController {
         view.addSubview(forgotPasswordStackView)
         
         forgotPasswordBackButton.addTarget(self, action: #selector(forgotPasswordBackButtonTapped), for: .primaryActionTriggered)
+        resetPasswordButton.addTarget(self, action: #selector(resetPasswordButtonTapped), for: .primaryActionTriggered)
         
         NSLayoutConstraint.activate([
             forgotPasswordStackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
@@ -102,6 +105,29 @@ extension ForgotPasswordViewController {
     }
     
 
+}
+
+//MARK: - Actions
+extension ForgotPasswordViewController {
+    @objc func resetPasswordButtonTapped(sender: UIButton) {
+        view.endEditing(true)
+        
+        let isValidNewPassword = newPasswordTextField.validate()
+        let isValidConfirmPassword = confirmPasswordTextField.validate()
+        
+        if isValidNewPassword && isValidConfirmPassword {
+            showAlert(title: "Success", message: "Ready to make call to api")
+        }
+    }
+    
+    private func showAlert(title: String, message: String) {
+            let alert =  UIAlertController(title: "", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+            alert.title = title
+            alert.message = message
+            present(alert, animated: true, completion: nil)
+        }
 }
 
 // MARK: - UITextFieldDelegate
@@ -135,7 +161,25 @@ extension ForgotPasswordViewController {
 // MARK: - Keyboard
 extension ForgotPasswordViewController {
     @objc func keyboardWillShow(sender: NSNotification) {
-        print("Show keybpard")
+        guard let userInfo = sender.userInfo,
+              let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue,
+              let currentTextField = UIResponder.currentFirst() as? UITextField else { return }
+        
+        let keyboardTopY = keyboardFrame.cgRectValue.origin.y
+        
+        // convert one coordinate system to another
+        let convertedTextFieldFrame = view.convert(currentTextField.frame, from: currentTextField.superview)
+        
+        let textFieldBottomY = convertedTextFieldFrame.origin.y + convertedTextFieldFrame.size.height
+        
+
+        // if textField bottom is below keyboard bottom - bump the frame up
+        if textFieldBottomY > keyboardTopY {
+            // adjust view up
+            let textBoxY = convertedTextFieldFrame.origin.y
+                let newFrameY = (textBoxY - keyboardTopY / 2) * -1
+                view.frame.origin.y = newFrameY
+        }
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
