@@ -10,7 +10,7 @@ import UIKit
 class PasswordStatusUIView: UIView {
     let passwordStatusStackView = makeStackView(withSpacing: 8, withAxis: .vertical)
     
-    let criteriaLabel = UILabel()
+    let criteriaLabel = UILabel() // TODO: Use Dependency Inversion of Control
     
     let lengthCriteriaView = PasswordCriteriaUIView(text: "8-32 characters (no spaces)")
     let uppercaseCriteriaView = PasswordCriteriaUIView(text: "uppercase letter (A-Z)")

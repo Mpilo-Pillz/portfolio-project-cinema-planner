@@ -9,7 +9,7 @@ import Foundation
 
 struct Constants {
     static let localbaseURL =  "https://cinema-planner-372520.uc.r.appspot.com"
-    static let apiBaseURL = "http://localhost:4000"
+    static let apiBaseURL = "API_BASE_URL"
     static let bestYouTubeResult = 0
 }
 
@@ -17,7 +17,7 @@ class APICaller {
     static let shared = APICaller()
     
     func getTrendingMovies(completion: @escaping (Result<[Title], Error>) -> Void) {
-        guard let url = URL(string: "\(Constants.apiBaseURL)/api/v1/tmdb/getTrendingMovies") else {return}
+        guard let url = URL(string: "\(ProcessInfo.processInfo.environment[Constants.apiBaseURL] ?? "")/api/v1/tmdb/getTrendingMovies") else {return}
         
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
             
@@ -36,7 +36,7 @@ class APICaller {
     }
     
     func getTrendingTvs(completion: @escaping (Result<[Title], Error>) -> Void) {
-        guard let url = URL(string: "\(Constants.apiBaseURL)/api/v1/tmdb/getTrendingTvShows") else {return}
+        guard let url = URL(string: "\(ProcessInfo.processInfo.environment[Constants.apiBaseURL] ?? "")/api/v1/tmdb/getTrendingTvShows") else {return}
         
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
             guard let data = data, error == nil else {
@@ -55,7 +55,7 @@ class APICaller {
     }
     
     func getUpcomingMovies(completion: @escaping (Result<[Title], Error>) -> Void) {
-        guard let url = URL(string: "\(Constants.apiBaseURL)/api/v1/tmdb/getUpcomingMovies") else {return}
+        guard let url = URL(string: "\(ProcessInfo.processInfo.environment[Constants.apiBaseURL] ?? "")/api/v1/tmdb/getUpcomingMovies") else {return}
         let task = URLSession.shared.dataTask(with: URLRequest(url: url))  { data, _, error in
             guard let data = data, error == nil else {
                 return
@@ -71,7 +71,7 @@ class APICaller {
     }
     
     func getPopular(completion: @escaping (Result<[Title], Error>) -> Void) {
-        guard let url = URL(string: "\(Constants.apiBaseURL)/api/v1/tmdb/getPopularMovies") else
+        guard let url = URL(string: "\(ProcessInfo.processInfo.environment["API_KEY"] ?? "")/api/v1/tmdb/getPopularMovies") else
         {return}
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
             guard let data = data, error == nil else {
@@ -88,7 +88,7 @@ class APICaller {
     }
     
     func getTopRated(completion: @escaping (Result<[Title], Error>) -> Void) {
-        guard let url = URL(string: "\(Constants.apiBaseURL)/api/v1/tmdb/getTopRatedMovies") else
+        guard let url = URL(string: "\(ProcessInfo.processInfo.environment[Constants.apiBaseURL] ?? "")/api/v1/tmdb/getTopRatedMovies") else
         {return}
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
             guard let data = data, error == nil else {
@@ -106,7 +106,7 @@ class APICaller {
     }
     
     func getDiscoverMovies(completion: @escaping (Result<[Title], Error>) -> Void) {
-        guard let url = URL(string: "\(Constants.apiBaseURL)/api/v1/tmdb/getDiscoverMovies") else
+        guard let url = URL(string: "\(ProcessInfo.processInfo.environment[Constants.apiBaseURL] ?? "")/api/v1/tmdb/getDiscoverMovies") else
         {return}
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
             guard let data = data, error == nil else {
@@ -132,7 +132,7 @@ class APICaller {
             return
         }
         
-        guard let url = URL(string: "\(Constants.apiBaseURL)/api/v1/tmdb/searchMovies?query=\(query)") else {
+        guard let url = URL(string: "\(ProcessInfo.processInfo.environment[Constants.apiBaseURL] ?? "")/api/v1/tmdb/searchMovies?query=\(query)") else {
             return
         }
         
@@ -159,7 +159,7 @@ class APICaller {
             return
         }
         
-        guard let url = URL(string: "\(Constants.apiBaseURL)/api/v1/youtube/searchTrailers?query=\(query)") else {return}
+        guard let url = URL(string: "\(ProcessInfo.processInfo.environment[Constants.apiBaseURL] ?? "")/api/v1/youtube/searchTrailers?query=\(query)") else {return}
         
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
             guard let data = data, error == nil else {

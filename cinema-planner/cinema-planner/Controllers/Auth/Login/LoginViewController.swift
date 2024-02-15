@@ -16,7 +16,7 @@ protocol LoginViewControllerDelegate: AnyObject {
 
 class LoginViewController: UIViewController {
     
-    var userManager: UserManageable = UserManager()
+    var userManager: UserManageable = UserManager() // TODO: Use Dependency Inversion of Control
     
     let accessToken = "will-come-from-api"
     
